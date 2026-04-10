@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T21:22:21.854661+00:00",
+  "updated_at": "2026-04-10T21:57:31.688069+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -15,8 +15,8 @@
     },
     "us10y": {
       "value": 4.29,
-      "change": -0.04,
-      "change_pct": -0.92,
+      "change": 0.0,
+      "change_pct": 0.0,
       "signal": "yellow",
       "note": "금리 하락 = 채권 가격 상승"
     },
@@ -42,9 +42,9 @@
       "note": "TGA 감소 = 유동성 공급"
     },
     "rrp": {
-      "value": 0.402,
-      "change": 0.225,
-      "change_pct": 127.12,
+      "value": 0.507,
+      "change": 0.105,
+      "change_pct": 26.12,
       "signal": "yellow",
       "note": "RRP 감소 = 유동성 증가"
     },
