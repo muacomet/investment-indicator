@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>투자 지표 확인 - 기획안 최종</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/variable/pretendardvariable.min.css" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0f1117; --card:#1a1d28; --border:#252836;
+    --text:#e4e4e7; --dim:#8b8da3;
+    --green:#4ade80; --green-bg:rgba(74,222,128,0.12);
+    --yellow:#facc15; --blue:#60a5fa; --red:#f87171;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Pretendard Variable',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;padding-bottom:60px;-webkit-font-smoothing:antialiased}
+  .header{position:sticky;top:0;z-index:100;background:rgba(15,17,23,0.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:16px 20px}
+  .header h1{font-size:18px;font-weight:700}
+  .header .ver{font-size:12px;color:var(--dim);margin-top:2px}
+  .section{padding:28px 20px 0}
+  .num{display:inline-block;font-size:11px;font-weight:700;color:var(--green);background:var(--green-bg);padding:3px 10px;border-radius:12px;margin-bottom:8px;letter-spacing:0.5px}
+  h2{font-size:20px;font-weight:700;letter-spacing:-0.5px;margin-bottom:14px}
+  p{font-size:14px;color:var(--dim);margin-bottom:12px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:12px}
+  .card-title{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px}
+  .row:last-child{border:none}
+  .label{color:var(--dim)}
+  .val{font-weight:500;text-align:right;font-family:'SF Mono',monospace;font-size:12px}
+  .confirmed{background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.25);border-radius:14px;padding:18px;margin-bottom:12px}
+  .confirmed-title{font-size:14px;font-weight:700;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:6px}
+  .c-item{font-size:13px;padding:8px 0;border-bottom:1px solid rgba(74,222,128,0.1);display:flex;gap:10px}
+  .c-item:last-child{border:none}
+  .c-item .k{color:var(--dim);min-width:80px;flex-shrink:0}
+  .c-item .v{color:var(--text);font-weight:500;flex:1}
+  .divider{height:1px;background:var(--border);margin:28px 20px 0}
+  .arrow{text-align:center;color:var(--dim);padding:6px 0;font-size:16px}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 투자 지표 확인</h1>
+  <div class="ver">최종 기획안 v1.0 · 2026.04.10</div>
+</div>
+
+<div class="section">
+  <span class="num">확정</span>
+  <h2>결정 사항</h2>
+  <p>동현님 확인 결과 반영된 최종 결정입니다.</p>
+
+  <div class="confirmed">
+    <div class="confirmed-title">✓ 확정된 스펙</div>
+    <div class="c-item"><span class="k">갱신 주기</span><span class="v">최대한 짧게 (장중 5분 / 장외 30분)</span></div>
+    <div class="c-item"><span class="k">판정 수치</span><span class="v">현재 기준으로 진행, 추후 튜닝</span></div>
+    <div class="c-item"><span class="k">접근 제어</span><span class="v">비밀번호 없음 (URL만으로 접근)</span></div>
+    <div class="c-item"><span class="k">히스토리 차트</span><span class="v">필수 포함 (7일 / 30일 추이)</span></div>
+    <div class="c-item"><span class="k">구현 담당</span><span class="v">김혜성</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="num">01</span>
+  <h2>갱신 주기 전략</h2>
+  <p>GitHub Actions 무료 티어로 5분 간격 실행이 가능합니다.</p>
+  <div class="card">
+    <div class="row"><span class="label">🇺🇸 장중 (22:30~05:00 KST)</span><span class="val" style="color:var(--green)">5분</span></div>
+    <div class="row"><span class="label">장 시작 전후</span><span class="val" style="color:var(--yellow)">15분</span></div>
+    <div class="row"><span class="label">주말·공휴일</span><span class="val">1일 1회</span></div>
+    <div class="row"><span class="label">FRED 유동성 지표</span><span class="val">1일 1회 (주간 데이터)</span></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="num">02</span>
+  <h2>데이터 소스</h2>
+  <div class="card">
+    <div class="card-title">FRED API</div>
+    <p style="margin:0;font-size:12px">VIX / 10년·2년물 / 2-10스프레드 / TGA / RRP / M2 / 연준 대차대조표</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Yahoo Finance</div>
+    <p style="margin:0;font-size:12px">S&P500 / NASDAQ / DXY / 금 / WTI / 구리</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="num">03</span>
+  <h2>아키텍처</h2>
+  <div class="card">
+    <div style="text-align:center;font-size:13px;padding:8px 0">🌐 FRED + Yahoo Finance</div>
+    <div class="arrow">↓</div>
+    <div style="text-align:center;font-size:13px;padding:8px 0;color:var(--blue)">⚙️ GitHub Actions (5분 cron)</div>
+    <div class="arrow">↓</div>
+    <div style="text-align:center;font-size:13px;padding:8px 0">📁 latest.json + history.json</div>
+    <div class="arrow">↓</div>
+    <div style="text-align:center;font-size:13px;padding:8px 0;color:var(--green)">📱 React App (GitHub Pages)</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="num">04</span>
+  <h2>화면 구성</h2>
+  <div class="card">
+    <div class="card-title">① 종합 국면 판정 (상단 고정)</div>
+    <p style="margin:0;font-size:12px">🟢 매수 / ⚠️ 혼조 / 🔴 관망 + 근거 리스트</p>
+  </div>
+  <div class="card">
+    <div class="card-title">② 지표 카드 (기존 레이아웃)</div>
+    <p style="margin:0;font-size:12px">이름 / 값 / 변동 / 신호등 / 기준선</p>
+  </div>
+  <div class="card">
+    <div class="card-title">③ 히스토리 차트 ⭐</div>
+    <p style="margin:0;font-size:12px">각 지표별 7일 / 30일 추이 라인 차트. 카드 탭 시 차트 확장</p>
+  </div>
+  <div class="card">
+    <div class="card-title">④ 유동성 섹션</div>
+    <p style="margin:0;font-size:12px">TGA / RRP / M2 (주간 갱신)</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="section">
+  <span class="num">05</span>
+  <h2>다음 단계</h2>
+  <div class="card">
+    <div class="row"><span class="label">담당</span><span class="val">김혜성</span></div>
+    <div class="row"><span class="label">저장소</span><span class="val">Private Repo 생성</span></div>
+    <div class="row"><span class="label">API 키</span><span class="val">FRED 발급 → Secrets</span></div>
+    <div class="row"><span class="label">기반 소스</span><span class="val">동현님 React 코드</span></div>
+  </div>
+</div>
+
+<div style="height:40px"></div>
+</body>
+</html>
