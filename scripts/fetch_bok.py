@@ -25,9 +25,9 @@ BOK_SERIES = {
 }
 
 # ── KeyStatisticList 지표 (100대 핵심 통계) ────────────────
-# key: KEY_STAT_CODE
+# key: KEYSTAT_NAME (지표 이름으로 매칭)
 KEY_STAT_SERIES = {
-    "kr_delinquency": "K051",   # 가계대출 연체율
+    "kr_delinquency": "연체율",   # "가계대출 연체율" 또는 "연체율" 포함 항목 매칭
 }
 
 # ── 신호 판정 / 노트 ─────────────────────────────────────
@@ -105,9 +105,8 @@ def _fetch_stat(key: str, stat_code: str, item_code: str, freq: str) -> dict | N
 
 # ── KeyStatisticList 조회 (100대 핵심 통계) ────────────────
 
-def _fetch_key_stat(key: str, key_stat_code: str) -> dict | None:
-    """KeyStatisticList API에서 특정 지표를 조회한다.
-    한 번 호출로 100대 지표 전체를 가져와 필요한 것만 추출."""
+def _fetch_key_stat(key: str, keyword: str) -> dict | None:
+    """KeyStatisticList API에서 KEYSTAT_NAME에 keyword가 포함된 지표를 조회."""
     url = f"{API_BASE}/KeyStatisticList/{BOK_KEY}/json/kr/1/100/"
 
     for attempt in range(MAX_RETRIES):
@@ -122,39 +121,24 @@ def _fetch_key_stat(key: str, key_stat_code: str) -> dict | None:
                 continue
 
             rows = data["KeyStatisticList"]["row"]
-            # KEY_STAT_CODE 로 필터
-            match = [r for r in rows if r.get("KEYSTAT_NAME", "") == key_stat_code
-                     or r.get("CLASS_NAME", "") == key_stat_code
-                     or key_stat_code in r.get("DATA_VALUE", "")]
 
-            # 정확한 코드 매칭 시도
-            for r in rows:
-                if r.get("KEYSTAT_NAME") == key_stat_code:
-                    match = [r]
-                    break
+            # KEYSTAT_NAME에 keyword 포함된 항목 찾기
+            matches = [r for r in rows if keyword in r.get("KEYSTAT_NAME", "")]
 
-            # KEYSTAT_NAME이 아닐 수 있으니 모든 필드 검색
-            if not match:
-                for r in rows:
-                    row_str = json.dumps(r, ensure_ascii=False)
-                    if key_stat_code in row_str:
-                        match = [r]
-                        break
-
-            if not match:
+            if not matches:
                 if attempt == MAX_RETRIES - 1:
-                    print(f"[BOK] KeyStat {key}: {key_stat_code} not found in {len(rows)} items")
-                    # 디버그: 처음 5개 항목의 키 출력
-                    for r in rows[:5]:
-                        print(f"  → keys: {list(r.keys())}")
-                        print(f"  → sample: {json.dumps(r, ensure_ascii=False)[:200]}")
+                    print(f"[BOK] KeyStat {key}: '{keyword}' not found in {len(rows)} items")
+                    # 디버그: 전체 KEYSTAT_NAME 출력
+                    names = [r.get("KEYSTAT_NAME", "?") for r in rows]
+                    print(f"  → available: {names}")
                 continue
 
-            row = match[0]
+            row = matches[0]
+            print(f"[BOK] KeyStat {key}: matched '{row['KEYSTAT_NAME']}' = {row['DATA_VALUE']} ({row.get('CYCLE', '?')})")
+
             curr_str = row.get("DATA_VALUE", "0").replace(",", "")
             curr_val = float(curr_str) if curr_str else 0
 
-            # KeyStatisticList는 이전 값이 없으므로 change = 0
             signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
             return {
                 "value": round(curr_val, 2),
