@@ -1,0 +1,50 @@
+{
+  "updated_at": "2026-04-10T02:06:38.005348+00:00",
+  "phase": {
+    "status": "wait",
+    "score": 0,
+    "reasons": []
+  },
+  "indicators": {
+    "vix": {
+      "value": 21.04,
+      "change": -4.74,
+      "change_pct": -18.39
+    },
+    "us10y": {
+      "value": 4.29,
+      "change": -0.04,
+      "change_pct": -0.92
+    },
+    "us2y": {
+      "value": 3.79,
+      "change": -0.02,
+      "change_pct": -0.52
+    },
+    "spread_2_10": {
+      "value": 0.51,
+      "change": 0.01,
+      "change_pct": 2.0
+    },
+    "tga": {
+      "value": 748376.0,
+      "change": -99342.0,
+      "change_pct": -11.72
+    },
+    "rrp": {
+      "value": 0.402,
+      "change": 0.225,
+      "change_pct": 127.12
+    },
+    "m2": {
+      "value": 22667.3,
+      "change": 198.2,
+      "change_pct": 0.88
+    },
+    "walcl": {
+      "value": 6693871.0,
+      "change": 18527.0,
+      "change_pct": 0.28
+    }
+  }
+}

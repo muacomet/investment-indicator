@@ -32,7 +32,7 @@ jobs:
         run: python scripts/fetch_data.py
 
       - name: Copy data to docs for GitHub Pages
-        run: cp -r data/* docs/
+        run: mkdir -p docs/data && cp data/* docs/data/
 
       - name: Commit updated data
         run: |
