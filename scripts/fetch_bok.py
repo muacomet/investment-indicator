@@ -14,8 +14,10 @@ BOK_SERIES = {
     "kr10y":              ("817Y002", "010210000",  None,      "D"),
     "kr2y":               ("817Y002", "010200000",  None,      "D"),
     "krw_usd":            ("731Y001", "0000001",    "0000200", "D"),
-    "kr_household_delinq":("901Y009", "BECBLA02A",  None,      "M"),
-    "kr_saving_rate":     ("200Y004", "10114",      None,      "Q"),
+    # 가계대출 연체율: 금융안정 통계 → 예금취급기관 가계대출 연체율
+    "kr_household_delinq":("901Y063", "A",          None,      "M"),
+    # 가계 저축률: 국민소득 → 가계부문 저축률
+    "kr_saving_rate":     ("200Y003", "10602",      None,      "Q"),
 }
 
 SIGNAL_RULES = {
