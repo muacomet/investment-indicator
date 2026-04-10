@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PhasePanel from './components/PhasePanel';
 import IndicatorCard from './components/IndicatorCard';
-import LiquiditySection from './components/LiquiditySection';
+import SectionHeader from './components/SectionHeader';
 
-const MARKET_KEYS = [
+// ── 섹션 정의 ──────────────────────────────────────────
+
+const US_MARKET_KEYS = [
   { key: 'vix', name: 'VIX (변동성 지수)' },
   { key: 'sp500', name: 'S&P 500' },
   { key: 'nasdaq', name: 'NASDAQ' },
@@ -14,36 +16,46 @@ const MARKET_KEYS = [
   { key: 'gold', name: '금 (Gold)' },
   { key: 'wti', name: 'WTI 원유' },
   { key: 'copper', name: '구리 (Copper)' },
+  { key: 'tga', name: 'TGA (재무부 일반계정)' },
+  { key: 'rrp', name: 'RRP (역레포)' },
+  { key: 'm2', name: 'M2 통화량' },
+  { key: 'fed_balance', name: '연준 대차대조표' },
 ];
 
-// 데모 데이터 — fetch_data.py가 실제 데이터를 생성하면 이 fallback은 사용되지 않음
-function generateDemoHistory(base, volatility, days = 30) {
-  const result = [];
+const KR_MARKET_KEYS = [
+  { key: 'kospi', name: 'KOSPI' },
+  { key: 'krw_usd', name: '원/달러 환율' },
+  { key: 'kr10y', name: '한국 국고채 10년' },
+  { key: 'kr2y', name: '한국 국고채 2년' },
+];
+
+const HEALTH_KEYS = [
+  { key: 'us_cc_delinq', name: '🇺🇸 신용카드 연체율' },
+  { key: 'us_auto_delinq', name: '🇺🇸 자동차 할부 연체율' },
+  { key: 'us_mortgage_delinq', name: '🇺🇸 주담대 연체율' },
+  { key: 'us_saving_rate', name: '🇺🇸 개인 저축률' },
+  { key: 'kr_household_delinq', name: '🇰🇷 가계대출 연체율' },
+  { key: 'kr_saving_rate', name: '🇰🇷 가계 저축률' },
+];
+
+// ── 데모 데이터 ────────────────────────────────────────
+
+function genHistory(base, vol, days = 30) {
+  const r = [];
   const now = new Date();
   for (let i = days; i >= 0; i--) {
     const d = new Date(now);
     d.setDate(d.getDate() - i);
-    const noise = (Math.random() - 0.5) * volatility * 2;
-    result.push({
-      date: d.toISOString().slice(0, 10),
-      value: +(base + noise).toFixed(2),
-    });
-    base = base + noise * 0.3;
+    const n = (Math.random() - 0.5) * vol * 2;
+    r.push({ date: d.toISOString().slice(0, 10), value: +(base + n).toFixed(2) });
+    base += n * 0.3;
   }
-  return result;
+  return r;
 }
 
 const DEMO_DATA = {
   updated_at: new Date().toISOString(),
-  phase: {
-    status: 'mixed',
-    score: 2,
-    reasons: [
-      'VIX 25 수준 — 불안정',
-      'S&P 500 200일선 근접',
-      'M2 증가 추세 확인',
-    ],
-  },
+  phase: { status: 'mixed', score: 2, reasons: ['VIX 25 수준 — 불안정', 'S&P 500 200일선 근접', 'M2 증가 추세 확인'] },
   indicators: {
     vix: { value: 25.3, change: -2.1, change_pct: -7.66, signal: 'yellow', note: '20 이하 안정 / 30+ 위험' },
     sp500: { value: 5124.5, change: 45.2, change_pct: 0.89, signal: 'green', note: '200일선: 5,050' },
@@ -59,25 +71,33 @@ const DEMO_DATA = {
     rrp: { value: 438.1, change: -25.3, change_pct: -5.46, signal: 'green', note: 'RRP 감소 = 유동성 증가' },
     m2: { value: 21050.0, change: 120.0, change_pct: 0.57, signal: 'green', note: 'M2 증가 = 유동성 확대' },
     fed_balance: { value: 7420.5, change: -15.2, change_pct: -0.2, signal: 'yellow', note: 'QT 진행 중' },
+    kospi: { value: 2654.3, change: 28.1, change_pct: 1.07, signal: 'green', note: '' },
+    krw_usd: { value: 1385.2, change: -5.3, change_pct: -0.38, signal: 'green', note: '환율 상승 = 원화 약세' },
+    kr10y: { value: 3.42, change: -0.03, change_pct: -0.87, signal: 'yellow', note: '' },
+    kr2y: { value: 3.15, change: -0.02, change_pct: -0.63, signal: 'yellow', note: '' },
+    us_cc_delinq: { value: 2.98, change: 0.11, change_pct: 3.83, signal: 'yellow', note: '3%+ 경고' },
+    us_auto_delinq: { value: 2.85, change: 0.08, change_pct: 2.89, signal: 'yellow', note: '3%+ 경고' },
+    us_mortgage_delinq: { value: 1.72, change: -0.03, change_pct: -1.71, signal: 'green', note: '4%+ 위험' },
+    us_saving_rate: { value: 4.6, change: -0.2, change_pct: -4.17, signal: 'yellow', note: '5% 이상 건전' },
+    kr_household_delinq: { value: 0.48, change: 0.02, change_pct: 4.35, signal: 'green', note: '1%+ 경고' },
+    kr_saving_rate: { value: 35.2, change: 0.5, change_pct: 1.44, signal: 'green', note: '국민계정 기준 분기' },
   },
 };
 
-const DEMO_HISTORY = {
-  vix: generateDemoHistory(25, 3),
-  sp500: generateDemoHistory(5100, 80),
-  nasdaq: generateDemoHistory(15900, 250),
-  dxy: generateDemoHistory(104, 1),
-  us10y: generateDemoHistory(4.3, 0.1),
-  us2y: generateDemoHistory(4.7, 0.1),
-  spread_2_10: generateDemoHistory(-0.4, 0.05),
-  gold: generateDemoHistory(2300, 30),
-  wti: generateDemoHistory(79, 3),
-  copper: generateDemoHistory(4.1, 0.15),
-  tga: generateDemoHistory(760, 20),
-  rrp: generateDemoHistory(460, 30),
-  m2: generateDemoHistory(21000, 100),
-  fed_balance: generateDemoHistory(7430, 20),
-};
+const DEMO_HISTORY = Object.fromEntries([
+  ['vix', genHistory(25, 3)], ['sp500', genHistory(5100, 80)], ['nasdaq', genHistory(15900, 250)],
+  ['dxy', genHistory(104, 1)], ['us10y', genHistory(4.3, 0.1)], ['us2y', genHistory(4.7, 0.1)],
+  ['spread_2_10', genHistory(-0.4, 0.05)], ['gold', genHistory(2300, 30)], ['wti', genHistory(79, 3)],
+  ['copper', genHistory(4.1, 0.15)], ['tga', genHistory(760, 20)], ['rrp', genHistory(460, 30)],
+  ['m2', genHistory(21000, 100)], ['fed_balance', genHistory(7430, 20)],
+  ['kospi', genHistory(2650, 40)], ['krw_usd', genHistory(1385, 10)],
+  ['kr10y', genHistory(3.4, 0.08)], ['kr2y', genHistory(3.15, 0.06)],
+  ['us_cc_delinq', genHistory(2.9, 0.1)], ['us_auto_delinq', genHistory(2.8, 0.1)],
+  ['us_mortgage_delinq', genHistory(1.7, 0.05)], ['us_saving_rate', genHistory(4.6, 0.3)],
+  ['kr_household_delinq', genHistory(0.48, 0.03)], ['kr_saving_rate', genHistory(35, 1)],
+]);
+
+// ── 유틸 ────────────────────────────────────────────────
 
 function formatTime(isoStr) {
   if (!isoStr) return '';
@@ -85,6 +105,22 @@ function formatTime(isoStr) {
   const pad = (n) => String(n).padStart(2, '0');
   return `${d.getFullYear()}.${pad(d.getMonth() + 1)}.${pad(d.getDate())} ${pad(d.getHours())}:${pad(d.getMinutes())} KST`;
 }
+
+function renderSection(keys, indicators, history) {
+  return keys.map(
+    (item) =>
+      indicators[item.key] && (
+        <IndicatorCard
+          key={item.key}
+          name={item.name}
+          indicator={indicators[item.key]}
+          history={history?.[item.key]}
+        />
+      )
+  );
+}
+
+// ── 앱 ──────────────────────────────────────────────────
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -99,7 +135,6 @@ export default function App() {
           fetch(`${base}data/latest.json`).then((r) => r.json()),
           fetch(`${base}data/history.json`).then((r) => r.json()),
         ]);
-
         const hasData = latestRes?.indicators && Object.keys(latestRes.indicators).length > 0;
         if (hasData) {
           setData(latestRes);
@@ -115,22 +150,12 @@ export default function App() {
         setIsDemo(true);
       }
     }
-
     fetchData();
   }, []);
 
   if (!data) {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-          color: 'var(--dim)',
-          fontSize: 14,
-        }}
-      >
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', color: 'var(--dim)', fontSize: 14 }}>
         로딩 중…
       </div>
     );
@@ -141,38 +166,17 @@ export default function App() {
       {/* Header */}
       <header
         style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 100,
+          position: 'sticky', top: 0, zIndex: 100,
           background: 'rgba(15, 17, 23, 0.85)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderBottom: '1px solid var(--border)',
-          padding: '14px 20px',
+          backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)',
+          borderBottom: '1px solid var(--border)', padding: '14px 20px',
         }}
       >
         <h1 style={{ fontSize: 18, fontWeight: 700 }}>📊 투자 지표 확인</h1>
-        <div
-          style={{
-            fontSize: 12,
-            color: 'var(--dim)',
-            marginTop: 2,
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
+        <div style={{ fontSize: 12, color: 'var(--dim)', marginTop: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span>{formatTime(data.updated_at)}</span>
           {isDemo && (
-            <span
-              style={{
-                fontSize: 10,
-                background: 'rgba(250,204,21,0.15)',
-                color: 'var(--yellow)',
-                padding: '2px 8px',
-                borderRadius: 6,
-              }}
-            >
+            <span style={{ fontSize: 10, background: 'rgba(250,204,21,0.15)', color: 'var(--yellow)', padding: '2px 8px', borderRadius: 6 }}>
               DEMO
             </span>
           )}
@@ -184,35 +188,23 @@ export default function App() {
         <PhasePanel phase={data.phase} />
       </div>
 
-      {/* Market Indicators */}
+      {/* 🇺🇸 미국 시장 */}
       <div style={{ padding: '0 16px' }}>
-        <div
-          style={{
-            fontSize: 13,
-            fontWeight: 700,
-            color: 'var(--dim)',
-            textTransform: 'uppercase',
-            letterSpacing: 1,
-            marginBottom: 10,
-          }}
-        >
-          📈 시장 지표
-        </div>
-        {MARKET_KEYS.map(
-          (mk) =>
-            data.indicators[mk.key] && (
-              <IndicatorCard
-                key={mk.key}
-                name={mk.name}
-                indicator={data.indicators[mk.key]}
-                history={history?.[mk.key]}
-              />
-            )
-        )}
+        <SectionHeader icon="🇺🇸" title="미국 시장" />
+        {renderSection(US_MARKET_KEYS, data.indicators, history)}
       </div>
 
-      {/* Liquidity Section */}
-      <LiquiditySection indicators={data.indicators} history={history} />
+      {/* 🇰🇷 한국 시장 */}
+      <div style={{ padding: '0 16px' }}>
+        <SectionHeader icon="🇰🇷" title="한국 시장" />
+        {renderSection(KR_MARKET_KEYS, data.indicators, history)}
+      </div>
+
+      {/* 💳 신용·가계 건전성 */}
+      <div style={{ padding: '0 16px' }}>
+        <SectionHeader icon="💳" title="신용·가계 건전성" subtitle="분기 갱신" />
+        {renderSection(HEALTH_KEYS, data.indicators, history)}
+      </div>
     </>
   );
 }

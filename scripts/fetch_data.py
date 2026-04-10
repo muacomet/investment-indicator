@@ -5,6 +5,7 @@ from pathlib import Path
 from fredapi import Fred
 import yfinance as yf
 from calculate import judge_phase
+from fetch_bok import fetch_bok
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 FRED_KEY = os.environ.get("FRED_API_KEY", "")
@@ -13,6 +14,11 @@ FRED_SERIES = {
     "vix": "VIXCLS", "us10y": "DGS10", "us2y": "DGS2",
     "spread_2_10": "T10Y2Y", "tga": "WTREGEN",
     "rrp": "RRPONTSYD", "m2": "M2SL", "fed_balance": "WALCL",
+    # 신용·가계 건전성 (분기)
+    "us_cc_delinq": "DRCCLACBS",
+    "us_auto_delinq": "DRALACBN",
+    "us_mortgage_delinq": "DRSFRMACBS",
+    "us_saving_rate": "PSAVERT",
 }
 YF_TICKERS = {
     "sp500": "^GSPC", "nasdaq": "^IXIC", "dxy": "DX-Y.NYB",
@@ -35,6 +41,18 @@ SIGNAL_RULES = {
     "rrp":          lambda _, c: "green" if c < 0 else "yellow",
     "m2":           lambda _, c: "green" if c > 0 else "yellow",
     "fed_balance":  lambda _, c: "yellow" if c < 0 else "green",
+    # 신용·가계 건전성
+    "us_cc_delinq":       lambda v, _: "red" if v > 3 else "yellow" if v > 2 else "green",
+    "us_auto_delinq":     lambda v, _: "red" if v > 3 else "yellow" if v > 2 else "green",
+    "us_mortgage_delinq": lambda v, _: "red" if v > 4 else "yellow" if v > 2.5 else "green",
+    "us_saving_rate":     lambda v, _: "red" if v < 3 else "yellow" if v < 5 else "green",
+    # 한국 지표
+    "kospi":          lambda _, c: "green" if c > 0 else "red",
+    "krw_usd":        lambda _, c: "red" if c > 1 else "yellow" if c > 0 else "green",
+    "kr10y":          lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
+    "kr2y":           lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
+    "kr_household_delinq": lambda v, _: "red" if v > 1 else "yellow" if v > 0.5 else "green",
+    "kr_saving_rate": lambda v, _: "red" if v < 30 else "yellow" if v < 35 else "green",
 }
 
 NOTES = {
@@ -52,6 +70,18 @@ NOTES = {
     "rrp": "RRP 감소 = 유동성 증가",
     "m2": "M2 증가 = 유동성 확대",
     "fed_balance": "QT 진행 중",
+    # 신용·가계 건전성
+    "us_cc_delinq": "3%+ 경고",
+    "us_auto_delinq": "3%+ 경고",
+    "us_mortgage_delinq": "4%+ 위험",
+    "us_saving_rate": "5% 이상 건전",
+    # 한국 지표
+    "kospi": "",
+    "krw_usd": "환율 상승 = 원화 약세",
+    "kr10y": "",
+    "kr2y": "",
+    "kr_household_delinq": "1%+ 경고",
+    "kr_saving_rate": "국민계정 기준 분기",
 }
 
 MAX_RETRIES = 3
@@ -146,7 +176,8 @@ def main():
         fred_data = fetch_fred(fred)
 
     yf_data = fetch_yahoo()
-    indicators = {**fred_data, **yf_data}
+    bok_data = fetch_bok()
+    indicators = {**fred_data, **yf_data, **bok_data}
 
     if not indicators:
         print("✗ No data fetched, skipping update")
