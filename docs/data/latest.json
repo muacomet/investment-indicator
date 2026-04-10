@@ -1,11 +1,18 @@
 {
-  "updated_at": "2026-04-10T15:04:00.207872+00:00",
+  "updated_at": "2026-04-10T16:02:57.589413+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
     "reasons": []
   },
   "indicators": {
+    "vix": {
+      "value": 19.49,
+      "change": -1.55,
+      "change_pct": -7.37,
+      "signal": "green",
+      "note": "20 이하 안정 / 30+ 위험"
+    },
     "us10y": {
       "value": 4.29,
       "change": -0.04,
@@ -33,6 +40,13 @@
       "change_pct": -11.72,
       "signal": "green",
       "note": "TGA 감소 = 유동성 공급"
+    },
+    "rrp": {
+      "value": 0.402,
+      "change": 0.225,
+      "change_pct": 127.12,
+      "signal": "yellow",
+      "note": "RRP 감소 = 유동성 증가"
     },
     "m2": {
       "value": 22667.3,
