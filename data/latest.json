@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T02:06:38.005348+00:00",
+  "updated_at": "2026-04-10T03:19:50.371362+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -9,42 +9,58 @@
     "vix": {
       "value": 21.04,
       "change": -4.74,
-      "change_pct": -18.39
+      "change_pct": -18.39,
+      "signal": "yellow",
+      "note": "20 이하 안정 / 30+ 위험"
     },
     "us10y": {
       "value": 4.29,
       "change": -0.04,
-      "change_pct": -0.92
+      "change_pct": -0.92,
+      "signal": "yellow",
+      "note": "금리 하락 = 채권 가격 상승"
     },
     "us2y": {
       "value": 3.79,
       "change": -0.02,
-      "change_pct": -0.52
+      "change_pct": -0.52,
+      "signal": "green",
+      "note": ""
     },
     "spread_2_10": {
       "value": 0.51,
       "change": 0.01,
-      "change_pct": 2.0
+      "change_pct": 2.0,
+      "signal": "green",
+      "note": "역전 시 경기침체 경고"
     },
     "tga": {
       "value": 748376.0,
       "change": -99342.0,
-      "change_pct": -11.72
+      "change_pct": -11.72,
+      "signal": "green",
+      "note": "TGA 감소 = 유동성 공급"
     },
     "rrp": {
       "value": 0.402,
       "change": 0.225,
-      "change_pct": 127.12
+      "change_pct": 127.12,
+      "signal": "yellow",
+      "note": "RRP 감소 = 유동성 증가"
     },
     "m2": {
       "value": 22667.3,
       "change": 198.2,
-      "change_pct": 0.88
+      "change_pct": 0.88,
+      "signal": "green",
+      "note": "M2 증가 = 유동성 확대"
     },
-    "walcl": {
+    "fed_balance": {
       "value": 6693871.0,
       "change": 18527.0,
-      "change_pct": 0.28
+      "change_pct": 0.28,
+      "signal": "green",
+      "note": "QT 진행 중"
     }
   }
 }
