@@ -13,7 +13,7 @@ const CHART_COLORS = {
   red: '#f87171',
 };
 
-export default function IndicatorCard({ name, indicator, history }) {
+export default function IndicatorCard({ name, desc, indicator, history }) {
   const [expanded, setExpanded] = useState(false);
 
   if (!indicator) return null;
@@ -86,7 +86,7 @@ export default function IndicatorCard({ name, indicator, history }) {
         </div>
       </div>
 
-      {indicator.note && (
+      {(indicator.note || desc) && (
         <div
           style={{
             fontSize: 11,
@@ -95,6 +95,8 @@ export default function IndicatorCard({ name, indicator, history }) {
           }}
         >
           {indicator.note}
+          {indicator.note && desc && ' · '}
+          {desc && <span style={{ color: 'var(--blue)', opacity: 0.7 }}>{desc}</span>}
         </div>
       )}
 

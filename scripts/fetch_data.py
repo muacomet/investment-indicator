@@ -46,13 +46,12 @@ SIGNAL_RULES = {
     "us_auto_delinq":     lambda v, _: "red" if v > 3 else "yellow" if v > 2 else "green",
     "us_mortgage_delinq": lambda v, _: "red" if v > 4 else "yellow" if v > 2.5 else "green",
     "us_saving_rate":     lambda v, _: "red" if v < 3 else "yellow" if v < 5 else "green",
-    # 한국 지표
+    # 한국 지표 (fetch_bok.py 에서 관리, signal 참조용)
     "kospi":          lambda _, c: "green" if c > 0 else "red",
-    "krw_usd":        lambda _, c: "red" if c > 1 else "yellow" if c > 0 else "green",
+    "usdkrw":         lambda _, c: "red" if c > 1 else "yellow" if c > 0 else "green",
     "kr10y":          lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
     "kr2y":           lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
-    "kr_household_delinq": lambda v, _: "red" if v > 1 else "yellow" if v > 0.5 else "green",
-    "kr_saving_rate": lambda v, _: "red" if v < 30 else "yellow" if v < 35 else "green",
+    "kr_delinquency": lambda v, _: "red" if v > 1 else "yellow" if v > 0.5 else "green",
 }
 
 NOTES = {
@@ -75,13 +74,12 @@ NOTES = {
     "us_auto_delinq": "3%+ 경고",
     "us_mortgage_delinq": "4%+ 위험",
     "us_saving_rate": "5% 이상 건전",
-    # 한국 지표
+    # 한국 지표 (fetch_bok.py 에서 관리, note 참조용)
     "kospi": "",
-    "krw_usd": "환율 상승 = 원화 약세",
+    "usdkrw": "환율 상승 = 원화 약세",
     "kr10y": "",
     "kr2y": "",
-    "kr_household_delinq": "1%+ 경고",
-    "kr_saving_rate": "국민계정 기준 분기",
+    "kr_delinquency": "1%+ 경고",
 }
 
 MAX_RETRIES = 3

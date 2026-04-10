@@ -9,7 +9,7 @@ const US_MARKET_KEYS = [
   { key: 'vix', name: 'VIX (변동성 지수)' },
   { key: 'sp500', name: 'S&P 500' },
   { key: 'nasdaq', name: 'NASDAQ' },
-  { key: 'dxy', name: 'DXY (달러 인덱스)' },
+  { key: 'dxy', name: 'DXY (달러 인덱스)', desc: '6개 주요 통화 대비 달러 가치' },
   { key: 'us10y', name: '미국 10년물 금리' },
   { key: 'us2y', name: '미국 2년물 금리' },
   { key: 'spread_2_10', name: '2-10 스프레드' },
@@ -24,7 +24,7 @@ const US_MARKET_KEYS = [
 
 const KR_MARKET_KEYS = [
   { key: 'kospi', name: 'KOSPI' },
-  { key: 'krw_usd', name: '원/달러 환율' },
+  { key: 'usdkrw', name: '원/달러 환율', desc: '원화 기준 달러 환율 (DXY와 별개)' },
   { key: 'kr10y', name: '한국 국고채 10년' },
   { key: 'kr2y', name: '한국 국고채 2년' },
 ];
@@ -34,8 +34,7 @@ const HEALTH_KEYS = [
   { key: 'us_auto_delinq', name: '🇺🇸 자동차 할부 연체율' },
   { key: 'us_mortgage_delinq', name: '🇺🇸 주담대 연체율' },
   { key: 'us_saving_rate', name: '🇺🇸 개인 저축률' },
-  { key: 'kr_household_delinq', name: '🇰🇷 가계대출 연체율' },
-  { key: 'kr_saving_rate', name: '🇰🇷 가계 저축률' },
+  { key: 'kr_delinquency', name: '🇰🇷 가계대출 연체율' },
 ];
 
 // ── 데모 데이터 ────────────────────────────────────────
@@ -60,7 +59,7 @@ const DEMO_DATA = {
     vix: { value: 25.3, change: -2.1, change_pct: -7.66, signal: 'yellow', note: '20 이하 안정 / 30+ 위험' },
     sp500: { value: 5124.5, change: 45.2, change_pct: 0.89, signal: 'green', note: '200일선: 5,050' },
     nasdaq: { value: 16032.1, change: 189.3, change_pct: 1.19, signal: 'green', note: '' },
-    dxy: { value: 104.32, change: -0.45, change_pct: -0.43, signal: 'yellow', note: '달러 약세 시 위험자산 유리' },
+    dxy: { value: 104.32, change: -0.45, change_pct: -0.43, signal: 'yellow', note: '6개 주요 통화 대비 달러 가치' },
     us10y: { value: 4.35, change: -0.08, change_pct: -1.81, signal: 'yellow', note: '금리 하락 = 채권 가격 상승' },
     us2y: { value: 4.72, change: -0.05, change_pct: -1.05, signal: 'yellow', note: '' },
     spread_2_10: { value: -0.37, change: 0.03, change_pct: 7.5, signal: 'red', note: '역전 시 경기침체 경고' },
@@ -72,15 +71,14 @@ const DEMO_DATA = {
     m2: { value: 21050.0, change: 120.0, change_pct: 0.57, signal: 'green', note: 'M2 증가 = 유동성 확대' },
     fed_balance: { value: 7420.5, change: -15.2, change_pct: -0.2, signal: 'yellow', note: 'QT 진행 중' },
     kospi: { value: 2654.3, change: 28.1, change_pct: 1.07, signal: 'green', note: '' },
-    krw_usd: { value: 1385.2, change: -5.3, change_pct: -0.38, signal: 'green', note: '환율 상승 = 원화 약세' },
+    usdkrw: { value: 1385.2, change: -5.3, change_pct: -0.38, signal: 'green', note: '환율 상승 = 원화 약세' },
     kr10y: { value: 3.42, change: -0.03, change_pct: -0.87, signal: 'yellow', note: '' },
     kr2y: { value: 3.15, change: -0.02, change_pct: -0.63, signal: 'yellow', note: '' },
     us_cc_delinq: { value: 2.98, change: 0.11, change_pct: 3.83, signal: 'yellow', note: '3%+ 경고' },
     us_auto_delinq: { value: 2.85, change: 0.08, change_pct: 2.89, signal: 'yellow', note: '3%+ 경고' },
     us_mortgage_delinq: { value: 1.72, change: -0.03, change_pct: -1.71, signal: 'green', note: '4%+ 위험' },
     us_saving_rate: { value: 4.6, change: -0.2, change_pct: -4.17, signal: 'yellow', note: '5% 이상 건전' },
-    kr_household_delinq: { value: 0.48, change: 0.02, change_pct: 4.35, signal: 'green', note: '1%+ 경고' },
-    kr_saving_rate: { value: 35.2, change: 0.5, change_pct: 1.44, signal: 'green', note: '국민계정 기준 분기' },
+    kr_delinquency: { value: 0.48, change: 0.02, change_pct: 4.35, signal: 'green', note: '1%+ 경고' },
   },
 };
 
@@ -90,11 +88,11 @@ const DEMO_HISTORY = Object.fromEntries([
   ['spread_2_10', genHistory(-0.4, 0.05)], ['gold', genHistory(2300, 30)], ['wti', genHistory(79, 3)],
   ['copper', genHistory(4.1, 0.15)], ['tga', genHistory(760, 20)], ['rrp', genHistory(460, 30)],
   ['m2', genHistory(21000, 100)], ['fed_balance', genHistory(7430, 20)],
-  ['kospi', genHistory(2650, 40)], ['krw_usd', genHistory(1385, 10)],
+  ['kospi', genHistory(2650, 40)], ['usdkrw', genHistory(1385, 10)],
   ['kr10y', genHistory(3.4, 0.08)], ['kr2y', genHistory(3.15, 0.06)],
   ['us_cc_delinq', genHistory(2.9, 0.1)], ['us_auto_delinq', genHistory(2.8, 0.1)],
   ['us_mortgage_delinq', genHistory(1.7, 0.05)], ['us_saving_rate', genHistory(4.6, 0.3)],
-  ['kr_household_delinq', genHistory(0.48, 0.03)], ['kr_saving_rate', genHistory(35, 1)],
+  ['kr_delinquency', genHistory(0.48, 0.03)],
 ]);
 
 // ── 유틸 ────────────────────────────────────────────────
@@ -113,6 +111,7 @@ function renderSection(keys, indicators, history) {
         <IndicatorCard
           key={item.key}
           name={item.name}
+          desc={item.desc}
           indicator={indicators[item.key]}
           history={history?.[item.key]}
         />
