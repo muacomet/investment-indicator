@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T12:06:12.583153+00:00",
+  "updated_at": "2026-04-10T13:55:00.475382+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -7,10 +7,10 @@
   },
   "indicators": {
     "vix": {
-      "value": 21.04,
-      "change": -4.74,
-      "change_pct": -18.39,
-      "signal": "yellow",
+      "value": 19.49,
+      "change": -1.55,
+      "change_pct": -7.37,
+      "signal": "green",
       "note": "20 이하 안정 / 30+ 위험"
     },
     "us10y": {
