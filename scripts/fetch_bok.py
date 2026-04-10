@@ -20,7 +20,8 @@ BOK_SERIES = {
     "kr2y":            ("817Y002", "010195000", "D", None),
     "kr10y":           ("817Y002", "010210000", "D", None),
     "usdkrw":          ("731Y001", "0000001",   "D", None),
-    "kr_delinquency":  ("901Y084", None,        "M", "가계"),  # 예금취급기관 연체율
+    # 가계대출 연체율 — 여러 통계표 시도
+    "kr_delinquency":  ("901Y009", None,        "M", "연체"),
 }
 
 SIGNAL_RULES = {
@@ -76,8 +77,8 @@ def _lookup_item_codes(stat_code: str, keyword: str = "가계") -> list[dict]:
         for r in matches[:10]:
             print(f"  → {r['ITEM_CODE']} : {r['ITEM_NAME']}")
         if not matches:
-            print(f"  (no match for '{keyword}', showing first 5)")
-            for r in rows[:5]:
+            print(f"  (no match for '{keyword}', showing all {len(rows)} items)")
+            for r in rows:
                 print(f"  → {r['ITEM_CODE']} : {r['ITEM_NAME']}")
 
         return matches
