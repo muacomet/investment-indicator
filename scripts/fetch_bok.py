@@ -1,5 +1,8 @@
 """한국은행 ECOS API 데이터 수집.
 
+StatisticSearch API: KOSPI, 국고채, 환율 등 일반 지표
+KeyStatisticList API: 100대 통계지표 (가계대출 연체율 K051 등)
+
 항목코드 오류 시 StatisticItemList로 후보를 조회해 로그에 출력한다.
 네트워크 실패 시 기존 latest.json의 해당 지표 값을 유지한다.
 """
@@ -12,19 +15,22 @@ API_BASE = "https://ecos.bok.or.kr/api"
 MAX_RETRIES = 3
 DATA_DIR = Path(__file__).parent.parent / "data"
 
-# ── 지표 정의 ────────────────────────────────────────────
-# key: (STAT_CODE, ITEM_CODE1, FREQ, SEARCH_KEYWORD)
-# ITEM_CODE1 이 None 이면 SEARCH_KEYWORD 로 StatisticItemList 자동 탐색
+# ── StatisticSearch 지표 ─────────────────────────────────
+# key: (STAT_CODE, ITEM_CODE, FREQ)
 BOK_SERIES = {
-    "kospi":           ("802Y001", "0001000",   "D", None),
-    "kr2y":            ("817Y002", "010195000", "D", None),
-    "kr10y":           ("817Y002", "010210000", "D", None),
-    "usdkrw":          ("731Y001", "0000001",   "D", None),
-    # 가계대출 연체율 — 정확한 통계코드 확인 필요
-    # ECOS 웹에서 "가계대출 연체율" 검색 후 STAT_CODE, ITEM_CODE 확인하여 입력
-    # "kr_delinquency":  ("???", "???", "M", None),
+    "kospi":  ("802Y001", "0001000",   "D"),
+    "kr2y":   ("817Y002", "010195000", "D"),
+    "kr10y":  ("817Y002", "010210000", "D"),
+    "usdkrw": ("731Y001", "0000001",   "D"),
 }
 
+# ── KeyStatisticList 지표 (100대 핵심 통계) ────────────────
+# key: KEY_STAT_CODE
+KEY_STAT_SERIES = {
+    "kr_delinquency": "K051",   # 가계대출 연체율
+}
+
+# ── 신호 판정 / 노트 ─────────────────────────────────────
 SIGNAL_RULES = {
     "kospi":          lambda v, c: "green" if c > 0 else "red",
     "usdkrw":         lambda v, c: "red" if c > 1 else "yellow" if c > 0 else "green",
@@ -45,7 +51,6 @@ NOTES = {
 # ── 날짜 유틸 ────────────────────────────────────────────
 
 def _date_range(freq: str) -> tuple[str, str]:
-    """주기별 조회 시작/종료 문자열."""
     now = datetime.now()
     if freq == "D":
         start = now - timedelta(days=30)
@@ -53,56 +58,13 @@ def _date_range(freq: str) -> tuple[str, str]:
     elif freq == "M":
         start = now - timedelta(days=365)
         return start.strftime("%Y%m"), now.strftime("%Y%m")
-    else:  # Q
+    else:
         return f"{now.year - 2}Q1", f"{now.year}Q4"
 
 
-# ── StatisticItemList 로 항목코드 탐색 ────────────────────
+# ── StatisticSearch 조회 ─────────────────────────────────
 
-def _lookup_item_codes(stat_code: str, keyword: str = "가계") -> list[dict]:
-    """통계표의 항목 목록을 조회하고, keyword 가 포함된 항목을 반환."""
-    url = f"{API_BASE}/StatisticItemList/{BOK_KEY}/json/kr/1/100/{stat_code}"
-    try:
-        resp = requests.get(url, timeout=15)
-        data = resp.json()
-        if "StatisticItemList" not in data:
-            err = data.get("RESULT", {}).get("MESSAGE", "Unknown")
-            print(f"[BOK] ItemList {stat_code} error: {err}")
-            return []
-
-        rows = data["StatisticItemList"]["row"]
-        matches = [r for r in rows if keyword in r.get("ITEM_NAME", "")]
-
-        # 로그에 후보 출력
-        print(f"[BOK] ItemList for {stat_code} — {len(rows)} items total, {len(matches)} matches for '{keyword}':")
-        for r in matches[:10]:
-            print(f"  → {r['ITEM_CODE']} : {r['ITEM_NAME']}")
-        if not matches:
-            print(f"  (no match for '{keyword}', showing first 10)")
-            for r in rows[:10]:
-                print(f"  → {r['ITEM_CODE']} : {r['ITEM_NAME']}")
-
-        return matches
-    except Exception as e:
-        print(f"[BOK] ItemList lookup failed: {e}")
-        return []
-
-
-# ── 단일 지표 조회 ───────────────────────────────────────
-
-def _fetch_one(key: str, stat_code: str, item_code: str | None, freq: str, search_keyword: str = "가계") -> dict | None:
-    """ECOS StatisticSearch 로 단일 지표를 조회한다."""
-
-    # 항목코드 미확정이면 자동 탐색
-    if item_code is None:
-        matches = _lookup_item_codes(stat_code, keyword=search_keyword)
-        if matches:
-            item_code = matches[0]["ITEM_CODE"]
-            print(f"[BOK] {key}: auto-selected item_code={item_code}")
-        else:
-            print(f"[BOK] {key}: no matching item_code found, skipping")
-            return None
-
+def _fetch_stat(key: str, stat_code: str, item_code: str, freq: str) -> dict | None:
     start, end = _date_range(freq)
     url = f"{API_BASE}/StatisticSearch/{BOK_KEY}/json/kr/1/100/{stat_code}/{freq}/{start}/{end}/{item_code}"
 
@@ -115,9 +77,6 @@ def _fetch_one(key: str, stat_code: str, item_code: str | None, freq: str, searc
                 err = data.get("RESULT", {}).get("MESSAGE", "Unknown error")
                 if attempt == MAX_RETRIES - 1:
                     print(f"[BOK] {key}: {err}")
-                    # 항목코드 오류 같으면 후보 출력
-                    if "해당하는 데이터가 없습니다" in err:
-                        _lookup_item_codes(stat_code)
                 return None
 
             rows = data["StatisticSearch"]["row"]
@@ -144,10 +103,75 @@ def _fetch_one(key: str, stat_code: str, item_code: str | None, freq: str, searc
     return None
 
 
+# ── KeyStatisticList 조회 (100대 핵심 통계) ────────────────
+
+def _fetch_key_stat(key: str, key_stat_code: str) -> dict | None:
+    """KeyStatisticList API에서 특정 지표를 조회한다.
+    한 번 호출로 100대 지표 전체를 가져와 필요한 것만 추출."""
+    url = f"{API_BASE}/KeyStatisticList/{BOK_KEY}/json/kr/1/100/"
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = requests.get(url, timeout=15)
+            data = resp.json()
+
+            if "KeyStatisticList" not in data:
+                err = data.get("RESULT", {}).get("MESSAGE", "Unknown error")
+                if attempt == MAX_RETRIES - 1:
+                    print(f"[BOK] KeyStat {key}: {err}")
+                continue
+
+            rows = data["KeyStatisticList"]["row"]
+            # KEY_STAT_CODE 로 필터
+            match = [r for r in rows if r.get("KEYSTAT_NAME", "") == key_stat_code
+                     or r.get("CLASS_NAME", "") == key_stat_code
+                     or key_stat_code in r.get("DATA_VALUE", "")]
+
+            # 정확한 코드 매칭 시도
+            for r in rows:
+                if r.get("KEYSTAT_NAME") == key_stat_code:
+                    match = [r]
+                    break
+
+            # KEYSTAT_NAME이 아닐 수 있으니 모든 필드 검색
+            if not match:
+                for r in rows:
+                    row_str = json.dumps(r, ensure_ascii=False)
+                    if key_stat_code in row_str:
+                        match = [r]
+                        break
+
+            if not match:
+                if attempt == MAX_RETRIES - 1:
+                    print(f"[BOK] KeyStat {key}: {key_stat_code} not found in {len(rows)} items")
+                    # 디버그: 처음 5개 항목의 키 출력
+                    for r in rows[:5]:
+                        print(f"  → keys: {list(r.keys())}")
+                        print(f"  → sample: {json.dumps(r, ensure_ascii=False)[:200]}")
+                continue
+
+            row = match[0]
+            curr_str = row.get("DATA_VALUE", "0").replace(",", "")
+            curr_val = float(curr_str) if curr_str else 0
+
+            # KeyStatisticList는 이전 값이 없으므로 change = 0
+            signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
+            return {
+                "value": round(curr_val, 2),
+                "change": 0,
+                "change_pct": 0,
+                "signal": signal_fn(curr_val, 0),
+                "note": NOTES.get(key, ""),
+            }
+        except Exception as e:
+            if attempt == MAX_RETRIES - 1:
+                print(f"[BOK] KeyStat {key} failed after {MAX_RETRIES} retries: {e}")
+    return None
+
+
 # ── 기존 값 fallback ─────────────────────────────────────
 
 def _load_existing() -> dict:
-    """기존 latest.json 에서 indicators 를 읽어온다."""
     try:
         latest = json.loads((DATA_DIR / "latest.json").read_text())
         return latest.get("indicators", {})
@@ -158,24 +182,34 @@ def _load_existing() -> dict:
 # ── 메인 ─────────────────────────────────────────────────
 
 def fetch_bok() -> dict:
-    """모든 한국 지표를 수집하여 dict 로 반환.
-    실패한 지표는 기존 latest.json 값으로 fallback."""
+    """모든 한국 지표를 수집하여 dict 로 반환."""
     if not BOK_KEY:
         print("⚠ BOK_API_KEY not set, skipping Korean indicators")
         return {}
 
     existing = _load_existing()
     out = {}
+    total = len(BOK_SERIES) + len(KEY_STAT_SERIES)
 
-    for key, (stat_code, item_code, freq, search_kw) in BOK_SERIES.items():
-        result = _fetch_one(key, stat_code, item_code, freq, search_kw or "가계")
+    # StatisticSearch 지표
+    for key, (stat_code, item_code, freq) in BOK_SERIES.items():
+        result = _fetch_stat(key, stat_code, item_code, freq)
         if result:
             out[key] = result
         elif key in existing:
-            print(f"[BOK] {key}: using cached value from latest.json")
+            print(f"[BOK] {key}: using cached value")
             out[key] = existing[key]
 
-    print(f"[BOK] Fetched {len(out)}/{len(BOK_SERIES)} Korean indicators")
+    # KeyStatisticList 지표 (100대 핵심 통계)
+    for key, key_stat_code in KEY_STAT_SERIES.items():
+        result = _fetch_key_stat(key, key_stat_code)
+        if result:
+            out[key] = result
+        elif key in existing:
+            print(f"[BOK] {key}: using cached value")
+            out[key] = existing[key]
+
+    print(f"[BOK] Fetched {len(out)}/{total} Korean indicators")
     return out
 
 
