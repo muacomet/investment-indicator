@@ -94,9 +94,10 @@ export default function App() {
   useEffect(() => {
     async function fetchData() {
       try {
+        const base = import.meta.env.BASE_URL;
         const [latestRes, historyRes] = await Promise.all([
-          fetch('./data/latest.json').then((r) => r.json()),
-          fetch('./data/history.json').then((r) => r.json()),
+          fetch(`${base}data/latest.json`).then((r) => r.json()),
+          fetch(`${base}data/history.json`).then((r) => r.json()),
         ]);
 
         const hasData = latestRes?.indicators && Object.keys(latestRes.indicators).length > 0;
