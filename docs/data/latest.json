@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T07:06:58.105322+00:00",
+  "updated_at": "2026-04-10T07:33:09.470141+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -98,16 +98,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.21,
-      "change": 0.014,
-      "change_pct": 0.44,
+      "value": 3.23,
+      "change": 0.015,
+      "change_pct": 0.47,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 3.66,
-      "change": 0.032,
-      "change_pct": 0.88,
+      "value": 3.69,
+      "change": 0.026,
+      "change_pct": 0.71,
       "signal": "yellow",
       "note": ""
     },
