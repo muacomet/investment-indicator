@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T07:33:09.470141+00:00",
+  "updated_at": "2026-04-10T07:36:43.412817+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -117,6 +117,13 @@
       "change_pct": 0.34,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
+    },
+    "kr_delinquency": {
+      "value": 0.42,
+      "change": 0,
+      "change_pct": 0,
+      "signal": "green",
+      "note": "1%+ 경고"
     }
   }
 }
