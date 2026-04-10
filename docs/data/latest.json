@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T05:17:58.146311+00:00",
+  "updated_at": "2026-04-10T05:35:05.559497+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -97,6 +97,13 @@
       "signal": "red",
       "note": ""
     },
+    "kr2y": {
+      "value": 3.21,
+      "change": 0.014,
+      "change_pct": 0.44,
+      "signal": "yellow",
+      "note": ""
+    },
     "kr10y": {
       "value": 3.66,
       "change": 0.032,
@@ -104,14 +111,7 @@
       "signal": "yellow",
       "note": ""
     },
-    "kr2y": {
-      "value": 3.34,
-      "change": 0.023,
-      "change_pct": 0.69,
-      "signal": "yellow",
-      "note": ""
-    },
-    "krw_usd": {
+    "usdkrw": {
       "value": 1481.1,
       "change": 5.0,
       "change_pct": 0.34,
