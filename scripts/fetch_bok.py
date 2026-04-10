@@ -13,14 +13,14 @@ MAX_RETRIES = 3
 DATA_DIR = Path(__file__).parent.parent / "data"
 
 # ── 지표 정의 ────────────────────────────────────────────
-# key: (STAT_CODE, ITEM_CODE1, FREQ)
-# ITEM_CODE1 이 None 이면 StatisticItemList 로 자동 탐색
+# key: (STAT_CODE, ITEM_CODE1, FREQ, SEARCH_KEYWORD)
+# ITEM_CODE1 이 None 이면 SEARCH_KEYWORD 로 StatisticItemList 자동 탐색
 BOK_SERIES = {
-    "kospi":           ("802Y001", "0001000",   "D"),
-    "kr2y":            ("817Y002", "010195000", "D"),
-    "kr10y":           ("817Y002", "010210000", "D"),
-    "usdkrw":          ("731Y001", "0000001",   "D"),
-    "kr_delinquency":  ("901Y014", None,        "M"),   # 항목코드 미확정 → 자동 탐색
+    "kospi":           ("802Y001", "0001000",   "D", None),
+    "kr2y":            ("817Y002", "010195000", "D", None),
+    "kr10y":           ("817Y002", "010210000", "D", None),
+    "usdkrw":          ("731Y001", "0000001",   "D", None),
+    "kr_delinquency":  ("901Y084", None,        "M", "가계"),  # 예금취급기관 연체율
 }
 
 SIGNAL_RULES = {
@@ -88,12 +88,12 @@ def _lookup_item_codes(stat_code: str, keyword: str = "가계") -> list[dict]:
 
 # ── 단일 지표 조회 ───────────────────────────────────────
 
-def _fetch_one(key: str, stat_code: str, item_code: str | None, freq: str) -> dict | None:
+def _fetch_one(key: str, stat_code: str, item_code: str | None, freq: str, search_keyword: str = "가계") -> dict | None:
     """ECOS StatisticSearch 로 단일 지표를 조회한다."""
 
     # 항목코드 미확정이면 자동 탐색
     if item_code is None:
-        matches = _lookup_item_codes(stat_code, keyword="가계")
+        matches = _lookup_item_codes(stat_code, keyword=search_keyword)
         if matches:
             item_code = matches[0]["ITEM_CODE"]
             print(f"[BOK] {key}: auto-selected item_code={item_code}")
@@ -165,8 +165,8 @@ def fetch_bok() -> dict:
     existing = _load_existing()
     out = {}
 
-    for key, (stat_code, item_code, freq) in BOK_SERIES.items():
-        result = _fetch_one(key, stat_code, item_code, freq)
+    for key, (stat_code, item_code, freq, search_kw) in BOK_SERIES.items():
+        result = _fetch_one(key, stat_code, item_code, freq, search_kw or "가계")
         if result:
             out[key] = result
         elif key in existing:
