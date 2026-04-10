@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-10T05:12:30.389787+00:00",
+  "updated_at": "2026-04-10T05:17:58.146311+00:00",
   "phase": {
     "status": "wait",
     "score": 0,
@@ -61,6 +61,62 @@
       "change_pct": 0.28,
       "signal": "green",
       "note": "QT 진행 중"
+    },
+    "us_cc_delinq": {
+      "value": 2.94,
+      "change": -0.04,
+      "change_pct": -1.34,
+      "signal": "yellow",
+      "note": "3%+ 경고"
+    },
+    "us_auto_delinq": {
+      "value": 1.53,
+      "change": 0.06,
+      "change_pct": 4.08,
+      "signal": "green",
+      "note": "3%+ 경고"
+    },
+    "us_mortgage_delinq": {
+      "value": 1.78,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "signal": "green",
+      "note": "4%+ 위험"
+    },
+    "us_saving_rate": {
+      "value": 4.0,
+      "change": -0.5,
+      "change_pct": -11.11,
+      "signal": "yellow",
+      "note": "5% 이상 건전"
+    },
+    "kospi": {
+      "value": 5778.01,
+      "change": -94.33,
+      "change_pct": -1.61,
+      "signal": "red",
+      "note": ""
+    },
+    "kr10y": {
+      "value": 3.66,
+      "change": 0.032,
+      "change_pct": 0.88,
+      "signal": "yellow",
+      "note": ""
+    },
+    "kr2y": {
+      "value": 3.34,
+      "change": 0.023,
+      "change_pct": 0.69,
+      "signal": "yellow",
+      "note": ""
+    },
+    "krw_usd": {
+      "value": 1481.1,
+      "change": 5.0,
+      "change_pct": 0.34,
+      "signal": "yellow",
+      "note": "환율 상승 = 원화 약세"
     }
   }
 }
