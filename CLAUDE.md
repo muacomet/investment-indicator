@@ -3,7 +3,7 @@
 개인용 매크로 시장 대시보드. FRED + Yahoo Finance 데이터를 GitHub Actions로 주기 수집 → JSON 저장 → React 앱이 GitHub Pages에서 서빙.
 
 ## 핵심 목표
-"공포에 사라" 타이밍 자동 해석. 주요 지수·금리·원자재·유동성 지표를 종합해 매수/혼조/관망 국면을 판정.
+"공포에 사라" 타이밍 자동 해석. 주요 지수·금리·원자재·유동성 지표를 종합해 적극매수/매수/중립/주의/관망 국면을 판정.
 
 ## 아키텍처
 ```
@@ -25,16 +25,31 @@ web/ (React) → GitHub Pages → 모바일 브라우저
 ## 데이터 소스
 
 ### FRED API (무료, 키 필요)
-| 지표 | Series ID |
+| 지표 | Series ID | 비고 |
+|---|---|---|
+| VIX | VIXCLS | |
+| 미 10년물 | DGS10 | |
+| 미 2년물 | DGS2 | |
+| 2-10 스프레드 | T10Y2Y | |
+| 미국 기준금리 | DFEDTARU | FOMC 상단 |
+| TGA | WTREGEN | millions → billions 변환 |
+| RRP | RRPONTSYD | |
+| M2 | M2SL | |
+| 연준 대차대조표 | WALCL | millions → billions 변환 |
+| 신용카드 연체율 | DRCCLACBS | 분기 |
+| 자동차 할부 연체율 | DRALACBN | 분기 |
+| 주담대 연체율 | DRSFRMACBS | 분기 |
+| 개인 저축률 | PSAVERT | 월간 |
+
+### 한국은행 ECOS API
+| 지표 | 조회 방식 |
 |---|---|
-| VIX | VIXCLS |
-| 미 10년물 | DGS10 |
-| 미 2년물 | DGS2 |
-| 2-10 스프레드 | T10Y2Y |
-| TGA | WTREGEN |
-| RRP | RRPONTSYD |
-| M2 | M2SL |
-| 연준 대차대조표 | WALCL |
+| KOSPI | StatisticSearch 802Y001 |
+| 국고채 2년 | StatisticSearch 817Y002 |
+| 국고채 10년 | StatisticSearch 817Y002 |
+| 원/달러 환율 | StatisticSearch 731Y001 |
+| 한국 기준금리 | KeyStatisticList "한국은행 기준금리" |
+| 가계대출 연체율 | KeyStatisticList "연체율" |
 
 ### Yahoo Finance (yfinance)
 | 지표 | Ticker |
@@ -51,7 +66,7 @@ web/ (React) → GitHub Pages → 모바일 브라우저
 {
   "updated_at": "2026-04-10T14:30:00Z",
   "phase": {
-    "status": "buy" | "mixed" | "wait",
+    "status": "strong_buy" | "buy" | "neutral" | "caution" | "wait",
     "score": 3,
     "reasons": ["VIX 30+ 극도 공포", "S&P 200일선 하회"]
   },
@@ -70,17 +85,28 @@ web/ (React) → GitHub Pages → 모바일 브라우저
 history.json은 지표별 {date, value} 배열. 최근 90일 유지.
 
 ## 국면 판정 로직 (scripts/calculate.py)
-규칙 기반. 4개 조건 중 충족 수로 판정:
-1. VIX > 30 (극도 공포)
-2. S&P 500 < 200일 이동평균 (하락장)
-3. 금 상승 AND 국채 가격 상승 (안전자산 선호)
-4. M2 증가 추세 (유동성 공급)
+Multi-factor scoring. score 범위 -3 ~ 6+.
 
-- score >= 3 → 🟢 buy
-- score == 2 → ⚠️ mixed
-- score < 2 → 🔴 wait
+### 판정 팩터 (10개)
+1. **VIX 4단계**: 패닉(60+) +3 / 위험(30+) +2 / 불안(25+) 0 / 안정(<20) -1
+2. **TGA 4주 추세**: 4주 -20% 급감 +2 / 1조$+ -1 / 5천억$- +1
+3. **RRP 추세**: 소진(500B-) +1 / 대기(2조+) -1 / 4주 -10% +1
+4. **TGA+RRP 복합**: TGA 방출 + RRP 소진 동시 → +1 (쌍둥이 유동성)
+5. **US10Y vs 기준금리 스프레드**: 정상(+0.5%) +1 / 역전 -1
+6. **US10Y 일간 급락**: -10bp 이상 +1
+7. **2-10 스프레드 역전**: 역전 시 -1
+8. **금·국채 안전자산**: 금↑ + 금리↓ 동시 +1
+9. **M2 추세**: 증가 +1 / 감소(-1%+) -1
+10. **S&P 500 급락**: -2%+ 급락 +1
 
-**수치는 운영하며 튜닝 예정.** 하드코딩보다 `scripts/config.py`에서 상수로 관리.
+### 종합 판정 (config.py 상수)
+- score >= 4 → 🟢🟢 strong_buy (적극 매수)
+- score >= 2 → 🟢 buy (매수)
+- score >= 0 → ⚪ neutral (중립)
+- score >= -2 → 🟡 caution (주의)
+- score < -2 → 🔴 wait (관망)
+
+**임계값은 `scripts/config.py`에서 상수로 관리.**
 
 ## 화면 구성 (web/)
 1. 상단 고정: 종합 국면 판정 패널
@@ -96,6 +122,7 @@ history.json은 지표별 {date, value} 배열. 최근 90일 유지.
 
 ## GitHub Secrets
 - `FRED_API_KEY`: FRED API 키
+- `BOK_API_KEY`: 한국은행 ECOS API 키
 
 ## 주의사항
 - FRED 키 절대 커밋 금지

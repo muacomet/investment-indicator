@@ -4,6 +4,10 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from fredapi import Fred
 import yfinance as yf
+from config import (
+    VIX_STABLE, VIX_CAUTION, VIX_WARNING, VIX_PANIC,
+    TGA_HIGH, TGA_LOW, RRP_HIGH, RRP_LOW,
+)
 from calculate import judge_phase
 from fetch_bok import fetch_bok
 
@@ -14,12 +18,21 @@ FRED_SERIES = {
     "vix": "VIXCLS", "us10y": "DGS10", "us2y": "DGS2",
     "spread_2_10": "T10Y2Y", "tga": "WTREGEN",
     "rrp": "RRPONTSYD", "m2": "M2SL", "fed_balance": "WALCL",
-    # 신용·가계 건전성 (분기)
+    "fed_rate": "DFEDTARU",
+    # 신용·가계 건전성
     "us_cc_delinq": "DRCCLACBS",
     "us_auto_delinq": "DRALACBN",
     "us_mortgage_delinq": "DRSFRMACBS",
     "us_saving_rate": "PSAVERT",
 }
+
+# TGA(WTREGEN): millions → billions, RRP(RRPONTSYD): billions 그대로
+# WALCL: millions → billions, M2SL: billions 그대로
+UNIT_CONVERSIONS = {
+    "tga": 1e-3,         # millions → billions
+    "fed_balance": 1e-3, # millions → billions
+}
+
 YF_TICKERS = {
     "sp500": "^GSPC", "nasdaq": "^IXIC", "dxy": "DX-Y.NYB",
     "gold": "GC=F", "wti": "CL=F", "copper": "HG=F",
@@ -27,59 +40,47 @@ YF_TICKERS = {
 
 # 신호 판정 기준
 SIGNAL_RULES = {
-    "vix":          lambda v, _: "red" if v > 30 else "yellow" if v > 20 else "green",
+    "vix":          lambda v, _: "red" if v >= VIX_WARNING else "orange" if v >= VIX_CAUTION else "yellow" if v > VIX_STABLE else "green",
     "sp500":        lambda _, c: "green" if c > 0 else "red",
     "nasdaq":       lambda _, c: "green" if c > 0 else "red",
     "dxy":          lambda _, c: "yellow" if abs(c) > 1 else "green",
     "us10y":        lambda v, _: "red" if v > 5 else "yellow" if v > 4 else "green",
     "us2y":         lambda v, _: "red" if v > 5 else "yellow" if v > 4 else "green",
     "spread_2_10":  lambda v, _: "red" if v < 0 else "green",
+    "fed_rate":     lambda v, _: "yellow",
     "gold":         lambda _, c: "green" if c > 0 else "yellow",
     "wti":          lambda _, c: "yellow" if abs(c) > 3 else "green",
     "copper":       lambda _, c: "green" if c > 0 else "yellow",
-    "tga":          lambda _, c: "green" if c < 0 else "yellow",
-    "rrp":          lambda _, c: "green" if c < 0 else "yellow",
+    "tga":          lambda v, _: "red" if v > TGA_HIGH else "yellow" if v < TGA_LOW else "green",
+    "rrp":          lambda v, _: "red" if v > RRP_HIGH else "yellow" if v <= RRP_LOW else "green",
     "m2":           lambda _, c: "green" if c > 0 else "yellow",
     "fed_balance":  lambda _, c: "yellow" if c < 0 else "green",
-    # 신용·가계 건전성
     "us_cc_delinq":       lambda v, _: "red" if v > 3 else "yellow" if v > 2 else "green",
     "us_auto_delinq":     lambda v, _: "red" if v > 3 else "yellow" if v > 2 else "green",
     "us_mortgage_delinq": lambda v, _: "red" if v > 4 else "yellow" if v > 2.5 else "green",
     "us_saving_rate":     lambda v, _: "red" if v < 3 else "yellow" if v < 5 else "green",
-    # 한국 지표 (fetch_bok.py 에서 관리, signal 참조용)
-    "kospi":          lambda _, c: "green" if c > 0 else "red",
-    "usdkrw":         lambda _, c: "red" if c > 1 else "yellow" if c > 0 else "green",
-    "kr10y":          lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
-    "kr2y":           lambda v, _: "red" if v > 4 else "yellow" if v > 3 else "green",
-    "kr_delinquency": lambda v, _: "red" if v > 1 else "yellow" if v > 0.5 else "green",
 }
 
 NOTES = {
-    "vix": "20 이하 안정 / 30+ 위험",
-    "sp500": "200일선 대비 확인 필요",
+    "vix": f"20 안정 / 25 불안 / 30 위험 / 60 패닉",
+    "sp500": "",
     "nasdaq": "",
-    "dxy": "달러 약세 시 위험자산 유리",
-    "us10y": "금리 하락 = 채권 가격 상승",
+    "dxy": "6개 주요 통화 대비 달러 가치",
+    "us10y": "기준금리 +0.5~1%가 정상",
     "us2y": "",
     "spread_2_10": "역전 시 경기침체 경고",
+    "fed_rate": "FOMC 정책금리 상단",
     "gold": "안전자산 선호 시 상승",
     "wti": "",
     "copper": "경기 선행 지표",
-    "tga": "TGA 감소 = 유동성 공급",
-    "rrp": "RRP 감소 = 유동성 증가",
+    "tga": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)",
+    "rrp": "역사적 고점 2.5조 (단위: B$)",
     "m2": "M2 증가 = 유동성 확대",
-    "fed_balance": "QT 진행 중",
-    # 신용·가계 건전성
+    "fed_balance": "QT 진행 중 (단위: B$)",
     "us_cc_delinq": "3%+ 경고",
     "us_auto_delinq": "3%+ 경고",
     "us_mortgage_delinq": "4%+ 위험",
     "us_saving_rate": "5% 이상 건전",
-    # 한국 지표 (fetch_bok.py 에서 관리, note 참조용)
-    "kospi": "",
-    "usdkrw": "환율 상승 = 원화 약세",
-    "kr10y": "",
-    "kr2y": "",
-    "kr_delinquency": "1%+ 경고",
 }
 
 MAX_RETRIES = 3
@@ -92,15 +93,30 @@ def fetch_fred(fred: Fred) -> dict:
             try:
                 s = fred.get_series(sid).dropna()
                 prev, curr = float(s.iloc[-2]), float(s.iloc[-1])
+
+                # 단위 변환
+                conv = UNIT_CONVERSIONS.get(key, 1)
+                curr *= conv
+                prev *= conv
+
                 change_pct = round((curr - prev) / prev * 100, 2) if prev else 0
                 signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
+
+                value = round(curr, 4) if conv == 1 else round(curr, 2)
                 out[key] = {
-                    "value": curr,
+                    "value": value,
                     "change": round(curr - prev, 4),
                     "change_pct": change_pct,
-                    "signal": signal_fn(curr, change_pct),
+                    "signal": signal_fn(value, change_pct),
                     "note": NOTES.get(key, ""),
                 }
+
+                # Sanity check for TGA/RRP
+                if key == "tga" and not (100 < value < 2000):
+                    print(f"[WARN] TGA value {value}B$ outside expected 100-2000 range")
+                if key == "rrp" and value > 3000:
+                    print(f"[WARN] RRP value {value}B$ unusually high")
+
                 break
             except Exception as e:
                 if attempt == MAX_RETRIES - 1:
@@ -123,7 +139,7 @@ def fetch_yahoo() -> dict:
                     "value": round(curr, 2),
                     "change": round(curr - prev, 2),
                     "change_pct": change_pct,
-                    "signal": signal_fn(curr, change_pct),
+                    "signal": signal_fn(round(curr, 2), change_pct),
                     "note": NOTES.get(key, ""),
                 }
                 break
@@ -149,17 +165,12 @@ def update_history(indicators: dict) -> dict:
     for key, data in indicators.items():
         if key not in history:
             history[key] = []
-
-        # 오늘 날짜 이미 있으면 업데이트, 없으면 추가
         existing = [e for e in history[key] if e["date"] == today]
         if existing:
             existing[0]["value"] = data["value"]
         else:
             history[key].append({"date": today, "value": data["value"]})
-
-        # 90일 초과 삭제
         history[key] = [e for e in history[key] if e["date"] >= cutoff]
-        # 날짜순 정렬
         history[key].sort(key=lambda e: e["date"])
 
     return history
@@ -181,7 +192,10 @@ def main():
         print("✗ No data fetched, skipping update")
         return
 
-    phase = judge_phase(indicators)
+    # history 먼저 로드 (calculate에서 4주 추세 계산에 필요)
+    history = update_history(indicators)
+
+    phase = judge_phase(indicators, history)
 
     latest = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
@@ -192,13 +206,11 @@ def main():
     (DATA_DIR / "latest.json").write_text(
         json.dumps(latest, indent=2, ensure_ascii=False)
     )
-
-    history = update_history(indicators)
     (DATA_DIR / "history.json").write_text(
         json.dumps(history, indent=2, ensure_ascii=False)
     )
 
-    print(f"✓ Updated {len(indicators)} indicators, phase={phase['status']}")
+    print(f"✓ Updated {len(indicators)} indicators, phase={phase['status']} (score={phase['score']})")
 
 
 if __name__ == "__main__":

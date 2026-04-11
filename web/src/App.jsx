@@ -10,21 +10,23 @@ const US_MARKET_KEYS = [
   { key: 'sp500', name: 'S&P 500' },
   { key: 'nasdaq', name: 'NASDAQ' },
   { key: 'dxy', name: 'DXY (달러 인덱스)', desc: '6개 주요 통화 대비 달러 가치' },
-  { key: 'us10y', name: '미국 10년물 금리' },
+  { key: 'fed_rate', name: '미국 기준금리', desc: 'FOMC 정책금리 상단' },
+  { key: 'us10y', name: '미국 10년물 금리', desc: '기준금리 +0.5~1%가 정상' },
   { key: 'us2y', name: '미국 2년물 금리' },
-  { key: 'spread_2_10', name: '2-10 스프레드' },
-  { key: 'gold', name: '금 (Gold)' },
+  { key: 'spread_2_10', name: '2-10 스프레드', desc: '역전 시 경기침체 경고' },
+  { key: 'gold', name: '금 (Gold)', desc: '안전자산 선호 시 상승' },
   { key: 'wti', name: 'WTI 원유' },
-  { key: 'copper', name: '구리 (Copper)' },
-  { key: 'tga', name: 'TGA (재무부 일반계정)' },
-  { key: 'rrp', name: 'RRP (역레포)' },
-  { key: 'm2', name: 'M2 통화량' },
-  { key: 'fed_balance', name: '연준 대차대조표' },
+  { key: 'copper', name: '구리 (Copper)', desc: '경기 선행 지표' },
+  { key: 'tga', name: 'TGA (재무부 일반계정)', desc: '5천억~1조$ 정상' },
+  { key: 'rrp', name: 'RRP (역레포)', desc: '역사적 고점 2.5조$' },
+  { key: 'm2', name: 'M2 통화량', desc: '증가 = 유동성 확대' },
+  { key: 'fed_balance', name: '연준 대차대조표', desc: 'QT 진행 중' },
 ];
 
 const KR_MARKET_KEYS = [
   { key: 'kospi', name: 'KOSPI' },
   { key: 'usdkrw', name: '원/달러 환율', desc: '원화 기준 달러 환율 (DXY와 별개)' },
+  { key: 'kr_rate', name: '한국 기준금리', desc: '한국은행 기준금리' },
   { key: 'kr10y', name: '한국 국고채 10년' },
   { key: 'kr2y', name: '한국 국고채 2년' },
 ];
@@ -54,7 +56,7 @@ function genHistory(base, vol, days = 30) {
 
 const DEMO_DATA = {
   updated_at: new Date().toISOString(),
-  phase: { status: 'mixed', score: 2, reasons: ['VIX 25 수준 — 불안정', 'S&P 500 200일선 근접', 'M2 증가 추세 확인'] },
+  phase: { status: 'neutral', score: 1, reasons: ['VIX 25.3 불안', 'M2 증가 추세 (유동성 확대)', '금·국채 동반 상승 (안전자산 선호 → 바닥 신호)'] },
   indicators: {
     vix: { value: 25.3, change: -2.1, change_pct: -7.66, signal: 'yellow', note: '20 이하 안정 / 30+ 위험' },
     sp500: { value: 5124.5, change: 45.2, change_pct: 0.89, signal: 'green', note: '200일선: 5,050' },
@@ -62,6 +64,7 @@ const DEMO_DATA = {
     dxy: { value: 104.32, change: -0.45, change_pct: -0.43, signal: 'yellow', note: '6개 주요 통화 대비 달러 가치' },
     us10y: { value: 4.35, change: -0.08, change_pct: -1.81, signal: 'yellow', note: '금리 하락 = 채권 가격 상승' },
     us2y: { value: 4.72, change: -0.05, change_pct: -1.05, signal: 'yellow', note: '' },
+    fed_rate: { value: 5.5, change: 0, change_pct: 0, signal: 'yellow', note: 'FOMC 정책금리 상단' },
     spread_2_10: { value: -0.37, change: 0.03, change_pct: 7.5, signal: 'red', note: '역전 시 경기침체 경고' },
     gold: { value: 2345.6, change: 18.3, change_pct: 0.79, signal: 'green', note: '안전자산 선호 시 상승' },
     wti: { value: 78.45, change: -1.2, change_pct: -1.51, signal: 'yellow', note: '' },
@@ -78,6 +81,7 @@ const DEMO_DATA = {
     us_auto_delinq: { value: 2.85, change: 0.08, change_pct: 2.89, signal: 'yellow', note: '3%+ 경고' },
     us_mortgage_delinq: { value: 1.72, change: -0.03, change_pct: -1.71, signal: 'green', note: '4%+ 위험' },
     us_saving_rate: { value: 4.6, change: -0.2, change_pct: -4.17, signal: 'yellow', note: '5% 이상 건전' },
+    kr_rate: { value: 2.5, change: 0, change_pct: 0, signal: 'yellow', note: '한국은행 기준금리' },
     kr_delinquency: { value: 0.48, change: 0.02, change_pct: 4.35, signal: 'green', note: '1%+ 경고' },
   },
 };
@@ -85,6 +89,7 @@ const DEMO_DATA = {
 const DEMO_HISTORY = Object.fromEntries([
   ['vix', genHistory(25, 3)], ['sp500', genHistory(5100, 80)], ['nasdaq', genHistory(15900, 250)],
   ['dxy', genHistory(104, 1)], ['us10y', genHistory(4.3, 0.1)], ['us2y', genHistory(4.7, 0.1)],
+  ['fed_rate', genHistory(5.5, 0)],
   ['spread_2_10', genHistory(-0.4, 0.05)], ['gold', genHistory(2300, 30)], ['wti', genHistory(79, 3)],
   ['copper', genHistory(4.1, 0.15)], ['tga', genHistory(760, 20)], ['rrp', genHistory(460, 30)],
   ['m2', genHistory(21000, 100)], ['fed_balance', genHistory(7430, 20)],
@@ -92,6 +97,7 @@ const DEMO_HISTORY = Object.fromEntries([
   ['kr10y', genHistory(3.4, 0.08)], ['kr2y', genHistory(3.15, 0.06)],
   ['us_cc_delinq', genHistory(2.9, 0.1)], ['us_auto_delinq', genHistory(2.8, 0.1)],
   ['us_mortgage_delinq', genHistory(1.7, 0.05)], ['us_saving_rate', genHistory(4.6, 0.3)],
+  ['kr_rate', genHistory(2.5, 0)],
   ['kr_delinquency', genHistory(0.48, 0.03)],
 ]);
 

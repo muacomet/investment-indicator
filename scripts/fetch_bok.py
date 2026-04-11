@@ -27,7 +27,8 @@ BOK_SERIES = {
 # ── KeyStatisticList 지표 (100대 핵심 통계) ────────────────
 # key: KEYSTAT_NAME (지표 이름으로 매칭)
 KEY_STAT_SERIES = {
-    "kr_delinquency": "연체율",   # "가계대출 연체율" 또는 "연체율" 포함 항목 매칭
+    "kr_delinquency": "연체율",       # "가계대출 연체율" 또는 "연체율" 포함 항목 매칭
+    "kr_rate":        "한국은행 기준금리",  # 한국은행 기준금리
 }
 
 # ── 신호 판정 / 노트 ─────────────────────────────────────
@@ -37,6 +38,7 @@ SIGNAL_RULES = {
     "kr10y":          lambda v, c: "red" if v > 4 else "yellow" if v > 3 else "green",
     "kr2y":           lambda v, c: "red" if v > 4 else "yellow" if v > 3 else "green",
     "kr_delinquency": lambda v, c: "red" if v > 1 else "yellow" if v > 0.5 else "green",
+    "kr_rate":        lambda v, c: "yellow",
 }
 
 NOTES = {
@@ -45,6 +47,7 @@ NOTES = {
     "kr10y":          "",
     "kr2y":           "",
     "kr_delinquency": "1%+ 경고",
+    "kr_rate":        "한국은행 기준금리",
 }
 
 

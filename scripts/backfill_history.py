@@ -15,6 +15,7 @@ FRED_SERIES = {
     "vix": "VIXCLS", "us10y": "DGS10", "us2y": "DGS2",
     "spread_2_10": "T10Y2Y", "tga": "WTREGEN",
     "rrp": "RRPONTSYD", "m2": "M2SL", "fed_balance": "WALCL",
+    "fed_rate": "DFEDTARU",
     "us_cc_delinq": "DRCCLACBS", "us_auto_delinq": "DRALACBN",
     "us_mortgage_delinq": "DRSFRMACBS", "us_saving_rate": "PSAVERT",
 }
@@ -29,6 +30,11 @@ BOK_STAT = {
     "kr2y":   ("817Y002", "010195000"),
     "kr10y":  ("817Y002", "010210000"),
     "usdkrw": ("731Y001", "0000001"),
+}
+
+# KeyStatisticList에서 가져올 지표 (backfill은 시계열 없으므로 최신 1건만)
+BOK_KEY_STAT = {
+    "kr_rate": "한국은행 기준금리",
 }
 
 

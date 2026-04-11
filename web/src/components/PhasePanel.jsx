@@ -1,6 +1,13 @@
 import React from 'react';
 
 const PHASE_CONFIG = {
+  strong_buy: {
+    emoji: '🟢🟢',
+    label: '적극 매수 국면',
+    color: 'var(--green)',
+    bg: 'var(--green-bg)',
+    border: 'rgba(74, 222, 128, 0.25)',
+  },
   buy: {
     emoji: '🟢',
     label: '매수 국면',
@@ -8,9 +15,16 @@ const PHASE_CONFIG = {
     bg: 'var(--green-bg)',
     border: 'rgba(74, 222, 128, 0.25)',
   },
-  mixed: {
-    emoji: '⚠️',
-    label: '혼조 국면',
+  neutral: {
+    emoji: '⚪',
+    label: '중립 국면',
+    color: 'var(--dim)',
+    bg: 'rgba(148, 163, 184, 0.08)',
+    border: 'rgba(148, 163, 184, 0.2)',
+  },
+  caution: {
+    emoji: '🟡',
+    label: '주의 국면',
     color: 'var(--yellow)',
     bg: 'var(--yellow-bg)',
     border: 'rgba(250, 204, 21, 0.25)',
@@ -22,12 +36,20 @@ const PHASE_CONFIG = {
     bg: 'var(--red-bg)',
     border: 'rgba(248, 113, 113, 0.25)',
   },
+  // legacy fallback
+  mixed: {
+    emoji: '⚠️',
+    label: '혼조 국면',
+    color: 'var(--yellow)',
+    bg: 'var(--yellow-bg)',
+    border: 'rgba(250, 204, 21, 0.25)',
+  },
 };
 
 export default function PhasePanel({ phase }) {
   if (!phase) return null;
 
-  const config = PHASE_CONFIG[phase.status] || PHASE_CONFIG.wait;
+  const config = PHASE_CONFIG[phase.status] || PHASE_CONFIG.neutral;
 
   return (
     <div
@@ -60,7 +82,7 @@ export default function PhasePanel({ phase }) {
             marginLeft: 'auto',
           }}
         >
-          {phase.score}/4
+          score {phase.score}
         </span>
       </div>
       {phase.reasons && phase.reasons.length > 0 && (

@@ -4,12 +4,14 @@ import HistoryChart from './HistoryChart';
 const SIGNAL_COLORS = {
   green: { color: 'var(--green)', bg: 'var(--green-bg)' },
   yellow: { color: 'var(--yellow)', bg: 'var(--yellow-bg)' },
+  orange: { color: '#fb923c', bg: 'rgba(251, 146, 60, 0.08)' },
   red: { color: 'var(--red)', bg: 'var(--red-bg)' },
 };
 
 const CHART_COLORS = {
   green: '#4ade80',
   yellow: '#facc15',
+  orange: '#fb923c',
   red: '#f87171',
 };
 
