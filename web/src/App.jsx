@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PhasePanel from './components/PhasePanel';
 import IndicatorCard from './components/IndicatorCard';
 import SectionHeader from './components/SectionHeader';
+import SummaryTable from './components/SummaryTable';
 
 // ── 섹션 정의 ──────────────────────────────────────────
 
@@ -131,6 +132,7 @@ export default function App() {
   const [data, setData] = useState(null);
   const [history, setHistory] = useState(null);
   const [isDemo, setIsDemo] = useState(false);
+  const [viewMode, setViewMode] = useState('table'); // 'table' | 'card'
 
   useEffect(() => {
     async function fetchData() {
@@ -193,23 +195,64 @@ export default function App() {
         <PhasePanel phase={data.phase} />
       </div>
 
-      {/* 🇺🇸 미국 시장 */}
-      <div style={{ padding: '0 16px' }}>
-        <SectionHeader icon="🇺🇸" title="미국 시장" />
-        {renderSection(US_MARKET_KEYS, data.indicators, history)}
+      {/* View Toggle */}
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 16px 8px', gap: 4 }}>
+        <button
+          onClick={() => setViewMode('table')}
+          style={{
+            background: viewMode === 'table' ? 'var(--card)' : 'transparent',
+            border: `1px solid ${viewMode === 'table' ? 'var(--blue)' : 'var(--border)'}`,
+            color: viewMode === 'table' ? 'var(--blue)' : 'var(--dim)',
+            borderRadius: 8, padding: '6px 14px', fontSize: 12, fontWeight: 600,
+            cursor: 'pointer', transition: 'all 0.2s',
+          }}
+        >
+          📋 한눈에
+        </button>
+        <button
+          onClick={() => setViewMode('card')}
+          style={{
+            background: viewMode === 'card' ? 'var(--card)' : 'transparent',
+            border: `1px solid ${viewMode === 'card' ? 'var(--blue)' : 'var(--border)'}`,
+            color: viewMode === 'card' ? 'var(--blue)' : 'var(--dim)',
+            borderRadius: 8, padding: '6px 14px', fontSize: 12, fontWeight: 600,
+            cursor: 'pointer', transition: 'all 0.2s',
+          }}
+        >
+          🃏 카드
+        </button>
       </div>
 
-      {/* 🇰🇷 한국 시장 */}
-      <div style={{ padding: '0 16px' }}>
-        <SectionHeader icon="🇰🇷" title="한국 시장" />
-        {renderSection(KR_MARKET_KEYS, data.indicators, history)}
-      </div>
+      {viewMode === 'table' ? (
+        <SummaryTable
+          sections={[
+            { icon: '🇺🇸', title: '미국 시장', keys: US_MARKET_KEYS },
+            { icon: '🇰🇷', title: '한국 시장', keys: KR_MARKET_KEYS },
+            { icon: '💳', title: '신용·가계 건전성', keys: HEALTH_KEYS },
+          ]}
+          indicators={data.indicators}
+        />
+      ) : (
+        <>
+          {/* 🇺🇸 미국 시장 */}
+          <div style={{ padding: '0 16px' }}>
+            <SectionHeader icon="🇺🇸" title="미국 시장" />
+            {renderSection(US_MARKET_KEYS, data.indicators, history)}
+          </div>
 
-      {/* 💳 신용·가계 건전성 */}
-      <div style={{ padding: '0 16px' }}>
-        <SectionHeader icon="💳" title="신용·가계 건전성" subtitle="분기 갱신" />
-        {renderSection(HEALTH_KEYS, data.indicators, history)}
-      </div>
+          {/* 🇰🇷 한국 시장 */}
+          <div style={{ padding: '0 16px' }}>
+            <SectionHeader icon="🇰🇷" title="한국 시장" />
+            {renderSection(KR_MARKET_KEYS, data.indicators, history)}
+          </div>
+
+          {/* 💳 신용·가계 건전성 */}
+          <div style={{ padding: '0 16px' }}>
+            <SectionHeader icon="💳" title="신용·가계 건전성" subtitle="분기 갱신" />
+            {renderSection(HEALTH_KEYS, data.indicators, history)}
+          </div>
+        </>
+      )}
     </>
   );
 }
