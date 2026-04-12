@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-04-11T02:31:49.047508+00:00",
+  "updated_at": "2026-04-12T02:51:11.018143+00:00",
   "phase": {
-    "status": "wait",
-    "score": 0,
-    "reasons": []
+    "status": "strong_buy",
+    "score": 5,
+    "reasons": [
+      "VIX 19.5 안정 (추가 하락 여력 제한)",
+      "TGA 4주 -99.9% 급감 → 유동성 방출",
+      "RRP 1B$ 소진 (유동성 시장 유입)",
+      "TGA 방출 + RRP 소진 → 쌍둥이 유동성 신호",
+      "10Y-기준금리 스프레드 0.54% 정상 (경기 확장)",
+      "M2 증가 추세 (유동성 확대)"
+    ]
   },
   "indicators": {
     "vix": {
@@ -11,14 +18,14 @@
       "change": -1.55,
       "change_pct": -7.37,
       "signal": "green",
-      "note": "20 이하 안정 / 30+ 위험"
+      "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
     },
     "us10y": {
       "value": 4.29,
       "change": 0.0,
       "change_pct": 0.0,
       "signal": "yellow",
-      "note": "금리 하락 = 채권 가격 상승"
+      "note": "기준금리 +0.5~1%가 정상"
     },
     "us2y": {
       "value": 3.78,
@@ -35,18 +42,18 @@
       "note": "역전 시 경기침체 경고"
     },
     "tga": {
-      "value": 748376.0,
-      "change": -99342.0,
+      "value": 748.38,
+      "change": -99.342,
       "change_pct": -11.72,
       "signal": "green",
-      "note": "TGA 감소 = 유동성 공급"
+      "note": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)"
     },
     "rrp": {
       "value": 0.507,
       "change": 0.105,
       "change_pct": 26.12,
       "signal": "yellow",
-      "note": "RRP 감소 = 유동성 증가"
+      "note": "역사적 고점 2.5조 (단위: B$)"
     },
     "m2": {
       "value": 22667.3,
@@ -56,11 +63,18 @@
       "note": "M2 증가 = 유동성 확대"
     },
     "fed_balance": {
-      "value": 6693871.0,
-      "change": 18527.0,
+      "value": 6693.87,
+      "change": 18.527,
       "change_pct": 0.28,
       "signal": "green",
-      "note": "QT 진행 중"
+      "note": "QT 진행 중 (단위: B$)"
+    },
+    "fed_rate": {
+      "value": 3.75,
+      "change": 0.0,
+      "change_pct": 0.0,
+      "signal": "yellow",
+      "note": "FOMC 정책금리 상단"
     },
     "us_cc_delinq": {
       "value": 2.94,
@@ -124,6 +138,13 @@
       "change_pct": 0,
       "signal": "green",
       "note": "1%+ 경고"
+    },
+    "kr_rate": {
+      "value": 2.5,
+      "change": 0,
+      "change_pct": 0,
+      "signal": "yellow",
+      "note": "한국은행 기준금리"
     }
   }
 }
