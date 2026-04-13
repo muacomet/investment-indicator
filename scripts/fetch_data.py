@@ -130,47 +130,83 @@ def fetch_fred(fred: Fred) -> dict:
     return out
 
 
+def _yf_direct_fetch(ticker: str) -> tuple[float, float] | None:
+    """Yahoo Finance v8 chart API 직접 호출 (yfinance 실패 시 fallback)."""
+    import requests as req
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+    params = {"range": "5d", "interval": "1d"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    try:
+        resp = req.get(url, params=params, headers=headers, timeout=15)
+        data = resp.json()
+        closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+        # None 값 제거
+        closes = [c for c in closes if c is not None]
+        if len(closes) < 2:
+            # 5d 부족 → 1mo 재시도
+            params["range"] = "1mo"
+            resp = req.get(url, params=params, headers=headers, timeout=15)
+            data = resp.json()
+            closes = data["chart"]["result"][0]["indicators"]["quote"][0]["close"]
+            closes = [c for c in closes if c is not None]
+        if len(closes) >= 2:
+            return closes[-2], closes[-1]
+    except Exception as e:
+        print(f"[YF-direct] {ticker}: {e}")
+    return None
+
+
 def fetch_yahoo() -> dict:
-    """yf.download()로 일괄 다운로드 후 개별 지표 추출."""
+    """yf.download() → 실패 시 v8 API 직접 호출."""
     out = {}
+
+    # 1차: yf.download()
     tickers_str = " ".join(YF_TICKERS.values())
-
-    for attempt in range(MAX_RETRIES):
-        try:
-            # yf.download: group_by='ticker', 복수 티커 일괄 다운로드
-            df = yf.download(tickers_str, period="1mo", progress=False, timeout=30)
-            if df.empty:
-                print(f"[YF] download returned empty (attempt {attempt+1})")
-                continue
-
+    try:
+        df = yf.download(tickers_str, period="1mo", progress=False, timeout=30)
+        if not df.empty:
             for key, tk in YF_TICKERS.items():
                 try:
-                    # 복수 티커: MultiIndex columns (ticker, field)
                     if len(YF_TICKERS) > 1:
                         close = df[("Close", tk)].dropna()
                     else:
                         close = df["Close"].dropna()
-
-                    if len(close) < 2:
-                        print(f"[YF] {key} ({tk}): insufficient data ({len(close)} rows)")
-                        continue
-
-                    prev, curr = float(close.iloc[-2]), float(close.iloc[-1])
-                    change_pct = round((curr - prev) / prev * 100, 2)
-                    signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
-                    out[key] = {
-                        "value": round(curr, 2),
-                        "change": round(curr - prev, 2),
-                        "change_pct": change_pct,
-                        "signal": signal_fn(round(curr, 2), change_pct),
-                        "note": NOTES.get(key, ""),
-                    }
+                    if len(close) >= 2:
+                        prev, curr = float(close.iloc[-2]), float(close.iloc[-1])
+                        change_pct = round((curr - prev) / prev * 100, 2)
+                        signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
+                        out[key] = {
+                            "value": round(curr, 2),
+                            "change": round(curr - prev, 2),
+                            "change_pct": change_pct,
+                            "signal": signal_fn(round(curr, 2), change_pct),
+                            "note": NOTES.get(key, ""),
+                        }
                 except Exception as e:
-                    print(f"[YF] {key} ({tk}) parse error: {e}")
-            break  # 성공 시 재시도 불필요
-        except Exception as e:
-            if attempt == MAX_RETRIES - 1:
-                print(f"[YF] download failed after {MAX_RETRIES} retries: {e}")
+                    print(f"[YF] {key} parse error: {e}")
+    except Exception as e:
+        print(f"[YF] download error: {e}")
+
+    # 2차: yf.download() 실패한 티커에 대해 v8 API 직접 호출
+    missing = [k for k in YF_TICKERS if k not in out]
+    if missing:
+        print(f"[YF] {len(missing)} tickers missing, trying direct API: {missing}")
+        for key in missing:
+            tk = YF_TICKERS[key]
+            result = _yf_direct_fetch(tk)
+            if result:
+                prev, curr = result
+                change_pct = round((curr - prev) / prev * 100, 2)
+                signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
+                out[key] = {
+                    "value": round(curr, 2),
+                    "change": round(curr - prev, 2),
+                    "change_pct": change_pct,
+                    "signal": signal_fn(round(curr, 2), change_pct),
+                    "note": NOTES.get(key, ""),
+                }
+            else:
+                print(f"[YF-direct] {key} ({tk}): also failed")
 
     print(f"[YF] Fetched {len(out)}/{len(YF_TICKERS)} Yahoo Finance indicators")
     return out
