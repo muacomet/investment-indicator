@@ -135,8 +135,14 @@ def fetch_yahoo() -> dict:
     for key, tk in YF_TICKERS.items():
         for attempt in range(MAX_RETRIES):
             try:
-                hist = yf.Ticker(tk).history(period="5d")
+                ticker = yf.Ticker(tk)
+                # 5d → 1mo fallback (주말/공휴일 대비)
+                hist = ticker.history(period="5d")
                 if len(hist) < 2:
+                    print(f"[YF] {key}: 5d returned {len(hist)} rows, trying 1mo")
+                    hist = ticker.history(period="1mo")
+                if len(hist) < 2:
+                    print(f"[YF] {key}: 1mo also returned {len(hist)} rows, skipping")
                     break
                 prev, curr = float(hist["Close"].iloc[-2]), float(hist["Close"].iloc[-1])
                 change_pct = round((curr - prev) / prev * 100, 2)
@@ -152,6 +158,7 @@ def fetch_yahoo() -> dict:
             except Exception as e:
                 if attempt == MAX_RETRIES - 1:
                     print(f"[YF] {key} failed after {MAX_RETRIES} retries: {e}")
+    print(f"[YF] Fetched {len(out)}/{len(YF_TICKERS)} Yahoo Finance indicators")
     return out
 
 
