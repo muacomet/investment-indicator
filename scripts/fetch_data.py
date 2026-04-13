@@ -131,33 +131,47 @@ def fetch_fred(fred: Fred) -> dict:
 
 
 def fetch_yahoo() -> dict:
+    """yf.download()로 일괄 다운로드 후 개별 지표 추출."""
     out = {}
-    for key, tk in YF_TICKERS.items():
-        for attempt in range(MAX_RETRIES):
-            try:
-                ticker = yf.Ticker(tk)
-                # 5d → 1mo fallback (주말/공휴일 대비)
-                hist = ticker.history(period="5d")
-                if len(hist) < 2:
-                    print(f"[YF] {key}: 5d returned {len(hist)} rows, trying 1mo")
-                    hist = ticker.history(period="1mo")
-                if len(hist) < 2:
-                    print(f"[YF] {key}: 1mo also returned {len(hist)} rows, skipping")
-                    break
-                prev, curr = float(hist["Close"].iloc[-2]), float(hist["Close"].iloc[-1])
-                change_pct = round((curr - prev) / prev * 100, 2)
-                signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
-                out[key] = {
-                    "value": round(curr, 2),
-                    "change": round(curr - prev, 2),
-                    "change_pct": change_pct,
-                    "signal": signal_fn(round(curr, 2), change_pct),
-                    "note": NOTES.get(key, ""),
-                }
-                break
-            except Exception as e:
-                if attempt == MAX_RETRIES - 1:
-                    print(f"[YF] {key} failed after {MAX_RETRIES} retries: {e}")
+    tickers_str = " ".join(YF_TICKERS.values())
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            # yf.download: group_by='ticker', 복수 티커 일괄 다운로드
+            df = yf.download(tickers_str, period="1mo", progress=False, timeout=30)
+            if df.empty:
+                print(f"[YF] download returned empty (attempt {attempt+1})")
+                continue
+
+            for key, tk in YF_TICKERS.items():
+                try:
+                    # 복수 티커: MultiIndex columns (ticker, field)
+                    if len(YF_TICKERS) > 1:
+                        close = df[("Close", tk)].dropna()
+                    else:
+                        close = df["Close"].dropna()
+
+                    if len(close) < 2:
+                        print(f"[YF] {key} ({tk}): insufficient data ({len(close)} rows)")
+                        continue
+
+                    prev, curr = float(close.iloc[-2]), float(close.iloc[-1])
+                    change_pct = round((curr - prev) / prev * 100, 2)
+                    signal_fn = SIGNAL_RULES.get(key, lambda v, c: "yellow")
+                    out[key] = {
+                        "value": round(curr, 2),
+                        "change": round(curr - prev, 2),
+                        "change_pct": change_pct,
+                        "signal": signal_fn(round(curr, 2), change_pct),
+                        "note": NOTES.get(key, ""),
+                    }
+                except Exception as e:
+                    print(f"[YF] {key} ({tk}) parse error: {e}")
+            break  # 성공 시 재시도 불필요
+        except Exception as e:
+            if attempt == MAX_RETRIES - 1:
+                print(f"[YF] download failed after {MAX_RETRIES} retries: {e}")
+
     print(f"[YF] Fetched {len(out)}/{len(YF_TICKERS)} Yahoo Finance indicators")
     return out
 
