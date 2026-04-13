@@ -9,7 +9,8 @@ const SIGNAL_COLORS = {
 
 // 테이블용 짧은 이름
 const SHORT_NAMES = {
-  vix: 'VIX', sp500: 'S&P 500', nasdaq: 'NASDAQ', dxy: 'DXY',
+  vix: 'VIX', sp500: 'S&P 500', nasdaq: 'NASDAQ',
+  qqq: 'QQQ', schd: 'SCHD', dxy: 'DXY',
   fed_rate: '기준금리', us10y: '10년물', us2y: '2년물',
   spread_2_10: '2-10 스프레드', gold: '금', wti: 'WTI',
   copper: '구리', tga: 'TGA', rrp: 'RRP',
@@ -22,7 +23,8 @@ const SHORT_NAMES = {
 };
 
 const ICONS = {
-  vix: '⚡', sp500: '🇺🇸', nasdaq: '🖥️', dxy: '💲',
+  vix: '⚡', sp500: '🇺🇸', nasdaq: '🖥️',
+  qqq: '📈', schd: '💎', dxy: '💲',
   fed_rate: '🏛️', us10y: '📉', us2y: '📈', spread_2_10: '⊕',
   gold: '🥇', wti: '🛢️', copper: '🔶', tga: '🏦', rrp: '🔄',
   m2: '💰', fed_balance: '📊',
@@ -32,7 +34,8 @@ const ICONS = {
 };
 
 const SUBTITLES = {
-  vix: '공포지수', sp500: '미국 대형주', nasdaq: '기술주', dxy: '달러인덱스',
+  vix: '공포지수', sp500: '미국 대형주', nasdaq: '기술주',
+  qqq: '나스닥100 ETF', schd: '배당성장 ETF', dxy: '달러인덱스',
   fed_rate: 'FOMC 상단', us10y: '국채 금리', us2y: '국채 금리',
   spread_2_10: '장단기 금리차', gold: 'Gold Spot', wti: 'Crude Oil',
   copper: '경기선행', tga: '재무부 계정', rrp: '역레포', m2: '통화량',
@@ -47,6 +50,8 @@ const DESCRIPTIONS = {
   vix: '20 이하 안정 / 30+ 위험',
   sp500: '200일선 위 = 강세장',
   nasdaq: 'S&P 대비 상대강도',
+  qqq: '나스닥100 추종',
+  schd: '배당+성장 ETF',
   dxy: '100 이상 = 달러 강세',
   fed_rate: '인하 시 유동성 확대',
   us10y: '4%↑ = 밸류 압박',

@@ -28,24 +28,26 @@ export default function IndicatorCard({ name, desc, indicator, history }) {
   const changeColor =
     changePct > 0 ? 'var(--green)' : changePct < 0 ? 'var(--red)' : 'var(--dim)';
 
+  const handleToggle = () => setExpanded(!expanded);
+
   return (
     <div
-      onClick={() => setExpanded(!expanded)}
       style={{
         background: 'var(--card)',
         border: '1px solid var(--border)',
         borderRadius: 14,
         padding: 16,
         marginBottom: 10,
-        cursor: 'pointer',
-        transition: 'border-color 0.2s',
       }}
     >
+      {/* 헤더 영역 — 터치하면 열림/닫힘 */}
       <div
+        onClick={handleToggle}
         style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          cursor: 'pointer',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -90,10 +92,12 @@ export default function IndicatorCard({ name, desc, indicator, history }) {
 
       {(indicator.note || desc) && (
         <div
+          onClick={handleToggle}
           style={{
             fontSize: 11,
             color: 'var(--dim)',
             marginTop: 8,
+            cursor: 'pointer',
           }}
         >
           {indicator.note}
@@ -104,6 +108,7 @@ export default function IndicatorCard({ name, desc, indicator, history }) {
 
       {expanded && (
         <div
+          onClick={(e) => e.stopPropagation()}
           style={{
             borderTop: '1px solid var(--border)',
             marginTop: 12,
@@ -126,13 +131,16 @@ export default function IndicatorCard({ name, desc, indicator, history }) {
         </div>
       )}
 
+      {/* 접기/펼치기 버튼 */}
       <div
+        onClick={handleToggle}
         style={{
           textAlign: 'center',
           marginTop: 8,
           fontSize: 10,
           color: 'var(--dim)',
           opacity: 0.5,
+          cursor: 'pointer',
         }}
       >
         {expanded ? '▲ 접기' : '▼ 차트 보기'}

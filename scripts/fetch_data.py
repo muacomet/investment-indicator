@@ -34,7 +34,9 @@ UNIT_CONVERSIONS = {
 }
 
 YF_TICKERS = {
-    "sp500": "^GSPC", "nasdaq": "^IXIC", "dxy": "DX-Y.NYB",
+    "sp500": "^GSPC", "nasdaq": "^IXIC",
+    "qqq": "QQQ", "schd": "SCHD",
+    "dxy": "DX-Y.NYB",
     "gold": "GC=F", "wti": "CL=F", "copper": "HG=F",
 }
 
@@ -43,6 +45,8 @@ SIGNAL_RULES = {
     "vix":          lambda v, _: "red" if v >= VIX_WARNING else "orange" if v >= VIX_CAUTION else "yellow" if v > VIX_STABLE else "green",
     "sp500":        lambda _, c: "green" if c > 0 else "red",
     "nasdaq":       lambda _, c: "green" if c > 0 else "red",
+    "qqq":          lambda _, c: "green" if c > 0 else "red",
+    "schd":         lambda _, c: "green" if c > 0 else "red",
     "dxy":          lambda _, c: "yellow" if abs(c) > 1 else "green",
     "us10y":        lambda v, _: "red" if v > 5 else "yellow" if v > 4 else "green",
     "us2y":         lambda v, _: "red" if v > 5 else "yellow" if v > 4 else "green",
@@ -65,6 +69,8 @@ NOTES = {
     "vix": f"20 안정 / 25 불안 / 30 위험 / 60 패닉",
     "sp500": "",
     "nasdaq": "",
+    "qqq": "나스닥100 추종 ETF",
+    "schd": "미국 배당성장 ETF",
     "dxy": "6개 주요 통화 대비 달러 가치",
     "us10y": "기준금리 +0.5~1%가 정상",
     "us2y": "",

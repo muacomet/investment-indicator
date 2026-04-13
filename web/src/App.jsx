@@ -10,6 +10,8 @@ const US_MARKET_KEYS = [
   { key: 'vix', name: 'VIX (변동성 지수)' },
   { key: 'sp500', name: 'S&P 500' },
   { key: 'nasdaq', name: 'NASDAQ' },
+  { key: 'qqq', name: 'QQQ', desc: '나스닥100 추종 ETF' },
+  { key: 'schd', name: 'SCHD', desc: '미국 배당성장 ETF' },
   { key: 'dxy', name: 'DXY (달러 인덱스)', desc: '6개 주요 통화 대비 달러 가치' },
   { key: 'fed_rate', name: '미국 기준금리', desc: 'FOMC 정책금리 상단' },
   { key: 'us10y', name: '미국 10년물 금리', desc: '기준금리 +0.5~1%가 정상' },
@@ -62,6 +64,8 @@ const DEMO_DATA = {
     vix: { value: 25.3, change: -2.1, change_pct: -7.66, signal: 'yellow', note: '20 이하 안정 / 30+ 위험' },
     sp500: { value: 5124.5, change: 45.2, change_pct: 0.89, signal: 'green', note: '200일선: 5,050' },
     nasdaq: { value: 16032.1, change: 189.3, change_pct: 1.19, signal: 'green', note: '' },
+    qqq: { value: 482.5, change: 6.8, change_pct: 1.43, signal: 'green', note: '나스닥100 추종 ETF' },
+    schd: { value: 82.3, change: 0.45, change_pct: 0.55, signal: 'green', note: '미국 배당성장 ETF' },
     dxy: { value: 104.32, change: -0.45, change_pct: -0.43, signal: 'yellow', note: '6개 주요 통화 대비 달러 가치' },
     us10y: { value: 4.35, change: -0.08, change_pct: -1.81, signal: 'yellow', note: '금리 하락 = 채권 가격 상승' },
     us2y: { value: 4.72, change: -0.05, change_pct: -1.05, signal: 'yellow', note: '' },
@@ -89,6 +93,7 @@ const DEMO_DATA = {
 
 const DEMO_HISTORY = Object.fromEntries([
   ['vix', genHistory(25, 3)], ['sp500', genHistory(5100, 80)], ['nasdaq', genHistory(15900, 250)],
+  ['qqq', genHistory(480, 8)], ['schd', genHistory(82, 1)],
   ['dxy', genHistory(104, 1)], ['us10y', genHistory(4.3, 0.1)], ['us2y', genHistory(4.7, 0.1)],
   ['fed_rate', genHistory(5.5, 0)],
   ['spread_2_10', genHistory(-0.4, 0.05)], ['gold', genHistory(2300, 30)], ['wti', genHistory(79, 3)],
