@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-12T02:51:11.018143+00:00",
+  "updated_at": "2026-04-13T02:08:23.607021+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 5,
@@ -126,10 +126,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1481.1,
-      "change": 5.0,
-      "change_pct": 0.34,
-      "signal": "yellow",
+      "value": 1479.8,
+      "change": -1.3,
+      "change_pct": -0.09,
+      "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
