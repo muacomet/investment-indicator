@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-13T19:56:51.406242+00:00",
+  "updated_at": "2026-04-13T20:45:02.391598+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 5,
@@ -8,7 +8,7 @@
       "TGA 4주 -99.9% 급감 → 유동성 방출",
       "RRP 0B$ 소진 (유동성 시장 유입)",
       "TGA 방출 + RRP 소진 → 쌍둥이 유동성 신호",
-      "10Y-기준금리 스프레드 0.54% 정상 (경기 확장)",
+      "10Y-기준금리 스프레드 0.56% 정상 (경기 확장)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -21,16 +21,16 @@
       "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
     },
     "us10y": {
-      "value": 4.29,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4.31,
+      "change": 0.02,
+      "change_pct": 0.47,
       "signal": "yellow",
       "note": "기준금리 +0.5~1%가 정상"
     },
     "us2y": {
-      "value": 3.78,
-      "change": -0.01,
-      "change_pct": -0.26,
+      "value": 3.81,
+      "change": 0.03,
+      "change_pct": 0.79,
       "signal": "green",
       "note": ""
     },
@@ -105,23 +105,23 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 6886.38,
-      "change": 69.49,
+      "value": 6886.24,
+      "change": 69.35,
       "change_pct": 1.02,
       "signal": "green",
       "note": ""
     },
     "nasdaq": {
-      "value": 23186.77,
-      "change": 283.88,
-      "change_pct": 1.24,
+      "value": 23183.74,
+      "change": 280.85,
+      "change_pct": 1.23,
       "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 617.46,
-      "change": 6.39,
-      "change_pct": 1.05,
+      "value": 617.39,
+      "change": 6.32,
+      "change_pct": 1.03,
       "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
@@ -135,28 +135,28 @@
     "dxy": {
       "value": 98.41,
       "change": -0.24,
-      "change_pct": -0.24,
+      "change_pct": -0.25,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4764.4,
-      "change": 2.5,
-      "change_pct": 0.05,
+      "value": 4763.6,
+      "change": 1.7,
+      "change_pct": 0.04,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 97.87,
-      "change": 1.3,
-      "change_pct": 1.35,
+      "value": 97.88,
+      "change": 1.31,
+      "change_pct": 1.36,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.01,
-      "change": 0.14,
-      "change_pct": 2.43,
+      "value": 6.0,
+      "change": 0.13,
+      "change_pct": 2.17,
       "signal": "green",
       "note": "경기 선행 지표"
     },
