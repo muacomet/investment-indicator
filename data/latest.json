@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T05:10:03.356548+00:00",
+  "updated_at": "2026-04-14T07:07:10.267396+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 5,
@@ -133,30 +133,30 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.32,
-      "change": -0.05,
-      "change_pct": -0.05,
+      "value": 98.26,
+      "change": -0.11,
+      "change_pct": -0.11,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4796.3,
-      "change": 53.9,
-      "change_pct": 1.14,
+      "value": 4803.5,
+      "change": 61.1,
+      "change_pct": 1.29,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 96.71,
-      "change": -2.37,
-      "change_pct": -2.39,
+      "value": 97.54,
+      "change": -1.54,
+      "change_pct": -1.55,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.01,
-      "change": 0.03,
-      "change_pct": 0.52,
+      "value": 6.02,
+      "change": 0.05,
+      "change_pct": 0.8,
       "signal": "green",
       "note": "경기 선행 지표"
     },
