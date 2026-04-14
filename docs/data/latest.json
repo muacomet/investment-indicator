@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T17:56:49.149841+00:00",
+  "updated_at": "2026-04-14T19:01:45.761398+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 5,
@@ -49,9 +49,9 @@
       "note": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)"
     },
     "rrp": {
-      "value": 0.227,
-      "change": -0.28,
-      "change_pct": -55.23,
+      "value": 0.306,
+      "change": 0.079,
+      "change_pct": 34.8,
       "signal": "yellow",
       "note": "역사적 고점 2.5조 (단위: B$)"
     },
@@ -105,58 +105,58 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 6960.61,
-      "change": 74.37,
-      "change_pct": 1.08,
+      "value": 6952.59,
+      "change": 66.35,
+      "change_pct": 0.96,
       "signal": "green",
       "note": ""
     },
     "nasdaq": {
-      "value": 23606.09,
-      "change": 422.35,
-      "change_pct": 1.82,
+      "value": 23562.29,
+      "change": 378.55,
+      "change_pct": 1.63,
       "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 627.39,
-      "change": 10.0,
-      "change_pct": 1.62,
+      "value": 626.59,
+      "change": 9.2,
+      "change_pct": 1.49,
       "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 30.63,
-      "change": -0.11,
-      "change_pct": -0.36,
+      "value": 30.68,
+      "change": -0.06,
+      "change_pct": -0.2,
       "signal": "red",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.07,
-      "change": -0.3,
-      "change_pct": -0.3,
+      "value": 98.14,
+      "change": -0.23,
+      "change_pct": -0.24,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4861.0,
-      "change": 118.6,
-      "change_pct": 2.5,
+      "value": 4856.2,
+      "change": 113.8,
+      "change_pct": 2.4,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.85,
-      "change": -7.23,
-      "change_pct": -7.3,
+      "value": 91.84,
+      "change": -7.24,
+      "change_pct": -7.31,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.09,
+      "value": 6.08,
       "change": 0.11,
-      "change_pct": 1.84,
+      "change_pct": 1.77,
       "signal": "green",
       "note": "경기 선행 지표"
     },
