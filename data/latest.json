@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-14T22:01:14.892521+00:00",
+  "updated_at": "2026-04-15T02:11:54.491235+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 6,
@@ -134,30 +134,30 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.12,
-      "change": -0.25,
-      "change_pct": -0.25,
+      "value": 98.14,
+      "change": -0.23,
+      "change_pct": -0.23,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4864.5,
-      "change": 122.1,
-      "change_pct": 2.57,
+      "value": 4869.8,
+      "change": 127.4,
+      "change_pct": 2.69,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 92.07,
-      "change": -7.01,
-      "change_pct": -7.08,
+      "value": 90.67,
+      "change": -8.41,
+      "change_pct": -8.49,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.08,
-      "change": 0.11,
-      "change_pct": 1.77,
+      "value": 6.13,
+      "change": 0.15,
+      "change_pct": 2.55,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -183,10 +183,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1489.8,
-      "change": 10.0,
-      "change_pct": 0.68,
-      "signal": "yellow",
+      "value": 1481.4,
+      "change": -8.4,
+      "change_pct": -0.56,
+      "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
