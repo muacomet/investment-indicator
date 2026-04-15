@@ -216,87 +216,93 @@ def fetch_yahoo() -> dict:
     return out
 
 
-def calculate_momentum(history: dict) -> dict:
-    """Calculate momentum metrics from history data."""
-    result = {}
-    targets = ["sp500", "nasdaq", "qqq"]
-    for key in targets:
-        entries = history.get(key, [])
-        if len(entries) < 2:
+def _fetch_chart_data(ticker: str, range_str: str = "1mo") -> dict | None:
+    """Yahoo v8 chart API에서 close/volume 배열 가져오기."""
+    import requests as req
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+    params = {"range": range_str, "interval": "1d"}
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+    try:
+        resp = req.get(url, params=params, headers=headers, timeout=15)
+        data = resp.json()
+        chart = data["chart"]["result"][0]
+        closes = chart["indicators"]["quote"][0]["close"]
+        volumes = chart["indicators"]["quote"][0].get("volume", [])
+        # None 제거 (close/volume 쌍)
+        if volumes:
+            pairs = [(c, v) for c, v in zip(closes, volumes) if c is not None and v is not None]
+            return {"closes": [p[0] for p in pairs], "volumes": [p[1] for p in pairs]}
+        else:
+            clean = [c for c in closes if c is not None]
+            return {"closes": clean, "volumes": []}
+    except Exception as e:
+        print(f"[CHART] {ticker}: {e}")
+    return None
+
+
+def fetch_momentum_and_volume() -> tuple[dict, dict]:
+    """S&P500, QQQ, SCHD의 모멘텀 + 거래량을 Yahoo API에서 직접 계산."""
+    momentum = {}
+    volume = {}
+    targets = {"sp500": "^GSPC", "qqq": "QQQ", "schd": "SCHD"}
+
+    for key, tk in targets.items():
+        chart = _fetch_chart_data(tk, "3mo")
+        if not chart or len(chart["closes"]) < 5:
+            print(f"[MOM] {key}: insufficient chart data")
             continue
 
-        values = [e["value"] for e in entries]
+        closes = chart["closes"]
+        volumes = chart["volumes"]
 
-        # Consecutive up days (count from most recent going back)
+        # ── 모멘텀 ──
+        # 연속 상승일
         consecutive = 0
-        for i in range(len(values) - 1, 0, -1):
-            if values[i] > values[i - 1]:
+        for i in range(len(closes) - 1, 0, -1):
+            if closes[i] > closes[i - 1]:
                 consecutive += 1
             else:
                 break
 
-        # ATH and distance
-        ath = max(values)
-        current = values[-1]
+        # 전고점(ATH) 대비
+        ath = max(closes)
+        current = closes[-1]
         ath_pct = round((current - ath) / ath * 100, 2) if ath else 0
 
-        result[key] = {
+        # 당일 등락률
+        daily_chg = round((closes[-1] - closes[-2]) / closes[-2] * 100, 2) if len(closes) >= 2 else 0
+
+        momentum[key] = {
             "consecutive_up": consecutive,
             "ath": round(ath, 2),
             "ath_distance_pct": ath_pct,
+            "daily_change_pct": daily_chg,
         }
-    return result
 
-
-def fetch_volume_data() -> dict:
-    """Fetch volume data for key tickers for volume analysis."""
-    import requests as req
-    result = {}
-    volume_tickers = {"sp500": "^GSPC", "nasdaq": "^IXIC", "qqq": "QQQ"}
-
-    for key, tk in volume_tickers.items():
-        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}"
-        params = {"range": "1mo", "interval": "1d"}
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-        try:
-            resp = req.get(url, params=params, headers=headers, timeout=15)
-            data = resp.json()
-            chart = data["chart"]["result"][0]
-            closes = chart["indicators"]["quote"][0]["close"]
-            volumes = chart["indicators"]["quote"][0]["volume"]
-
-            # Clean None values (pair them)
-            pairs = [(c, v) for c, v in zip(closes, volumes) if c is not None and v is not None]
-            if len(pairs) < 5:
-                continue
-
-            closes_clean = [p[0] for p in pairs]
-            volumes_clean = [p[1] for p in pairs]
-
-            today_vol = volumes_clean[-1]
-            avg_20 = sum(volumes_clean[-20:]) / min(len(volumes_clean), 20)
+        # ── 거래량 ──
+        if len(volumes) >= 5:
+            today_vol = volumes[-1]
+            avg_20 = sum(volumes[-20:]) / min(len(volumes), 20)
             vol_ratio = round(today_vol / avg_20, 2) if avg_20 > 0 else 0
 
-            # Up day vs down day average volume
-            up_vols = []
-            down_vols = []
-            for i in range(1, len(pairs)):
-                if closes_clean[i] > closes_clean[i - 1]:
-                    up_vols.append(volumes_clean[i])
-                else:
-                    down_vols.append(volumes_clean[i])
+            up_vols, down_vols = [], []
+            for i in range(1, len(closes)):
+                if i < len(volumes):
+                    if closes[i] > closes[i - 1]:
+                        up_vols.append(volumes[i])
+                    else:
+                        down_vols.append(volumes[i])
 
-            result[key] = {
+            volume[key] = {
                 "volume": int(today_vol),
                 "volume_avg_20d": int(avg_20),
                 "volume_ratio": vol_ratio,
                 "up_day_avg_vol": int(sum(up_vols) / len(up_vols)) if up_vols else 0,
                 "down_day_avg_vol": int(sum(down_vols) / len(down_vols)) if down_vols else 0,
             }
-        except Exception as e:
-            print(f"[VOL] {key}: {e}")
 
-    return result
+    print(f"[MOM] Calculated momentum for {list(momentum.keys())}")
+    return momentum, volume
 
 
 def update_history(indicators: dict) -> dict:
@@ -347,11 +353,8 @@ def main():
 
     phase = judge_phase(indicators, history)
 
-    # Momentum
-    momentum = calculate_momentum(history)
-
-    # Volume
-    volume = fetch_volume_data()
+    # Momentum + Volume (Yahoo API에서 직접 계산)
+    momentum, volume = fetch_momentum_and_volume()
 
     # Calendar
     calendar_events = get_upcoming_events(14)

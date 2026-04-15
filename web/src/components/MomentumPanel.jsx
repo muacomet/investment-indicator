@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NAMES = { sp500: 'S&P 500', nasdaq: 'NASDAQ', qqq: 'QQQ' };
+const NAMES = { sp500: 'S&P 500', qqq: 'QQQ', schd: 'SCHD' };
 
 function formatVol(n) {
   if (!n) return '-';
@@ -98,7 +98,7 @@ function MomentumRow({ name, indicator, momentum, volume }) {
 export default function MomentumPanel({ indicators, momentum, volume }) {
   if (!indicators) return null;
 
-  const keys = ['sp500', 'nasdaq', 'qqq'];
+  const keys = ['sp500', 'qqq', 'schd'];
   const hasData = keys.some(k => indicators[k]);
   if (!hasData) return null;
 
