@@ -10,6 +10,7 @@ from config import (
 )
 from calculate import judge_phase
 from fetch_bok import fetch_bok
+from economic_calendar import get_upcoming_events
 
 DATA_DIR = Path(__file__).parent.parent / "data"
 FRED_KEY = os.environ.get("FRED_API_KEY", "")
@@ -38,6 +39,7 @@ YF_TICKERS = {
     "qqq": "QQQ", "schd": "SCHD",
     "dxy": "DX-Y.NYB",
     "gold": "GC=F", "wti": "CL=F", "copper": "HG=F",
+    "nq_futures": "NQ=F",
 }
 
 # 신호 판정 기준
@@ -55,6 +57,7 @@ SIGNAL_RULES = {
     "gold":         lambda _, c: "green" if c > 0 else "yellow",
     "wti":          lambda _, c: "yellow" if abs(c) > 3 else "green",
     "copper":       lambda _, c: "green" if c > 0 else "yellow",
+    "nq_futures":   lambda _, c: "green" if c > 0 else "red",
     "tga":          lambda v, _: "red" if v > TGA_HIGH else "yellow" if v < TGA_LOW else "green",
     "rrp":          lambda v, _: "red" if v > RRP_HIGH else "yellow" if v <= RRP_LOW else "green",
     "m2":           lambda _, c: "green" if c > 0 else "yellow",
@@ -79,6 +82,7 @@ NOTES = {
     "gold": "안전자산 선호 시 상승",
     "wti": "",
     "copper": "경기 선행 지표",
+    "nq_futures": "나스닥100 선물 실시간",
     "tga": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)",
     "rrp": "역사적 고점 2.5조 (단위: B$)",
     "m2": "M2 증가 = 유동성 확대",
@@ -212,6 +216,89 @@ def fetch_yahoo() -> dict:
     return out
 
 
+def calculate_momentum(history: dict) -> dict:
+    """Calculate momentum metrics from history data."""
+    result = {}
+    targets = ["sp500", "nasdaq", "qqq"]
+    for key in targets:
+        entries = history.get(key, [])
+        if len(entries) < 2:
+            continue
+
+        values = [e["value"] for e in entries]
+
+        # Consecutive up days (count from most recent going back)
+        consecutive = 0
+        for i in range(len(values) - 1, 0, -1):
+            if values[i] > values[i - 1]:
+                consecutive += 1
+            else:
+                break
+
+        # ATH and distance
+        ath = max(values)
+        current = values[-1]
+        ath_pct = round((current - ath) / ath * 100, 2) if ath else 0
+
+        result[key] = {
+            "consecutive_up": consecutive,
+            "ath": round(ath, 2),
+            "ath_distance_pct": ath_pct,
+        }
+    return result
+
+
+def fetch_volume_data() -> dict:
+    """Fetch volume data for key tickers for volume analysis."""
+    import requests as req
+    result = {}
+    volume_tickers = {"sp500": "^GSPC", "nasdaq": "^IXIC", "qqq": "QQQ"}
+
+    for key, tk in volume_tickers.items():
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}"
+        params = {"range": "1mo", "interval": "1d"}
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+        try:
+            resp = req.get(url, params=params, headers=headers, timeout=15)
+            data = resp.json()
+            chart = data["chart"]["result"][0]
+            closes = chart["indicators"]["quote"][0]["close"]
+            volumes = chart["indicators"]["quote"][0]["volume"]
+
+            # Clean None values (pair them)
+            pairs = [(c, v) for c, v in zip(closes, volumes) if c is not None and v is not None]
+            if len(pairs) < 5:
+                continue
+
+            closes_clean = [p[0] for p in pairs]
+            volumes_clean = [p[1] for p in pairs]
+
+            today_vol = volumes_clean[-1]
+            avg_20 = sum(volumes_clean[-20:]) / min(len(volumes_clean), 20)
+            vol_ratio = round(today_vol / avg_20, 2) if avg_20 > 0 else 0
+
+            # Up day vs down day average volume
+            up_vols = []
+            down_vols = []
+            for i in range(1, len(pairs)):
+                if closes_clean[i] > closes_clean[i - 1]:
+                    up_vols.append(volumes_clean[i])
+                else:
+                    down_vols.append(volumes_clean[i])
+
+            result[key] = {
+                "volume": int(today_vol),
+                "volume_avg_20d": int(avg_20),
+                "volume_ratio": vol_ratio,
+                "up_day_avg_vol": int(sum(up_vols) / len(up_vols)) if up_vols else 0,
+                "down_day_avg_vol": int(sum(down_vols) / len(down_vols)) if down_vols else 0,
+            }
+        except Exception as e:
+            print(f"[VOL] {key}: {e}")
+
+    return result
+
+
 def update_history(indicators: dict) -> dict:
     """history.json에 오늘 데이터 추가, 90일 초과분 삭제."""
     history_path = DATA_DIR / "history.json"
@@ -260,10 +347,22 @@ def main():
 
     phase = judge_phase(indicators, history)
 
+    # Momentum
+    momentum = calculate_momentum(history)
+
+    # Volume
+    volume = fetch_volume_data()
+
+    # Calendar
+    calendar_events = get_upcoming_events(14)
+
     latest = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "phase": phase,
         "indicators": indicators,
+        "momentum": momentum,
+        "volume": volume,
+        "calendar": calendar_events,
     }
     DATA_DIR.mkdir(exist_ok=True)
     (DATA_DIR / "latest.json").write_text(

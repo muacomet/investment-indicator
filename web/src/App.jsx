@@ -3,6 +3,8 @@ import PhasePanel from './components/PhasePanel';
 import IndicatorCard from './components/IndicatorCard';
 import SectionHeader from './components/SectionHeader';
 import SummaryTable from './components/SummaryTable';
+import MomentumPanel from './components/MomentumPanel';
+import CalendarPanel from './components/CalendarPanel';
 
 // ── 섹션 정의 ──────────────────────────────────────────
 
@@ -24,6 +26,7 @@ const US_MARKET_KEYS = [
   { key: 'rrp', name: 'RRP (역레포)', desc: '역사적 고점 2.5조$' },
   { key: 'm2', name: 'M2 통화량', desc: '증가 = 유동성 확대' },
   { key: 'fed_balance', name: '연준 대차대조표', desc: 'QT 진행 중' },
+  { key: 'nq_futures', name: 'NQ 선물', desc: '나스닥100 선물 실시간' },
 ];
 
 const KR_MARKET_KEYS = [
@@ -86,9 +89,25 @@ const DEMO_DATA = {
     us_auto_delinq: { value: 2.85, change: 0.08, change_pct: 2.89, signal: 'yellow', note: '3%+ 경고' },
     us_mortgage_delinq: { value: 1.72, change: -0.03, change_pct: -1.71, signal: 'green', note: '4%+ 위험' },
     us_saving_rate: { value: 4.6, change: -0.2, change_pct: -4.17, signal: 'yellow', note: '5% 이상 건전' },
+    nq_futures: { value: 18250.5, change: 125.0, change_pct: 0.69, signal: 'green', note: '나스닥100 선물 실시간' },
     kr_rate: { value: 2.5, change: 0, change_pct: 0, signal: 'yellow', note: '한국은행 기준금리' },
     kr_delinquency: { value: 0.48, change: 0.02, change_pct: 4.35, signal: 'green', note: '1%+ 경고' },
   },
+  momentum: {
+    sp500: { consecutive_up: 3, ath: 5250.0, ath_distance_pct: -2.39 },
+    nasdaq: { consecutive_up: 4, ath: 16500.0, ath_distance_pct: -2.84 },
+    qqq: { consecutive_up: 4, ath: 495.0, ath_distance_pct: -2.53 },
+  },
+  volume: {
+    sp500: { volume: 3850000000, volume_avg_20d: 3200000000, volume_ratio: 1.20, up_day_avg_vol: 3500000000, down_day_avg_vol: 2900000000 },
+    nasdaq: { volume: 5200000000, volume_avg_20d: 4800000000, volume_ratio: 1.08, up_day_avg_vol: 5100000000, down_day_avg_vol: 4500000000 },
+    qqq: { volume: 42000000, volume_avg_20d: 38000000, volume_ratio: 1.11, up_day_avg_vol: 40000000, down_day_avg_vol: 36000000 },
+  },
+  calendar: [
+    { date: '2026-04-14', event: 'CPI', desc: '3월 소비자물가지수', days_until: 1 },
+    { date: '2026-05-01', event: '고용', desc: '비농업 고용·실업률', days_until: 18 },
+    { date: '2026-05-06', event: 'FOMC', desc: 'FOMC 금리 결정', days_until: 23 },
+  ],
 };
 
 const DEMO_HISTORY = Object.fromEntries([
@@ -199,6 +218,22 @@ export default function App() {
       <div style={{ padding: '16px 0 0' }}>
         <PhasePanel phase={data.phase} />
       </div>
+
+      {/* 📅 경제 캘린더 */}
+      <div style={{ padding: '0 16px 8px' }}>
+        <SectionHeader icon="📅" title="경제 캘린더" subtitle="향후 14일" />
+      </div>
+      <CalendarPanel events={data.calendar} />
+
+      {/* 📈 모멘텀 · 거래량 */}
+      <div style={{ padding: '12px 16px 8px' }}>
+        <SectionHeader icon="📈" title="모멘텀 · 거래량" subtitle="연속상승 / 전고점 / 거래량" />
+      </div>
+      <MomentumPanel
+        indicators={data.indicators}
+        momentum={data.momentum}
+        volume={data.volume}
+      />
 
       {/* View Toggle */}
       <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0 16px 8px', gap: 4 }}>
