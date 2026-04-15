@@ -1,15 +1,14 @@
 {
-  "updated_at": "2026-04-15T09:01:40.482523+00:00",
+  "updated_at": "2026-04-15T10:42:30.124029+00:00",
   "phase": {
     "status": "strong_buy",
-    "score": 6,
+    "score": 5,
     "reasons": [
       "VIX 19.1 안정 (추가 하락 여력 제한)",
       "TGA 4주 -99.9% 급감 → 유동성 방출",
       "RRP 0B$ 소진 (유동성 시장 유입)",
       "TGA 방출 + RRP 소진 → 쌍둥이 유동성 신호",
       "10Y-기준금리 스프레드 0.55% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -134,30 +133,30 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.15,
-      "change": 0.03,
-      "change_pct": 0.03,
+      "value": 98.25,
+      "change": 0.13,
+      "change_pct": 0.14,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4834.1,
-      "change": 9.1,
-      "change_pct": 0.19,
-      "signal": "green",
+      "value": 4818.0,
+      "change": -7.0,
+      "change_pct": -0.15,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.43,
-      "change": 0.15,
-      "change_pct": 0.16,
+      "value": 93.04,
+      "change": 1.76,
+      "change_pct": 1.93,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.09,
-      "change": 0.02,
-      "change_pct": 0.39,
+      "value": 6.07,
+      "change": 0.0,
+      "change_pct": 0.06,
       "signal": "green",
       "note": "경기 선행 지표"
     },
