@@ -357,7 +357,7 @@ def main():
     momentum, volume = fetch_momentum_and_volume()
 
     # Calendar
-    calendar_events = get_upcoming_events(14)
+    calendar_events = get_upcoming_events(30)
 
     latest = {
         "updated_at": datetime.now(timezone.utc).isoformat(),

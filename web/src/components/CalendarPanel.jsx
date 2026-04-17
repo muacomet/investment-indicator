@@ -6,13 +6,6 @@ const EVENT_STYLES = {
   '고용': { emoji: '👷', color: '#60a5fa', bg: 'rgba(96, 165, 250, 0.1)' },
 };
 
-// 2026 하드코딩 일정 (fetch 실패 대비)
-const FALLBACK_EVENTS = [
-  { date: '2026-04-14', event: 'CPI', desc: '3월 소비자물가지수', days_until: 1 },
-  { date: '2026-05-01', event: '고용', desc: '비농업 고용·실업률', days_until: 18 },
-  { date: '2026-05-06', event: 'FOMC', desc: 'FOMC 금리 결정', days_until: 23 },
-];
-
 function formatDate(dateStr) {
   const d = new Date(dateStr + 'T00:00:00');
   const month = d.getMonth() + 1;
@@ -29,9 +22,21 @@ function daysLabel(days) {
 }
 
 export default function CalendarPanel({ events }) {
-  const items = events && events.length > 0 ? events : FALLBACK_EVENTS;
+  const items = events || [];
 
-  if (!items || items.length === 0) return null;
+  if (items.length === 0) {
+    return (
+      <div style={{ padding: '0 16px' }}>
+        <div style={{
+          background: 'var(--card)', border: '1px solid var(--border)',
+          borderRadius: 12, padding: 20, textAlign: 'center',
+          fontSize: 13, color: 'var(--dim)',
+        }}>
+          향후 30일 이내 예정된 주요 경제 이벤트가 없습니다.
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={{ padding: '0 16px' }}>

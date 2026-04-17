@@ -33,7 +33,11 @@ def _calc_4w_change(history, key):
     old = entries[target_idx]["value"]
     if old == 0:
         return None
-    return (latest - old) / old
+    change = (latest - old) / old
+    # Sanity check: 단위 불일치 등으로 비정상 변화율이 나오면 무시
+    if abs(change) > 0.9:
+        return None
+    return change
 
 
 def judge_phase(ind: dict, history: dict = None) -> dict:
@@ -77,10 +81,10 @@ def judge_phase(ind: dict, history: dict = None) -> dict:
     rrp_4w = _calc_4w_change(history, "rrp")
     if rrp <= RRP_LOW:
         score += 1
-        reasons.append(f"RRP {rrp:.0f}B$ 소진 (유동성 시장 유입)")
+        reasons.append(f"RRP {rrp:.1f}B$ 소진 (유동성 시장 유입)")
     elif rrp > RRP_HIGH:
         score -= 1
-        reasons.append(f"RRP {rrp:.0f}B$ 대기 (유동성 미방출)")
+        reasons.append(f"RRP {rrp:.1f}B$ 대기 (유동성 미방출)")
     elif rrp_4w is not None and rrp_4w < -0.10:
         score += 1
         reasons.append(f"RRP 4주 {rrp_4w*100:.1f}% 감소 → 유동성 유입 중")
