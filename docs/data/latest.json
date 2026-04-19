@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-18T02:39:09.652678+00:00",
+  "updated_at": "2026-04-19T02:55:37.696800+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.23,
-      "change": 0.01,
-      "change_pct": 0.01,
+      "value": 98.1,
+      "change": -0.12,
+      "change_pct": -0.12,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4849.4,
-      "change": 64.0,
-      "change_pct": 1.34,
+      "value": 4857.6,
+      "change": 72.2,
+      "change_pct": 1.51,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.0,
-      "change": -10.69,
-      "change_pct": -11.29,
+      "value": 83.85,
+      "change": -10.84,
+      "change_pct": -11.45,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.08,
-      "change": 0.01,
-      "change_pct": 0.25,
+      "value": 6.1,
+      "change": 0.04,
+      "change_pct": 0.61,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26840.75,
-      "change": 353.5,
-      "change_pct": 1.33,
+      "value": 26825.5,
+      "change": 338.25,
+      "change_pct": 1.28,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -230,24 +230,24 @@
   },
   "volume": {
     "sp500": {
-      "volume": 3621555000,
-      "volume_avg_20d": 5310411250,
-      "volume_ratio": 0.68,
-      "up_day_avg_vol": 5317141666,
+      "volume": 6145300000,
+      "volume_avg_20d": 5436598500,
+      "volume_ratio": 1.13,
+      "up_day_avg_vol": 5393618787,
       "down_day_avg_vol": 6095169285
     },
     "qqq": {
-      "volume": 53221762,
-      "volume_avg_20d": 60486778,
+      "volume": 53386300,
+      "volume_avg_20d": 60495005,
       "volume_ratio": 0.88,
-      "up_day_avg_vol": 57692640,
+      "up_day_avg_vol": 57697211,
       "down_day_avg_vol": 75029788
     },
     "schd": {
-      "volume": 20006357,
-      "volume_avg_20d": 24650542,
+      "volume": 20078900,
+      "volume_avg_20d": 24654170,
       "volume_ratio": 0.81,
-      "up_day_avg_vol": 23856381,
+      "up_day_avg_vol": 23858514,
       "down_day_avg_vol": 24964388
     }
   },
@@ -256,19 +256,19 @@
       "date": "2026-05-01",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-05-06",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 18
+      "days_until": 17
     },
     {
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 25
+      "days_until": 24
     }
   ]
 }
