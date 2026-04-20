@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T02:28:50.250720+00:00",
+  "updated_at": "2026-04-20T05:26:36.317250+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -133,37 +133,37 @@
     "dxy": {
       "value": 98.3,
       "change": 0.2,
-      "change_pct": 0.2,
+      "change_pct": 0.21,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4820.4,
-      "change": -37.2,
-      "change_pct": -0.77,
-      "signal": "yellow",
+      "value": 4857.6,
+      "change": 72.2,
+      "change_pct": 1.51,
+      "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
-    "copper": {
-      "value": 6.08,
-      "change": -0.02,
-      "change_pct": -0.35,
+    "wti": {
+      "value": 83.85,
+      "change": -10.84,
+      "change_pct": -11.45,
       "signal": "yellow",
+      "note": ""
+    },
+    "copper": {
+      "value": 6.1,
+      "change": 0.04,
+      "change_pct": 0.61,
+      "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26699.25,
-      "change": -126.25,
-      "change_pct": -0.47,
+      "value": 26671.25,
+      "change": -154.25,
+      "change_pct": -0.58,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
-    },
-    "wti": {
-      "value": 82.59,
-      "change": -12.1,
-      "change_pct": -12.78,
-      "signal": "yellow",
-      "note": ""
     },
     "kospi": {
       "value": 6191.92,
