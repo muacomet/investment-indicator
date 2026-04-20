@@ -103,6 +103,7 @@ def fetch_fred(fred: Fred) -> dict:
             try:
                 s = fred.get_series(sid).dropna()
                 prev, curr = float(s.iloc[-2]), float(s.iloc[-1])
+                obs_date = s.index[-1].strftime("%Y-%m-%d")  # 실제 FRED 관측일
 
                 # 단위 변환
                 conv = UNIT_CONVERSIONS.get(key, 1)
@@ -119,6 +120,7 @@ def fetch_fred(fred: Fred) -> dict:
                     "change_pct": change_pct,
                     "signal": signal_fn(value, change_pct),
                     "note": NOTES.get(key, ""),
+                    "_obs_date": obs_date,  # history 기록용 (실제 관측일)
                 }
 
                 # Sanity check for TGA/RRP
@@ -321,11 +323,13 @@ def update_history(indicators: dict) -> dict:
     for key, data in indicators.items():
         if key not in history:
             history[key] = []
-        existing = [e for e in history[key] if e["date"] == today]
+        # FRED weekly/monthly 시리즈는 실제 관측일(_obs_date)을 사용해 중복 방지
+        entry_date = data.get("_obs_date") or today
+        existing = [e for e in history[key] if e["date"] == entry_date]
         if existing:
             existing[0]["value"] = data["value"]
         else:
-            history[key].append({"date": today, "value": data["value"]})
+            history[key].append({"date": entry_date, "value": data["value"]})
         history[key] = [e for e in history[key] if e["date"] >= cutoff]
         history[key].sort(key=lambda e: e["date"])
 
@@ -350,6 +354,10 @@ def main():
 
     # history 먼저 로드 (calculate에서 4주 추세 계산에 필요)
     history = update_history(indicators)
+
+    # history 저장 후에는 _obs_date 메타 필드 제거 (latest.json 공개 스키마)
+    for data in indicators.values():
+        data.pop("_obs_date", None)
 
     phase = judge_phase(indicators, history)
 
