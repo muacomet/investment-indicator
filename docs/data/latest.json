@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-19T02:55:37.696800+00:00",
+  "updated_at": "2026-04-20T02:28:50.250720+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,39 +131,39 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.1,
-      "change": -0.12,
-      "change_pct": -0.12,
+      "value": 98.3,
+      "change": 0.2,
+      "change_pct": 0.2,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4857.6,
-      "change": 72.2,
-      "change_pct": 1.51,
-      "signal": "green",
+      "value": 4820.4,
+      "change": -37.2,
+      "change_pct": -0.77,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
-    "wti": {
-      "value": 83.85,
-      "change": -10.84,
-      "change_pct": -11.45,
-      "signal": "yellow",
-      "note": ""
-    },
     "copper": {
-      "value": 6.1,
-      "change": 0.04,
-      "change_pct": 0.61,
-      "signal": "green",
+      "value": 6.08,
+      "change": -0.02,
+      "change_pct": -0.35,
+      "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26825.5,
-      "change": 338.25,
-      "change_pct": 1.28,
-      "signal": "green",
+      "value": 26699.25,
+      "change": -126.25,
+      "change_pct": -0.47,
+      "signal": "red",
       "note": "나스닥100 선물 실시간"
+    },
+    "wti": {
+      "value": 82.59,
+      "change": -12.1,
+      "change_pct": -12.78,
+      "signal": "yellow",
+      "note": ""
     },
     "kospi": {
       "value": 6191.92,
@@ -187,10 +187,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1472.6,
-      "change": -0.5,
-      "change_pct": -0.03,
-      "signal": "green",
+      "value": 1480.0,
+      "change": 7.4,
+      "change_pct": 0.5,
+      "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
@@ -256,19 +256,19 @@
       "date": "2026-05-01",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 12
+      "days_until": 11
     },
     {
       "date": "2026-05-06",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 17
+      "days_until": 16
     },
     {
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 24
+      "days_until": 23
     }
   ]
 }
