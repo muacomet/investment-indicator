@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T07:28:12.766123+00:00",
+  "updated_at": "2026-04-20T09:26:44.795677+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -173,16 +173,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.24,
-      "change": 0.032,
-      "change_pct": 1.0,
+      "value": 3.22,
+      "change": -0.018,
+      "change_pct": -0.56,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 3.72,
-      "change": 0.042,
-      "change_pct": 1.14,
+      "value": 3.69,
+      "change": -0.029,
+      "change_pct": -0.78,
       "signal": "yellow",
       "note": ""
     },
