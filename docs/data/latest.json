@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T05:26:36.317250+00:00",
+  "updated_at": "2026-04-20T07:28:12.766123+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -159,9 +159,9 @@
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26671.25,
-      "change": -154.25,
-      "change_pct": -0.58,
+      "value": 26646.25,
+      "change": -179.25,
+      "change_pct": -0.67,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -194,7 +194,7 @@
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
-      "value": 0.42,
+      "value": 0.45,
       "change": 0,
       "change_pct": 0,
       "signal": "green",
