@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-20T16:49:14.505063+00:00",
+  "updated_at": "2026-04-20T17:44:39.234190+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -103,31 +103,31 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7101.24,
-      "change": -24.82,
-      "change_pct": -0.35,
+      "value": 7102.85,
+      "change": -23.21,
+      "change_pct": -0.33,
       "signal": "red",
       "note": ""
     },
     "nasdaq": {
-      "value": 24342.95,
-      "change": -125.53,
-      "change_pct": -0.51,
+      "value": 24357.26,
+      "change": -111.22,
+      "change_pct": -0.45,
       "signal": "red",
       "note": ""
     },
     "qqq": {
-      "value": 645.33,
-      "change": -3.52,
-      "change_pct": -0.54,
+      "value": 645.83,
+      "change": -3.02,
+      "change_pct": -0.47,
       "signal": "red",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 31.07,
-      "change": 0.02,
-      "change_pct": 0.05,
-      "signal": "green",
+      "value": 31.03,
+      "change": -0.02,
+      "change_pct": -0.06,
+      "signal": "red",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
@@ -138,38 +138,38 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4820.1,
-      "change": -37.5,
-      "change_pct": -0.77,
+      "value": 4826.0,
+      "change": -31.6,
+      "change_pct": -0.65,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 87.4,
-      "change": 3.55,
-      "change_pct": 4.23,
+      "value": 87.9,
+      "change": 4.05,
+      "change_pct": 4.83,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.05,
-      "change": -0.06,
-      "change_pct": -0.94,
+      "value": 6.03,
+      "change": -0.07,
+      "change_pct": -1.16,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26674.5,
-      "change": -151.0,
-      "change_pct": -0.56,
+      "value": 26687.25,
+      "change": -138.25,
+      "change_pct": -0.52,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
-      "value": 6191.92,
-      "change": -34.13,
-      "change_pct": -0.55,
-      "signal": "red",
+      "value": 6219.09,
+      "change": 27.17,
+      "change_pct": 0.44,
+      "signal": "green",
       "note": ""
     },
     "kr2y": {
@@ -212,43 +212,43 @@
     "sp500": {
       "consecutive_up": 0,
       "ath": 7126.06,
-      "ath_distance_pct": -0.35,
-      "daily_change_pct": -0.35
+      "ath_distance_pct": -0.33,
+      "daily_change_pct": -0.33
     },
     "qqq": {
       "consecutive_up": 0,
       "ath": 648.85,
-      "ath_distance_pct": -0.55,
-      "daily_change_pct": -0.55
+      "ath_distance_pct": -0.46,
+      "daily_change_pct": -0.46
     },
     "schd": {
-      "consecutive_up": 3,
+      "consecutive_up": 0,
       "ath": 31.86,
-      "ath_distance_pct": -2.51,
-      "daily_change_pct": 0.03
+      "ath_distance_pct": -2.64,
+      "daily_change_pct": -0.1
     }
   },
   "volume": {
     "sp500": {
-      "volume": 1145590000,
-      "volume_avg_20d": 4992587000,
-      "volume_ratio": 0.23,
+      "volume": 1337028000,
+      "volume_avg_20d": 5002158900,
+      "volume_ratio": 0.27,
       "up_day_avg_vol": 5393618787,
-      "down_day_avg_vol": 5924494137
+      "down_day_avg_vol": 5931095448
     },
     "qqq": {
-      "volume": 23850312,
-      "volume_avg_20d": 57089285,
-      "volume_ratio": 0.42,
+      "volume": 26159183,
+      "volume_avg_20d": 57204729,
+      "volume_ratio": 0.46,
       "up_day_avg_vol": 57697211,
-      "down_day_avg_vol": 73061346
+      "down_day_avg_vol": 73150149
     },
     "schd": {
-      "volume": 10875305,
-      "volume_avg_20d": 23822100,
-      "volume_ratio": 0.46,
-      "up_day_avg_vol": 23487565,
-      "down_day_avg_vol": 24964388
+      "volume": 12185743,
+      "volume_avg_20d": 23887622,
+      "volume_ratio": 0.51,
+      "up_day_avg_vol": 23858514,
+      "down_day_avg_vol": 24508008
     }
   },
   "calendar": [
