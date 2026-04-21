@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-21T16:44:46.102611+00:00",
+  "updated_at": "2026-04-21T17:42:36.316718+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -103,72 +103,72 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7082.14,
-      "change": -27.0,
-      "change_pct": -0.38,
+      "value": 7088.9,
+      "change": -20.24,
+      "change_pct": -0.28,
       "signal": "red",
       "note": ""
     },
     "nasdaq": {
-      "value": 24313.96,
-      "change": -90.43,
-      "change_pct": -0.37,
+      "value": 24350.79,
+      "change": -53.6,
+      "change_pct": -0.22,
       "signal": "red",
       "note": ""
     },
     "qqq": {
-      "value": 645.32,
-      "change": -1.47,
-      "change_pct": -0.23,
+      "value": 646.4,
+      "change": -0.39,
+      "change_pct": -0.06,
       "signal": "red",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 31.08,
-      "change": 0.05,
-      "change_pct": 0.15,
+      "value": 31.09,
+      "change": 0.06,
+      "change_pct": 0.19,
       "signal": "green",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.36,
-      "change": 0.31,
-      "change_pct": 0.32,
+      "value": 98.45,
+      "change": 0.4,
+      "change_pct": 0.41,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4742.8,
-      "change": -63.8,
-      "change_pct": -1.33,
+      "value": 4722.4,
+      "change": -84.2,
+      "change_pct": -1.75,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 89.95,
-      "change": 0.34,
-      "change_pct": 0.38,
+      "value": 90.84,
+      "change": 1.23,
+      "change_pct": 1.37,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.02,
-      "change": -0.02,
-      "change_pct": -0.33,
+      "value": 5.99,
+      "change": -0.04,
+      "change_pct": -0.69,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26731.75,
-      "change": -17.0,
-      "change_pct": -0.06,
+      "value": 26658.25,
+      "change": -90.5,
+      "change_pct": -0.34,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
-      "value": 6219.09,
-      "change": 27.17,
-      "change_pct": 0.44,
+      "value": 6388.47,
+      "change": 169.38,
+      "change_pct": 2.72,
       "signal": "green",
       "note": ""
     },
@@ -212,42 +212,42 @@
     "sp500": {
       "consecutive_up": 0,
       "ath": 7126.06,
-      "ath_distance_pct": -0.62,
-      "daily_change_pct": -0.38
+      "ath_distance_pct": -0.52,
+      "daily_change_pct": -0.29
     },
     "qqq": {
       "consecutive_up": 0,
       "ath": 648.85,
-      "ath_distance_pct": -0.55,
-      "daily_change_pct": -0.23
+      "ath_distance_pct": -0.37,
+      "daily_change_pct": -0.05
     },
     "schd": {
       "consecutive_up": 1,
       "ath": 31.86,
-      "ath_distance_pct": -2.48,
-      "daily_change_pct": 0.13
+      "ath_distance_pct": -2.46,
+      "daily_change_pct": 0.15
     }
   },
   "volume": {
     "sp500": {
-      "volume": 1240181000,
-      "volume_avg_20d": 4929340550,
-      "volume_ratio": 0.25,
+      "volume": 1497634000,
+      "volume_avg_20d": 4942213200,
+      "volume_ratio": 0.3,
       "up_day_avg_vol": 5379809375,
-      "down_day_avg_vol": 5885535033
+      "down_day_avg_vol": 5894116800
     },
     "qqq": {
-      "volume": 18376071,
-      "volume_avg_20d": 54176653,
-      "volume_ratio": 0.34,
+      "volume": 22905046,
+      "volume_avg_20d": 54403102,
+      "volume_ratio": 0.42,
       "up_day_avg_vol": 57067551,
-      "down_day_avg_vol": 71525032
+      "down_day_avg_vol": 71692772
     },
     "schd": {
-      "volume": 9491730,
-      "volume_avg_20d": 22944421,
-      "volume_ratio": 0.41,
-      "up_day_avg_vol": 23550753,
+      "volume": 12017343,
+      "volume_avg_20d": 23070702,
+      "volume_ratio": 0.52,
+      "up_day_avg_vol": 23625036,
       "down_day_avg_vol": 24687521
     }
   },
