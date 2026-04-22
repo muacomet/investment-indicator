@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-22T16:45:40.192961+00:00",
+  "updated_at": "2026-04-22T17:42:38.644775+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -103,72 +103,72 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7115.57,
-      "change": 51.56,
-      "change_pct": 0.73,
+      "value": 7126.32,
+      "change": 62.31,
+      "change_pct": 0.88,
       "signal": "green",
       "note": ""
     },
     "nasdaq": {
-      "value": 24544.08,
-      "change": 284.12,
-      "change_pct": 1.17,
+      "value": 24602.56,
+      "change": 342.6,
+      "change_pct": 1.41,
       "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 652.4,
-      "change": 8.07,
-      "change_pct": 1.25,
+      "value": 654.02,
+      "change": 9.69,
+      "change_pct": 1.5,
       "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
       "value": 31.0,
       "change": 0.02,
-      "change_pct": 0.05,
+      "change_pct": 0.08,
       "signal": "green",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.56,
-      "change": 0.15,
-      "change_pct": 0.15,
+      "value": 98.53,
+      "change": 0.12,
+      "change_pct": 0.12,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4748.1,
-      "change": 49.7,
-      "change_pct": 1.06,
+      "value": 4754.6,
+      "change": 56.2,
+      "change_pct": 1.2,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 93.29,
-      "change": 1.16,
-      "change_pct": 1.26,
+      "value": 93.09,
+      "change": 0.96,
+      "change_pct": 1.04,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.12,
-      "change": 0.12,
-      "change_pct": 2.0,
+      "value": 6.14,
+      "change": 0.14,
+      "change_pct": 2.34,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26975.25,
-      "change": 340.5,
-      "change_pct": 1.28,
+      "value": 27041.0,
+      "change": 406.25,
+      "change_pct": 1.53,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
-      "value": 6388.47,
-      "change": 169.38,
-      "change_pct": 2.72,
+      "value": 6417.93,
+      "change": 29.46,
+      "change_pct": 0.46,
       "signal": "green",
       "note": ""
     },
@@ -211,44 +211,44 @@
   "momentum": {
     "sp500": {
       "consecutive_up": 1,
-      "ath": 7126.06,
-      "ath_distance_pct": -0.15,
-      "daily_change_pct": 0.72
+      "ath": 7126.51,
+      "ath_distance_pct": 0.0,
+      "daily_change_pct": 0.88
     },
     "qqq": {
       "consecutive_up": 1,
-      "ath": 652.38,
+      "ath": 654.04,
       "ath_distance_pct": 0.0,
-      "daily_change_pct": 1.25
+      "daily_change_pct": 1.51
     },
     "schd": {
-      "consecutive_up": 0,
+      "consecutive_up": 1,
       "ath": 31.86,
-      "ath_distance_pct": -2.76,
-      "daily_change_pct": 0.0
+      "ath_distance_pct": -2.68,
+      "daily_change_pct": 0.08
     }
   },
   "volume": {
     "sp500": {
-      "volume": 1195530000,
-      "volume_avg_20d": 4921192500,
-      "volume_ratio": 0.24,
-      "up_day_avg_vol": 5251307812,
+      "volume": 1406007000,
+      "volume_avg_20d": 4931716350,
+      "volume_ratio": 0.29,
+      "up_day_avg_vol": 5257885218,
       "down_day_avg_vol": 6016204666
     },
     "qqq": {
-      "volume": 17887634,
-      "volume_avg_20d": 53239896,
-      "volume_ratio": 0.34,
-      "up_day_avg_vol": 56371346,
+      "volume": 20908696,
+      "volume_avg_20d": 53390949,
+      "volume_ratio": 0.39,
+      "up_day_avg_vol": 56457662,
       "down_day_avg_vol": 72307555
     },
     "schd": {
-      "volume": 8720884,
-      "volume_avg_20d": 22300379,
-      "volume_ratio": 0.39,
-      "up_day_avg_vol": 24212121,
-      "down_day_avg_vol": 23929162
+      "volume": 10146986,
+      "volume_avg_20d": 22371684,
+      "volume_ratio": 0.45,
+      "up_day_avg_vol": 23785905,
+      "down_day_avg_vol": 24453586
     }
   },
   "calendar": [
