@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T20:46:12.119803+00:00",
+  "updated_at": "2026-04-24T21:34:12.048304+00:00",
   "phase": {
     "status": "neutral",
     "score": 1,
@@ -34,9 +34,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.51,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 0.53,
+      "change": 0.02,
+      "change_pct": 3.92,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -132,23 +132,23 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.53,
-      "change": -0.27,
-      "change_pct": -0.28,
+      "value": 98.51,
+      "change": -0.29,
+      "change_pct": -0.29,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4722.1,
-      "change": 17.0,
-      "change_pct": 0.36,
+      "value": 4725.4,
+      "change": 20.3,
+      "change_pct": 0.43,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 95.18,
-      "change": -0.67,
-      "change_pct": -0.7,
+      "value": 94.88,
+      "change": -0.97,
+      "change_pct": -1.01,
       "signal": "green",
       "note": ""
     },
@@ -245,11 +245,11 @@
       "down_day_avg_vol": 71162982
     },
     "schd": {
-      "volume": 19025292,
-      "volume_avg_20d": 22040544,
-      "volume_ratio": 0.86,
+      "volume": 19248450,
+      "volume_avg_20d": 22051702,
+      "volume_ratio": 0.87,
       "up_day_avg_vol": 23868015,
-      "down_day_avg_vol": 24447720
+      "down_day_avg_vol": 24455415
     }
   },
   "calendar": [
