@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-23T21:57:14.690654+00:00",
+  "updated_at": "2026-04-24T02:26:43.902917+00:00",
   "phase": {
     "status": "neutral",
     "score": 1,
@@ -134,36 +134,36 @@
     "dxy": {
       "value": 98.82,
       "change": 0.23,
-      "change_pct": 0.23,
+      "change_pct": 0.24,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4708.6,
-      "change": -23.9,
-      "change_pct": -0.51,
+      "value": 4709.5,
+      "change": -23.0,
+      "change_pct": -0.49,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 97.0,
-      "change": 4.04,
-      "change_pct": 4.35,
+      "value": 96.87,
+      "change": 3.91,
+      "change_pct": 4.21,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.03,
-      "change": -0.09,
-      "change_pct": -1.55,
+      "value": 6.02,
+      "change": -0.1,
+      "change_pct": -1.66,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 26942.75,
-      "change": -140.25,
-      "change_pct": -0.52,
-      "signal": "red",
+      "value": 27093.25,
+      "change": 10.25,
+      "change_pct": 0.04,
+      "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -188,9 +188,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1477.6,
-      "change": 6.8,
-      "change_pct": 0.46,
+      "value": 1480.6,
+      "change": 3.0,
+      "change_pct": 0.2,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
@@ -257,19 +257,19 @@
       "date": "2026-05-01",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 8
+      "days_until": 7
     },
     {
       "date": "2026-05-06",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 20
+      "days_until": 19
     }
   ]
 }
