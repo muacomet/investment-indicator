@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T22:23:33.768347+00:00",
+  "updated_at": "2026-04-25T02:41:12.108533+00:00",
   "phase": {
     "status": "neutral",
     "score": 1,
@@ -257,19 +257,19 @@
       "date": "2026-05-01",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 7
+      "days_until": 6
     },
     {
       "date": "2026-05-06",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 12
+      "days_until": 11
     },
     {
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 19
+      "days_until": 18
     }
   ]
 }
