@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-01T21:25:17.244197+00:00",
+  "updated_at": "2026-05-01T22:09:38.879548+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -34,9 +34,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.52,
-      "change": 0.02,
-      "change_pct": 4.0,
+      "value": 0.51,
+      "change": -0.01,
+      "change_pct": -1.92,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
