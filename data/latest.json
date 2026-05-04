@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-05-03T03:31:18.693569+00:00",
+  "updated_at": "2026-05-04T02:37:50.985884+00:00",
   "phase": {
     "status": "buy",
-    "score": 3,
+    "score": 2,
     "reasons": [
       "VIX 16.9 안정 (추가 하락 여력 제한)",
       "RRP 0.6B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 0.65% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -133,29 +132,29 @@
     },
     "dxy": {
       "value": 98.21,
-      "change": 0.13,
-      "change_pct": 0.13,
+      "change": -0.0,
+      "change_pct": -0.01,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4629.9,
-      "change": 15.2,
-      "change_pct": 0.33,
-      "signal": "green",
+      "value": 4606.5,
+      "change": -23.4,
+      "change_pct": -0.51,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 101.94,
-      "change": -3.13,
-      "change_pct": -2.98,
+      "value": 101.99,
+      "change": 0.05,
+      "change_pct": 0.05,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 5.93,
-      "change": 0.01,
-      "change_pct": 0.1,
+      "value": 5.99,
+      "change": 0.05,
+      "change_pct": 0.9,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -188,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1476.1,
-      "change": 2.8,
-      "change_pct": 0.19,
+      "value": 1484.8,
+      "change": 8.7,
+      "change_pct": 0.59,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
@@ -257,13 +256,13 @@
       "date": "2026-05-06",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 3
+      "days_until": 2
     },
     {
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 10
+      "days_until": 9
     }
   ]
 }
