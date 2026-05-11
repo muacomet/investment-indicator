@@ -1,13 +1,11 @@
 {
-  "updated_at": "2026-05-11T20:56:23.940862+00:00",
+  "updated_at": "2026-05-11T22:01:15.742432+00:00",
   "phase": {
-    "status": "buy",
-    "score": 3,
+    "status": "neutral",
+    "score": 1,
     "reasons": [
       "VIX 17.2 안정 (추가 하락 여력 제한)",
       "RRP 1.1B$ 소진 (유동성 시장 유입)",
-      "10Y-기준금리 스프레드 0.63% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -19,13 +17,6 @@
       "signal": "green",
       "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
     },
-    "us10y": {
-      "value": 4.38,
-      "change": -0.03,
-      "change_pct": -0.68,
-      "signal": "yellow",
-      "note": "기준금리 +0.5~1%가 정상"
-    },
     "us2y": {
       "value": 3.9,
       "change": -0.02,
@@ -34,9 +25,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.48,
+      "value": 0.47,
       "change": -0.01,
-      "change_pct": -2.04,
+      "change_pct": -2.08,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -60,13 +51,6 @@
       "change_pct": 0.26,
       "signal": "green",
       "note": "M2 증가 = 유동성 확대"
-    },
-    "fed_balance": {
-      "value": 6709.51,
-      "change": 9.555,
-      "change_pct": 0.14,
-      "signal": "green",
-      "note": "QT 진행 중 (단위: B$)"
     },
     "fed_rate": {
       "value": 3.75,
@@ -139,29 +123,29 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4747.4,
-      "change": 27.0,
-      "change_pct": 0.57,
+      "value": 4745.6,
+      "change": 25.2,
+      "change_pct": 0.53,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 98.31,
-      "change": 2.89,
-      "change_pct": 3.03,
-      "signal": "yellow",
+      "value": 98.25,
+      "change": 2.83,
+      "change_pct": 2.97,
+      "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.49,
       "change": 0.24,
-      "change_pct": 3.85,
+      "change_pct": 3.88,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29400.25,
-      "change": 67.75,
+      "value": 29400.0,
+      "change": 67.5,
       "change_pct": 0.23,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
@@ -238,10 +222,10 @@
       "down_day_avg_vol": 5685161153
     },
     "qqq": {
-      "volume": 32677329,
-      "volume_avg_20d": 40249611,
-      "volume_ratio": 0.81,
-      "up_day_avg_vol": 53423636,
+      "volume": 35673639,
+      "volume_avg_20d": 40399426,
+      "volume_ratio": 0.88,
+      "up_day_avg_vol": 53506867,
       "down_day_avg_vol": 65486700
     },
     "schd": {
