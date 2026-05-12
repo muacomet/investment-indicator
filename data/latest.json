@@ -1,11 +1,13 @@
 {
-  "updated_at": "2026-05-11T22:01:15.742432+00:00",
+  "updated_at": "2026-05-12T02:44:03.894088+00:00",
   "phase": {
-    "status": "neutral",
-    "score": 1,
+    "status": "buy",
+    "score": 3,
     "reasons": [
       "VIX 17.2 안정 (추가 하락 여력 제한)",
       "RRP 1.1B$ 소진 (유동성 시장 유입)",
+      "10Y-기준금리 스프레드 0.63% 정상 (경기 확장)",
+      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -16,6 +18,13 @@
       "change_pct": 0.64,
       "signal": "green",
       "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
+    },
+    "us10y": {
+      "value": 4.38,
+      "change": -0.03,
+      "change_pct": -0.68,
+      "signal": "yellow",
+      "note": "기준금리 +0.5~1%가 정상"
     },
     "us2y": {
       "value": 3.9,
@@ -51,6 +60,13 @@
       "change_pct": 0.26,
       "signal": "green",
       "note": "M2 증가 = 유동성 확대"
+    },
+    "fed_balance": {
+      "value": 6709.51,
+      "change": 9.555,
+      "change_pct": 0.14,
+      "signal": "green",
+      "note": "QT 진행 중 (단위: B$)"
     },
     "fed_rate": {
       "value": 3.75,
@@ -116,38 +132,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 97.94,
-      "change": 0.1,
-      "change_pct": 0.1,
+      "value": 98.12,
+      "change": 0.28,
+      "change_pct": 0.29,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4745.6,
-      "change": 25.2,
-      "change_pct": 0.53,
+      "value": 4735.1,
+      "change": 14.7,
+      "change_pct": 0.31,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 98.25,
-      "change": 2.83,
-      "change_pct": 2.97,
-      "signal": "green",
+      "value": 99.14,
+      "change": 3.72,
+      "change_pct": 3.9,
+      "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.49,
-      "change": 0.24,
-      "change_pct": 3.88,
+      "value": 6.45,
+      "change": 0.2,
+      "change_pct": 3.28,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29400.0,
-      "change": 67.5,
-      "change_pct": 0.23,
-      "signal": "green",
+      "value": 29319.25,
+      "change": -13.25,
+      "change_pct": -0.05,
+      "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -172,10 +188,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1466.0,
-      "change": 15.2,
-      "change_pct": 1.05,
-      "signal": "red",
+      "value": 1473.0,
+      "change": 7.0,
+      "change_pct": 0.48,
+      "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
@@ -223,16 +239,16 @@
     },
     "qqq": {
       "volume": 35673639,
-      "volume_avg_20d": 40399426,
+      "volume_avg_20d": 40408131,
       "volume_ratio": 0.88,
-      "up_day_avg_vol": 53506867,
+      "up_day_avg_vol": 53511703,
       "down_day_avg_vol": 65486700
     },
     "schd": {
       "volume": 23799726,
-      "volume_avg_20d": 19262281,
+      "volume_avg_20d": 19265006,
       "volume_ratio": 1.24,
-      "up_day_avg_vol": 22664446,
+      "up_day_avg_vol": 22666204,
       "down_day_avg_vol": 23987548
     }
   },
@@ -241,19 +257,19 @@
       "date": "2026-05-13",
       "event": "CPI",
       "desc": "4월 소비자물가지수",
-      "days_until": 2
+      "days_until": 1
     },
     {
       "date": "2026-06-05",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 25
+      "days_until": 24
     },
     {
       "date": "2026-06-10",
       "event": "CPI",
       "desc": "5월 소비자물가지수",
-      "days_until": 30
+      "days_until": 29
     }
   ]
 }
