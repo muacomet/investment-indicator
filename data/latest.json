@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-15T20:53:59.687933+00:00",
+  "updated_at": "2026-05-15T21:44:03.528777+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -132,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.28,
-      "change": 0.4,
-      "change_pct": 0.4,
+      "value": 99.27,
+      "change": 0.39,
+      "change_pct": 0.39,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4544.5,
-      "change": -133.6,
-      "change_pct": -2.86,
+      "value": 4543.6,
+      "change": -134.5,
+      "change_pct": -2.88,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 101.09,
-      "change": -0.08,
-      "change_pct": -0.08,
+      "value": 101.16,
+      "change": -0.01,
+      "change_pct": -0.01,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.28,
-      "change": -0.29,
-      "change_pct": -4.39,
+      "value": 6.29,
+      "change": -0.28,
+      "change_pct": -4.23,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29171.75,
-      "change": -516.0,
-      "change_pct": -1.74,
+      "value": 29173.0,
+      "change": -514.75,
+      "change_pct": -1.73,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -238,18 +238,18 @@
       "down_day_avg_vol": 5599128321
     },
     "qqq": {
-      "volume": 49649396,
-      "volume_avg_20d": 39076874,
-      "volume_ratio": 1.27,
+      "volume": 51344771,
+      "volume_avg_20d": 39161643,
+      "volume_ratio": 1.31,
       "up_day_avg_vol": 52185656,
-      "down_day_avg_vol": 63927575
+      "down_day_avg_vol": 63995390
     },
     "schd": {
-      "volume": 15862813,
-      "volume_avg_20d": 19305805,
+      "volume": 15914970,
+      "volume_avg_20d": 19308413,
       "volume_ratio": 0.82,
       "up_day_avg_vol": 22426643,
-      "down_day_avg_vol": 23162480
+      "down_day_avg_vol": 23164219
     }
   },
   "calendar": [
