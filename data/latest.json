@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-15T22:37:40.377367+00:00",
+  "updated_at": "2026-05-16T03:26:41.338389+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -257,13 +257,13 @@
       "date": "2026-06-05",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 21
+      "days_until": 20
     },
     {
       "date": "2026-06-10",
       "event": "CPI",
       "desc": "5월 소비자물가지수",
-      "days_until": 26
+      "days_until": 25
     }
   ]
 }
