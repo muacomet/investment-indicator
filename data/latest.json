@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-25T12:03:46.587345+00:00",
+  "updated_at": "2026-05-25T15:36:51.496051+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,9 +131,9 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.94,
-      "change": -0.38,
-      "change_pct": -0.38,
+      "value": 98.95,
+      "change": -0.37,
+      "change_pct": -0.37,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
