@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-05-27T08:00:52.566840+00:00",
+  "updated_at": "2026-05-27T11:52:49.765234+00:00",
   "phase": {
     "status": "buy",
-    "score": 3,
+    "score": 2,
     "reasons": [
       "VIX 16.6 안정 (추가 하락 여력 제한)",
       "RRP 1.8B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 0.81% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -132,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.09,
-      "change": -0.06,
-      "change_pct": -0.06,
+      "value": 99.14,
+      "change": -0.01,
+      "change_pct": -0.01,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4509.8,
-      "change": 9.4,
-      "change_pct": 0.21,
-      "signal": "green",
+      "value": 4472.4,
+      "change": -28.0,
+      "change_pct": -0.62,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.36,
-      "change": -2.53,
-      "change_pct": -2.69,
-      "signal": "green",
+      "value": 90.41,
+      "change": -3.48,
+      "change_pct": -3.71,
+      "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.38,
-      "change": 0.02,
-      "change_pct": 0.37,
-      "signal": "green",
+      "value": 6.34,
+      "change": -0.02,
+      "change_pct": -0.31,
+      "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30115.75,
-      "change": 42.25,
-      "change_pct": 0.14,
+      "value": 30278.0,
+      "change": 204.5,
+      "change_pct": 0.68,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
