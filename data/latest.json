@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-03T08:53:12.676483+00:00",
+  "updated_at": "2026-06-03T13:14:30.382086+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -88,13 +88,6 @@
       "signal": "green",
       "note": "3%+ 경고"
     },
-    "us_mortgage_delinq": {
-      "value": 1.89,
-      "change": 0.1,
-      "change_pct": 5.59,
-      "signal": "green",
-      "note": "4%+ 위험"
-    },
     "us_saving_rate": {
       "value": 2.6,
       "change": -0.6,
@@ -131,38 +124,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.39,
-      "change": 0.17,
-      "change_pct": 0.18,
+      "value": 99.45,
+      "change": 0.23,
+      "change_pct": 0.23,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4484.9,
-      "change": -4.2,
-      "change_pct": -0.09,
-      "signal": "yellow",
+      "value": 4490.9,
+      "change": 1.8,
+      "change_pct": 0.04,
+      "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 96.3,
-      "change": 2.54,
-      "change_pct": 2.71,
+      "value": 95.71,
+      "change": 1.95,
+      "change_pct": 2.08,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.59,
-      "change": -0.06,
-      "change_pct": -0.84,
+      "value": 6.58,
+      "change": -0.07,
+      "change_pct": -0.99,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30711.25,
-      "change": -1.5,
-      "change_pct": -0.0,
-      "signal": "red",
+      "value": 30729.75,
+      "change": 17.0,
+      "change_pct": 0.06,
+      "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
