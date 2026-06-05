@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-06-04T22:06:13.501285+00:00",
+  "updated_at": "2026-06-05T03:30:36.429152+00:00",
   "phase": {
     "status": "buy",
-    "score": 3,
+    "score": 2,
     "reasons": [
       "VIX 16.1 안정 (추가 하락 여력 제한)",
-      "RRP 2.1B$ 소진 (유동성 시장 유입)",
-      "10Y-기준금리 스프레드 0.71% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
+      "RRP 1.1B$ 소진 (유동성 시장 유입)",
+      "10Y-기준금리 스프레드 0.74% 정상 (경기 확장)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -20,37 +19,37 @@
       "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
     },
     "us10y": {
-      "value": 4.46,
-      "change": -0.01,
-      "change_pct": -0.22,
+      "value": 4.49,
+      "change": 0.03,
+      "change_pct": 0.67,
       "signal": "yellow",
       "note": "기준금리 +0.5~1%가 정상"
     },
     "us2y": {
-      "value": 4.05,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 4.08,
+      "change": 0.03,
+      "change_pct": 0.74,
       "signal": "yellow",
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.41,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 0.42,
+      "change": 0.01,
+      "change_pct": 2.44,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
     "tga": {
-      "value": 830.3,
-      "change": 49.003,
-      "change_pct": 6.27,
+      "value": 875.71,
+      "change": 45.417,
+      "change_pct": 5.47,
       "signal": "green",
       "note": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)"
     },
     "rrp": {
-      "value": 2.062,
-      "change": -0.44,
-      "change_pct": -17.59,
+      "value": 1.122,
+      "change": -0.94,
+      "change_pct": -45.59,
       "signal": "yellow",
       "note": "역사적 고점 2.5조 (단위: B$)"
     },
@@ -62,10 +61,10 @@
       "note": "M2 증가 = 유동성 확대"
     },
     "fed_balance": {
-      "value": 6704.38,
-      "change": -9.26,
-      "change_pct": -0.14,
-      "signal": "yellow",
+      "value": 6711.49,
+      "change": 7.112,
+      "change_pct": 0.11,
+      "signal": "green",
       "note": "QT 진행 중 (단위: B$)"
     },
     "fed_rate": {
@@ -134,35 +133,35 @@
     "dxy": {
       "value": 99.42,
       "change": -0.11,
-      "change_pct": -0.12,
+      "change_pct": -0.11,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4502.4,
-      "change": 65.7,
-      "change_pct": 1.48,
+      "value": 4465.0,
+      "change": 28.3,
+      "change_pct": 0.64,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 92.91,
-      "change": -3.11,
-      "change_pct": -3.24,
-      "signal": "yellow",
+      "value": 93.26,
+      "change": -2.76,
+      "change_pct": -2.87,
+      "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.53,
-      "change": 0.05,
-      "change_pct": 0.75,
-      "signal": "green",
+      "value": 6.43,
+      "change": -0.05,
+      "change_pct": -0.79,
+      "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30399.5,
-      "change": -233.75,
-      "change_pct": -0.76,
+      "value": 30209.5,
+      "change": -423.75,
+      "change_pct": -1.38,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -188,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1515.6,
-      "change": 4.3,
-      "change_pct": 0.28,
+      "value": 1528.6,
+      "change": 13.0,
+      "change_pct": 0.86,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
@@ -257,25 +256,25 @@
       "date": "2026-06-05",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 1
+      "days_until": 0
     },
     {
       "date": "2026-06-10",
       "event": "CPI",
       "desc": "5월 소비자물가지수",
-      "days_until": 6
+      "days_until": 5
     },
     {
       "date": "2026-06-17",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-07-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 28
+      "days_until": 27
     }
   ]
 }
