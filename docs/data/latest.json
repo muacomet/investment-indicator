@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-13T04:01:23.189864+00:00",
+  "updated_at": "2026-06-14T04:19:46.515705+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 4,
@@ -140,9 +140,9 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4215.0,
-      "change": 124.7,
-      "change_pct": 3.05,
+      "value": 4238.8,
+      "change": 148.5,
+      "change_pct": 3.63,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
@@ -154,9 +154,9 @@
       "note": ""
     },
     "copper": {
-      "value": 6.43,
-      "change": 0.17,
-      "change_pct": 2.74,
+      "value": 6.45,
+      "change": 0.19,
+      "change_pct": 2.97,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -258,13 +258,19 @@
       "date": "2026-06-17",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 4
+      "days_until": 3
     },
     {
       "date": "2026-07-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 19
+      "days_until": 18
+    },
+    {
+      "date": "2026-07-14",
+      "event": "CPI",
+      "desc": "6월 소비자물가지수",
+      "days_until": 30
     }
   ]
 }
