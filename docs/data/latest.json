@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T12:57:51.044314+00:00",
+  "updated_at": "2026-06-19T15:54:52.857996+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -7,8 +7,7 @@
       "VIX 18.4 안정 (추가 하락 여력 제한)",
       "RRP 0.3B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 0.74% 정상 (경기 확장)",
-      "M2 증가 추세 (유동성 확대)",
-      "S&P 500 -1.2% 하락"
+      "M2 증가 추세 (유동성 확대)"
     ]
   },
   "indicators": {
@@ -104,65 +103,65 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7420.1,
-      "change": -91.25,
-      "change_pct": -1.21,
-      "signal": "red",
+      "value": 7500.58,
+      "change": 80.48,
+      "change_pct": 1.08,
+      "signal": "green",
       "note": ""
     },
     "nasdaq": {
-      "value": 26021.66,
-      "change": -354.68,
-      "change_pct": -1.34,
-      "signal": "red",
+      "value": 26517.93,
+      "change": 496.27,
+      "change_pct": 1.91,
+      "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 722.51,
-      "change": -7.35,
-      "change_pct": -1.01,
-      "signal": "red",
+      "value": 740.62,
+      "change": 18.11,
+      "change_pct": 2.51,
+      "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 31.93,
-      "change": -0.6,
-      "change_pct": -1.84,
+      "value": 31.86,
+      "change": -0.07,
+      "change_pct": -0.22,
       "signal": "red",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.78,
-      "change": 0.69,
-      "change_pct": 0.69,
+      "value": 100.82,
+      "change": -0.03,
+      "change_pct": -0.03,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4166.6,
-      "change": -57.5,
-      "change_pct": -1.36,
+      "value": 4166.1,
+      "change": -58.0,
+      "change_pct": -1.37,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 76.45,
-      "change": -0.15,
-      "change_pct": -0.2,
+      "value": 76.46,
+      "change": -0.14,
+      "change_pct": -0.18,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.34,
-      "change": -0.03,
-      "change_pct": -0.46,
+      "value": 6.33,
+      "change": -0.04,
+      "change_pct": -0.64,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30560.25,
-      "change": 296.9,
-      "change_pct": 0.98,
+      "value": 30659.5,
+      "change": 396.15,
+      "change_pct": 1.31,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -211,45 +210,45 @@
   },
   "momentum": {
     "sp500": {
-      "consecutive_up": 0,
+      "consecutive_up": 1,
       "ath": 7609.78,
-      "ath_distance_pct": -2.49,
-      "daily_change_pct": -1.21
+      "ath_distance_pct": -1.43,
+      "daily_change_pct": 1.08
     },
     "qqq": {
-      "consecutive_up": 0,
+      "consecutive_up": 1,
       "ath": 746.16,
-      "ath_distance_pct": -3.17,
-      "daily_change_pct": -1.01
+      "ath_distance_pct": -0.74,
+      "daily_change_pct": 2.51
     },
     "schd": {
       "consecutive_up": 0,
       "ath": 32.83,
-      "ath_distance_pct": -2.74,
-      "daily_change_pct": -1.84
+      "ath_distance_pct": -2.95,
+      "daily_change_pct": -0.22
     }
   },
   "volume": {
     "sp500": {
-      "volume": 5883740000,
-      "volume_avg_20d": 5649452000,
-      "volume_ratio": 1.04,
-      "up_day_avg_vol": 5423021282,
+      "volume": 9061110000,
+      "volume_avg_20d": 5833300000,
+      "volume_ratio": 1.55,
+      "up_day_avg_vol": 5513973500,
       "down_day_avg_vol": 5557240434
     },
     "qqq": {
-      "volume": 51669300,
-      "volume_avg_20d": 48104850,
-      "volume_ratio": 1.07,
-      "up_day_avg_vol": 45492869,
+      "volume": 49914100,
+      "volume_avg_20d": 48761595,
+      "volume_ratio": 1.02,
+      "up_day_avg_vol": 45603400,
       "down_day_avg_vol": 55574808
     },
     "schd": {
-      "volume": 24015200,
-      "volume_avg_20d": 21151650,
-      "volume_ratio": 1.14,
+      "volume": 21148800,
+      "volume_avg_20d": 21294135,
+      "volume_ratio": 0.99,
       "up_day_avg_vol": 21685324,
-      "down_day_avg_vol": 21557486
+      "down_day_avg_vol": 21543863
     }
   },
   "calendar": [
