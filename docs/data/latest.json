@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-24T22:08:08.289499+00:00",
+  "updated_at": "2026-06-25T02:55:25.899168+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -125,43 +125,43 @@
     },
     "schd": {
       "value": 31.72,
-      "change": -0.3,
-      "change_pct": -0.94,
+      "change": -0.05,
+      "change_pct": -0.15,
       "signal": "red",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.58,
-      "change": 0.17,
-      "change_pct": 0.17,
+      "value": 101.53,
+      "change": 0.12,
+      "change_pct": 0.12,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4016.4,
-      "change": -113.5,
-      "change_pct": -2.75,
+      "value": 3995.1,
+      "change": -134.8,
+      "change_pct": -3.26,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 69.87,
-      "change": -3.34,
-      "change_pct": -4.56,
+      "value": 69.4,
+      "change": -3.81,
+      "change_pct": -5.2,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 5.99,
-      "change": -0.16,
-      "change_pct": -2.54,
+      "value": 5.97,
+      "change": -0.17,
+      "change_pct": -2.79,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30095.25,
-      "change": 429.25,
-      "change_pct": 1.45,
+      "value": 29973.25,
+      "change": 307.25,
+      "change_pct": 1.04,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -187,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1537.2,
-      "change": 1.5,
-      "change_pct": 0.1,
+      "value": 1538.3,
+      "change": 1.1,
+      "change_pct": 0.07,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
@@ -256,13 +256,13 @@
       "date": "2026-07-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 8
+      "days_until": 7
     },
     {
       "date": "2026-07-14",
       "event": "CPI",
       "desc": "6월 소비자물가지수",
-      "days_until": 20
+      "days_until": 19
     }
   ]
 }
