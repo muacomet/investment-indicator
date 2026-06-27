@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-26T22:56:40.089163+00:00",
+  "updated_at": "2026-06-27T03:39:51.339005+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -239,16 +239,16 @@
     },
     "qqq": {
       "volume": 44705529,
-      "volume_avg_20d": 52371086,
+      "volume_avg_20d": 52394891,
       "volume_ratio": 0.85,
-      "up_day_avg_vol": 44195715,
+      "up_day_avg_vol": 44207923,
       "down_day_avg_vol": 50363888
     },
     "schd": {
       "volume": 21589384,
-      "volume_avg_20d": 21227199,
+      "volume_avg_20d": 21229339,
       "volume_ratio": 1.02,
-      "up_day_avg_vol": 20941655,
+      "up_day_avg_vol": 20942914,
       "down_day_avg_vol": 20983046
     }
   },
@@ -257,13 +257,13 @@
       "date": "2026-07-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 6
+      "days_until": 5
     },
     {
       "date": "2026-07-14",
       "event": "CPI",
       "desc": "6월 소비자물가지수",
-      "days_until": 18
+      "days_until": 17
     }
   ]
 }
