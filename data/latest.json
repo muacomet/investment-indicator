@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T04:03:17.385262+00:00",
+  "updated_at": "2026-06-29T03:36:49.707024+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,38 +132,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.36,
-      "change": -0.07,
-      "change_pct": -0.07,
+      "value": 101.34,
+      "change": -0.02,
+      "change_pct": -0.02,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4096.3,
-      "change": 65.8,
-      "change_pct": 1.63,
+      "value": 4086.1,
+      "change": 7.4,
+      "change_pct": 0.18,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 69.23,
-      "change": -2.69,
-      "change_pct": -3.74,
-      "signal": "yellow",
+      "value": 69.95,
+      "change": 0.72,
+      "change_pct": 1.04,
+      "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.21,
-      "change": 0.14,
-      "change_pct": 2.25,
+      "value": 6.2,
+      "change": 0.06,
+      "change_pct": 1.03,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29368.25,
-      "change": -356.5,
-      "change_pct": -1.2,
-      "signal": "red",
+      "value": 29545.5,
+      "change": 177.25,
+      "change_pct": 0.6,
+      "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -188,10 +188,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1545.3,
-      "change": 7.0,
-      "change_pct": 0.46,
-      "signal": "yellow",
+      "value": 1544.2,
+      "change": -1.1,
+      "change_pct": -0.07,
+      "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
@@ -257,13 +257,19 @@
       "date": "2026-07-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 4
+      "days_until": 3
     },
     {
       "date": "2026-07-14",
       "event": "CPI",
       "desc": "6월 소비자물가지수",
-      "days_until": 16
+      "days_until": 15
+    },
+    {
+      "date": "2026-07-29",
+      "event": "FOMC",
+      "desc": "FOMC 금리 결정",
+      "days_until": 30
     }
   ]
 }
