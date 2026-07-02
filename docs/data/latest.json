@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-02T20:57:04.244802+00:00",
+  "updated_at": "2026-07-02T22:02:06.901155+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -33,16 +33,16 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.31,
-      "change": 0.01,
-      "change_pct": 3.33,
+      "value": 0.35,
+      "change": 0.04,
+      "change_pct": 12.9,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
     "tga": {
-      "value": 918.7,
-      "change": 37.983,
-      "change_pct": 4.31,
+      "value": 880.24,
+      "change": -38.459,
+      "change_pct": -4.19,
       "signal": "green",
       "note": "5천억~1조 정상 / 1조+ 흡수 / 5천억- 재충전 (단위: B$)"
     },
@@ -61,9 +61,9 @@
       "note": "M2 증가 = 유동성 확대"
     },
     "fed_balance": {
-      "value": 6735.65,
-      "change": -0.779,
-      "change_pct": -0.01,
+      "value": 6724.56,
+      "change": -11.081,
+      "change_pct": -0.16,
       "signal": "yellow",
       "note": "QT 진행 중 (단위: B$)"
     },
@@ -131,36 +131,36 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.86,
-      "change": -0.53,
-      "change_pct": -0.52,
+      "value": 100.88,
+      "change": -0.51,
+      "change_pct": -0.5,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4134.0,
-      "change": 65.7,
-      "change_pct": 1.61,
+      "value": 4135.5,
+      "change": 67.2,
+      "change_pct": 1.65,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 68.49,
-      "change": -0.09,
-      "change_pct": -0.13,
+      "value": 68.46,
+      "change": -0.12,
+      "change_pct": -0.17,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.18,
       "change": 0.05,
-      "change_pct": 0.86,
+      "change_pct": 0.85,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29552.5,
-      "change": -541.75,
+      "value": 29551.75,
+      "change": -542.5,
       "change_pct": -1.8,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
@@ -244,10 +244,10 @@
       "down_day_avg_vol": 49198558
     },
     "schd": {
-      "volume": 19162032,
-      "volume_avg_20d": 21597321,
-      "volume_ratio": 0.89,
-      "up_day_avg_vol": 20265851,
+      "volume": 19827830,
+      "volume_avg_20d": 21630611,
+      "volume_ratio": 0.92,
+      "up_day_avg_vol": 20286657,
       "down_day_avg_vol": 20827600
     }
   },
