@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T18:55:18.508638+00:00",
+  "updated_at": "2026-07-03T20:07:42.160117+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,9 +131,9 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.84,
-      "change": -0.02,
-      "change_pct": -0.02,
+      "value": 100.86,
+      "change": -0.0,
+      "change_pct": -0.0,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
@@ -237,17 +237,17 @@
       "down_day_avg_vol": 5623777500
     },
     "qqq": {
-      "volume": 50959800,
-      "volume_avg_20d": 54341740,
+      "volume": 51086100,
+      "volume_avg_20d": 54348055,
       "volume_ratio": 0.94,
       "up_day_avg_vol": 41873797,
-      "down_day_avg_vol": 49246112
+      "down_day_avg_vol": 49251375
     },
     "schd": {
-      "volume": 19859200,
-      "volume_avg_20d": 21632180,
+      "volume": 19932100,
+      "volume_avg_20d": 21635825,
       "volume_ratio": 0.92,
-      "up_day_avg_vol": 20287637,
+      "up_day_avg_vol": 20289915,
       "down_day_avg_vol": 20827600
     }
   },
