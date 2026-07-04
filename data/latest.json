@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-03T22:28:35.907036+00:00",
+  "updated_at": "2026-07-04T03:22:18.361342+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -256,13 +256,13 @@
       "date": "2026-07-14",
       "event": "CPI",
       "desc": "6월 소비자물가지수",
-      "days_until": 11
+      "days_until": 10
     },
     {
       "date": "2026-07-29",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 26
+      "days_until": 25
     }
   ]
 }
