@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-07T10:27:45.210240+00:00",
+  "updated_at": "2026-07-07T12:41:46.033471+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -123,47 +123,47 @@
       "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
-    "schd": {
-      "value": 32.24,
-      "change": -0.15,
-      "change_pct": -0.46,
-      "signal": "red",
-      "note": "미국 배당성장 ETF"
-    },
     "dxy": {
-      "value": 100.97,
-      "change": 0.12,
-      "change_pct": 0.12,
+      "value": 100.87,
+      "change": 0.02,
+      "change_pct": 0.02,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4144.4,
-      "change": -10.7,
-      "change_pct": -0.26,
-      "signal": "yellow",
+      "value": 4176.3,
+      "change": 21.2,
+      "change_pct": 0.51,
+      "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 69.19,
-      "change": 0.64,
-      "change_pct": 0.93,
+      "value": 69.0,
+      "change": 0.45,
+      "change_pct": 0.66,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.24,
       "change": 0.06,
-      "change_pct": 0.96,
+      "change_pct": 1.02,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29654.5,
-      "change": -286.5,
-      "change_pct": -0.96,
+      "value": 29676.25,
+      "change": -264.75,
+      "change_pct": -0.88,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
+    },
+    "schd": {
+      "value": 32.24,
+      "change": -0.15,
+      "change_pct": -0.46,
+      "signal": "red",
+      "note": "미국 배당성장 ETF"
     },
     "kospi": {
       "value": 8051.33,
@@ -173,16 +173,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.68,
-      "change": 0.001,
-      "change_pct": 0.03,
+      "value": 3.67,
+      "change": -0.006,
+      "change_pct": -0.16,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 4.2,
-      "change": 0.006,
-      "change_pct": 0.14,
+      "value": 4.21,
+      "change": 0.01,
+      "change_pct": 0.24,
       "signal": "red",
       "note": ""
     },
