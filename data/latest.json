@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-10T21:15:40.096770+00:00",
+  "updated_at": "2026-07-10T22:16:51.669037+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -230,10 +230,10 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2304282000,
-      "volume_avg_20d": 5687349100,
+      "volume": 2353229000,
+      "volume_avg_20d": 5689796450,
       "volume_ratio": 0.41,
-      "up_day_avg_vol": 5493783111,
+      "up_day_avg_vol": 5495142750,
       "down_day_avg_vol": 5629162000
     },
     "qqq": {
