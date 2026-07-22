@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-07-21T22:15:08.706139+00:00",
+  "updated_at": "2026-07-22T02:23:15.587777+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 5,
     "reasons": [
       "VIX 18.6 안정 (추가 하락 여력 제한)",
-      "TGA 4주 -24.8% 급감 → 유동성 방출",
+      "TGA 4주 -23.0% 급감 → 유동성 방출",
       "RRP 0.3B$ 소진 (유동성 시장 유입)",
       "TGA 방출 + RRP 소진 → 쌍둥이 유동성 신호",
       "10Y-기준금리 스프레드 0.85% 정상 (경기 확장)",
@@ -133,37 +133,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.19,
-      "change": 0.2,
-      "change_pct": 0.2,
+      "value": 101.15,
+      "change": 0.16,
+      "change_pct": 0.16,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4082.6,
-      "change": 72.3,
-      "change_pct": 1.8,
+      "value": 4125.2,
+      "change": 114.9,
+      "change_pct": 2.87,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.61,
-      "change": 1.38,
-      "change_pct": 1.66,
+      "value": 85.33,
+      "change": 2.1,
+      "change_pct": 2.52,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.53,
       "change": 0.23,
-      "change_pct": 3.68,
+      "change_pct": 3.59,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29295.0,
-      "change": 516.25,
-      "change_pct": 1.79,
+      "value": 29262.75,
+      "change": 484.0,
+      "change_pct": 1.68,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -189,9 +189,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1482.0,
-      "change": -2.3,
-      "change_pct": -0.15,
+      "value": 1475.6,
+      "change": -6.4,
+      "change_pct": -0.43,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -258,19 +258,19 @@
       "date": "2026-07-29",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 8
+      "days_until": 7
     },
     {
       "date": "2026-08-07",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 17
+      "days_until": 16
     },
     {
       "date": "2026-08-12",
       "event": "CPI",
       "desc": "7월 소비자물가지수",
-      "days_until": 22
+      "days_until": 21
     }
   ]
 }
