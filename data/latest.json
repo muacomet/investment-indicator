@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T20:36:22.000440+00:00",
+  "updated_at": "2026-07-24T21:41:22.262411+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -33,9 +33,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.34,
-      "change": -0.02,
-      "change_pct": -5.56,
+      "value": 0.36,
+      "change": 0.02,
+      "change_pct": 5.88,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.49,
-      "change": 0.06,
-      "change_pct": 0.05,
+      "value": 101.46,
+      "change": 0.03,
+      "change_pct": 0.03,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4057.1,
-      "change": 10.5,
-      "change_pct": 0.26,
+      "value": 4055.7,
+      "change": 9.1,
+      "change_pct": 0.22,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 90.39,
-      "change": -1.8,
-      "change_pct": -1.95,
+      "value": 90.47,
+      "change": -1.72,
+      "change_pct": -1.87,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.34,
       "change": 0.03,
-      "change_pct": 0.49,
+      "change_pct": 0.55,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 28315.75,
-      "change": -305.0,
-      "change_pct": -1.07,
+      "value": 28306.5,
+      "change": -314.25,
+      "change_pct": -1.1,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -230,10 +230,10 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2973085000,
-      "volume_avg_20d": 5245435250,
-      "volume_ratio": 0.57,
-      "up_day_avg_vol": 5507027727,
+      "volume": 3022195000,
+      "volume_avg_20d": 5247890750,
+      "volume_ratio": 0.58,
+      "up_day_avg_vol": 5508515909,
       "down_day_avg_vol": 5591338571
     },
     "qqq": {
