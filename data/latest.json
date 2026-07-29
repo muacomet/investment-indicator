@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T16:27:29.419494+00:00",
+  "updated_at": "2026-07-29T17:45:39.948000+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -104,72 +104,72 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7358.41,
-      "change": -70.37,
-      "change_pct": -0.95,
+      "value": 7381.38,
+      "change": -47.4,
+      "change_pct": -0.64,
       "signal": "red",
       "note": ""
     },
     "nasdaq": {
-      "value": 24590.96,
-      "change": -285.95,
-      "change_pct": -1.15,
+      "value": 24716.09,
+      "change": -160.82,
+      "change_pct": -0.65,
       "signal": "red",
       "note": ""
     },
     "qqq": {
-      "value": 666.18,
-      "change": -9.31,
-      "change_pct": -1.38,
+      "value": 669.83,
+      "change": -5.66,
+      "change_pct": -0.84,
       "signal": "red",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
       "value": 34.01,
       "change": 0.12,
-      "change_pct": 0.37,
+      "change_pct": 0.34,
       "signal": "green",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.49,
-      "change": 0.11,
-      "change_pct": 0.11,
+      "value": 101.37,
+      "change": -0.01,
+      "change_pct": -0.01,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4067.3,
-      "change": 31.0,
-      "change_pct": 0.77,
+      "value": 4095.7,
+      "change": 59.4,
+      "change_pct": 1.47,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.81,
-      "change": 5.55,
-      "change_pct": 7.0,
+      "value": 84.61,
+      "change": 5.35,
+      "change_pct": 6.75,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.29,
-      "change": -0.03,
-      "change_pct": -0.51,
+      "value": 6.32,
+      "change": -0.0,
+      "change_pct": -0.04,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 27427.75,
-      "change": -494.25,
-      "change_pct": -1.77,
+      "value": 27661.5,
+      "change": -260.5,
+      "change_pct": -0.93,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
-      "value": 6023.66,
-      "change": -732.09,
-      "change_pct": -10.84,
+      "value": 5663.24,
+      "change": -360.42,
+      "change_pct": -5.98,
       "signal": "red",
       "note": ""
     },
@@ -213,42 +213,42 @@
     "sp500": {
       "consecutive_up": 0,
       "ath": 7609.78,
-      "ath_distance_pct": -3.3,
-      "daily_change_pct": -0.95
+      "ath_distance_pct": -3.0,
+      "daily_change_pct": -0.43
     },
     "qqq": {
       "consecutive_up": 0,
       "ath": 746.16,
-      "ath_distance_pct": -10.71,
-      "daily_change_pct": -1.36
+      "ath_distance_pct": -10.23,
+      "daily_change_pct": -0.84
     },
     "schd": {
-      "consecutive_up": 3,
+      "consecutive_up": 4,
       "ath": 34.01,
       "ath_distance_pct": 0.0,
-      "daily_change_pct": 1.75
+      "daily_change_pct": 0.35
     }
   },
   "volume": {
     "sp500": {
-      "volume": 1296028000,
-      "volume_avg_20d": 4889186900,
-      "volume_ratio": 0.27,
-      "up_day_avg_vol": 5549960857,
-      "down_day_avg_vol": 5475176222
+      "volume": 1652155000,
+      "volume_avg_20d": 4976023250,
+      "volume_ratio": 0.33,
+      "up_day_avg_vol": 5569609696,
+      "down_day_avg_vol": 5488366111
     },
     "qqq": {
-      "volume": 20028695,
-      "volume_avg_20d": 36985559,
-      "volume_ratio": 0.54,
+      "volume": 26677345,
+      "volume_avg_20d": 37317992,
+      "volume_ratio": 0.71,
       "up_day_avg_vol": 38935483,
-      "down_day_avg_vol": 47100948
+      "down_day_avg_vol": 47315420
     },
     "schd": {
-      "volume": 15902708,
-      "volume_avg_20d": 19751805,
-      "volume_ratio": 0.81,
-      "up_day_avg_vol": 19830597,
+      "volume": 18847486,
+      "volume_avg_20d": 20224569,
+      "volume_ratio": 0.93,
+      "up_day_avg_vol": 20133649,
       "down_day_avg_vol": 21368778
     }
   },
