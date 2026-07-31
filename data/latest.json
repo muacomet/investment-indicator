@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T22:40:58.213183+00:00",
+  "updated_at": "2026-07-31T02:31:38.677614+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.97,
-      "change": -0.83,
-      "change_pct": -0.82,
+      "value": 100.15,
+      "change": -0.65,
+      "change_pct": -0.64,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4165.8,
-      "change": 131.1,
-      "change_pct": 3.25,
+      "value": 4141.3,
+      "change": 106.6,
+      "change_pct": 2.64,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.12,
-      "change": -0.34,
-      "change_pct": -0.4,
+      "value": 82.29,
+      "change": -2.17,
+      "change_pct": -2.57,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.5,
-      "change": 0.23,
-      "change_pct": 3.63,
+      "value": 6.49,
+      "change": 0.22,
+      "change_pct": 3.53,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 28352.25,
-      "change": 1010.25,
-      "change_pct": 3.69,
+      "value": 28419.0,
+      "change": 1077.0,
+      "change_pct": 3.94,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -187,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1450.1,
-      "change": -16.1,
-      "change_pct": -1.1,
+      "value": 1441.1,
+      "change": -9.0,
+      "change_pct": -0.62,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -253,22 +253,16 @@
   },
   "calendar": [
     {
-      "date": "2026-07-29",
-      "event": "FOMC",
-      "desc": "FOMC 결과 발표됨",
-      "days_until": -1
-    },
-    {
       "date": "2026-08-07",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 8
+      "days_until": 7
     },
     {
       "date": "2026-08-12",
       "event": "CPI",
       "desc": "7월 소비자물가지수",
-      "days_until": 13
+      "days_until": 12
     }
   ]
 }
