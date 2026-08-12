@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T07:19:27.618660+00:00",
+  "updated_at": "2026-08-12T08:46:08.698123+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -138,30 +138,30 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4460.6,
-      "change": 77.6,
-      "change_pct": 1.77,
+      "value": 4464.1,
+      "change": 81.1,
+      "change_pct": 1.85,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.0,
-      "change": 0.8,
-      "change_pct": 0.96,
+      "value": 83.72,
+      "change": 0.52,
+      "change_pct": 0.63,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.67,
       "change": 0.06,
-      "change_pct": 0.85,
+      "change_pct": 0.9,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29746.25,
-      "change": 120.25,
-      "change_pct": 0.41,
+      "value": 29766.5,
+      "change": 140.5,
+      "change_pct": 0.47,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -174,15 +174,15 @@
     },
     "kr2y": {
       "value": 3.63,
-      "change": 0.032,
-      "change_pct": 0.89,
+      "change": -0.006,
+      "change_pct": -0.17,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 4.3,
-      "change": 0.062,
-      "change_pct": 1.46,
+      "value": 4.29,
+      "change": -0.007,
+      "change_pct": -0.16,
       "signal": "red",
       "note": ""
     },
