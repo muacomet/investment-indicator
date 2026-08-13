@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T21:27:02.425776+00:00",
+  "updated_at": "2026-08-13T22:09:26.499211+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -102,13 +102,6 @@
       "signal": "red",
       "note": "5% 이상 건전"
     },
-    "sp500": {
-      "value": 7798.99,
-      "change": 50.49,
-      "change_pct": 0.65,
-      "signal": "green",
-      "note": ""
-    },
     "nasdaq": {
       "value": 26803.03,
       "change": 214.54,
@@ -164,6 +157,13 @@
       "change_pct": 1.21,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
+    },
+    "sp500": {
+      "value": 7798.99,
+      "change": 50.49,
+      "change_pct": 0.65,
+      "signal": "green",
+      "note": ""
     },
     "kospi": {
       "value": 6813.34,
