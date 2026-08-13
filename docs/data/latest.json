@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T01:47:25.253258+00:00",
+  "updated_at": "2026-08-13T04:13:11.279073+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.93,
-      "change": 0.11,
-      "change_pct": 0.11,
+      "value": 100.01,
+      "change": 0.19,
+      "change_pct": 0.19,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4486.8,
-      "change": 103.8,
-      "change_pct": 2.37,
+      "value": 4408.9,
+      "change": 25.9,
+      "change_pct": 0.59,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 82.29,
-      "change": -0.91,
-      "change_pct": -1.09,
+      "value": 83.27,
+      "change": 0.07,
+      "change_pct": 0.08,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.58,
-      "change": -0.03,
-      "change_pct": -0.48,
+      "value": 6.6,
+      "change": -0.01,
+      "change_pct": -0.23,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29820.5,
-      "change": 194.5,
-      "change_pct": 0.66,
+      "value": 29853.25,
+      "change": 227.25,
+      "change_pct": 0.77,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -231,25 +231,25 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2674503000,
-      "volume_avg_20d": 5121458650,
-      "volume_ratio": 0.52,
-      "up_day_avg_vol": 5444533843,
-      "down_day_avg_vol": 5591403333
+      "volume": 4574170000,
+      "volume_avg_20d": 5247789500,
+      "volume_ratio": 0.87,
+      "up_day_avg_vol": 5490141176,
+      "down_day_avg_vol": 5566367142
     },
     "qqq": {
-      "volume": 28772933,
-      "volume_avg_20d": 41141241,
+      "volume": 28926200,
+      "volume_avg_20d": 41148905,
       "volume_ratio": 0.7,
-      "up_day_avg_vol": 40428494,
+      "up_day_avg_vol": 40433603,
       "down_day_avg_vol": 46748021
     },
     "schd": {
-      "volume": 18501706,
-      "volume_avg_20d": 23325105,
-      "volume_ratio": 0.79,
+      "volume": 18933400,
+      "volume_avg_20d": 23346690,
+      "volume_ratio": 0.81,
       "up_day_avg_vol": 20724525,
-      "down_day_avg_vol": 22307674
+      "down_day_avg_vol": 22323662
     }
   },
   "calendar": [
