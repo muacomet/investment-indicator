@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-12T22:21:24.726733+00:00",
+  "updated_at": "2026-08-13T01:47:25.253258+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,36 +132,36 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.99,
-      "change": 0.17,
-      "change_pct": 0.17,
+      "value": 99.93,
+      "change": 0.11,
+      "change_pct": 0.11,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4462.7,
-      "change": 79.7,
-      "change_pct": 1.82,
+      "value": 4486.8,
+      "change": 103.8,
+      "change_pct": 2.37,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 82.73,
-      "change": -0.47,
-      "change_pct": -0.56,
+      "value": 82.29,
+      "change": -0.91,
+      "change_pct": -1.09,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.61,
-      "change": -0.01,
-      "change_pct": -0.11,
+      "value": 6.58,
+      "change": -0.03,
+      "change_pct": -0.48,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29820.25,
-      "change": 194.25,
+      "value": 29820.5,
+      "change": 194.5,
       "change_pct": 0.66,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
@@ -232,10 +232,10 @@
   "volume": {
     "sp500": {
       "volume": 2674503000,
-      "volume_avg_20d": 5152806150,
+      "volume_avg_20d": 5121458650,
       "volume_ratio": 0.52,
-      "up_day_avg_vol": 5434268617,
-      "down_day_avg_vol": 5566367142
+      "up_day_avg_vol": 5444533843,
+      "down_day_avg_vol": 5591403333
     },
     "qqq": {
       "volume": 28772933,
@@ -254,22 +254,16 @@
   },
   "calendar": [
     {
-      "date": "2026-08-12",
-      "event": "CPI",
-      "desc": "7월 소비자물가지수",
-      "days_until": 0
-    },
-    {
       "date": "2026-09-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 23
+      "days_until": 22
     },
     {
       "date": "2026-09-11",
       "event": "CPI",
       "desc": "8월 소비자물가지수",
-      "days_until": 30
+      "days_until": 29
     }
   ]
 }
