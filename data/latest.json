@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-14T21:59:12.384344+00:00",
+  "updated_at": "2026-08-15T01:19:52.147607+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -257,13 +257,13 @@
       "date": "2026-09-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 21
+      "days_until": 20
     },
     {
       "date": "2026-09-11",
       "event": "CPI",
       "desc": "8월 소비자물가지수",
-      "days_until": 28
+      "days_until": 27
     }
   ]
 }
