@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T21:46:41.661273+00:00",
+  "updated_at": "2026-08-17T22:06:55.162361+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -144,13 +144,6 @@
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
-    "wti": {
-      "value": 84.95,
-      "change": 2.55,
-      "change_pct": 3.09,
-      "signal": "yellow",
-      "note": ""
-    },
     "copper": {
       "value": 6.61,
       "change": 0.01,
@@ -164,6 +157,13 @@
       "change_pct": -0.21,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
+    },
+    "wti": {
+      "value": 84.95,
+      "change": 2.55,
+      "change_pct": 3.09,
+      "signal": "yellow",
+      "note": ""
     },
     "kospi": {
       "value": 6977.94,
