@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-17T21:25:55.964791+00:00",
+  "updated_at": "2026-08-17T21:46:41.661273+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -116,6 +116,13 @@
       "signal": "red",
       "note": ""
     },
+    "qqq": {
+      "value": 729.87,
+      "change": -1.2,
+      "change_pct": -0.16,
+      "signal": "red",
+      "note": "나스닥100 추종 ETF"
+    },
     "schd": {
       "value": 34.29,
       "change": -0.23,
@@ -124,9 +131,9 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.57,
-      "change": -0.1,
-      "change_pct": -0.1,
+      "value": 99.58,
+      "change": -0.09,
+      "change_pct": -0.09,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
@@ -157,13 +164,6 @@
       "change_pct": -0.21,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
-    },
-    "qqq": {
-      "value": 729.87,
-      "change": -1.2,
-      "change_pct": -0.16,
-      "signal": "red",
-      "note": "나스닥100 추종 ETF"
     },
     "kospi": {
       "value": 6977.94,
