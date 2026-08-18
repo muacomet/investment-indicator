@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-18T21:03:10.324950+00:00",
+  "updated_at": "2026-08-18T21:20:14.805497+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -33,9 +33,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.53,
-      "change": 0.02,
-      "change_pct": 3.92,
+      "value": 0.52,
+      "change": -0.01,
+      "change_pct": -1.89,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -109,6 +109,13 @@
       "signal": "red",
       "note": ""
     },
+    "nasdaq": {
+      "value": 26289.71,
+      "change": -355.2,
+      "change_pct": -1.33,
+      "signal": "red",
+      "note": ""
+    },
     "qqq": {
       "value": 717.51,
       "change": -12.36,
@@ -124,46 +131,39 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.67,
-      "change": 0.03,
-      "change_pct": 0.03,
+      "value": 99.65,
+      "change": 0.01,
+      "change_pct": 0.01,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4387.0,
-      "change": -30.8,
-      "change_pct": -0.7,
+      "value": 4389.5,
+      "change": -28.3,
+      "change_pct": -0.64,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.46,
-      "change": -0.04,
-      "change_pct": -0.05,
+      "value": 84.42,
+      "change": -0.08,
+      "change_pct": -0.09,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.46,
       "change": -0.15,
-      "change_pct": -2.23,
+      "change_pct": -2.24,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29555.5,
-      "change": -540.5,
-      "change_pct": -1.8,
+      "value": 29559.5,
+      "change": -536.5,
+      "change_pct": -1.78,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
-    },
-    "nasdaq": {
-      "value": 26289.71,
-      "change": -355.2,
-      "change_pct": -1.33,
-      "signal": "red",
-      "note": ""
     },
     "kospi": {
       "value": 6869.83,
@@ -231,10 +231,10 @@
   "volume": {
     "sp500": {
       "volume": 2650043000,
-      "volume_avg_20d": 5004053150,
+      "volume_avg_20d": 5012792650,
       "volume_ratio": 0.53,
-      "up_day_avg_vol": 5477381764,
-      "down_day_avg_vol": 5378862250
+      "up_day_avg_vol": 5490341562,
+      "down_day_avg_vol": 5396953814
     },
     "qqq": {
       "volume": 48164969,
