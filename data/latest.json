@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-18T07:34:38.651766+00:00",
+  "updated_at": "2026-08-18T08:32:26.783432+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.65,
-      "change": -0.02,
-      "change_pct": -0.02,
+      "value": 99.67,
+      "change": 0.0,
+      "change_pct": 0.0,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4456.8,
-      "change": 39.0,
-      "change_pct": 0.88,
+      "value": 4445.9,
+      "change": 28.1,
+      "change_pct": 0.64,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.96,
-      "change": 0.46,
-      "change_pct": 0.54,
+      "value": 84.5,
+      "change": 0.0,
+      "change_pct": 0.0,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.57,
-      "change": -0.03,
-      "change_pct": -0.48,
+      "value": 6.53,
+      "change": -0.07,
+      "change_pct": -1.12,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29862.5,
-      "change": -233.5,
-      "change_pct": -0.78,
+      "value": 29741.0,
+      "change": -355.0,
+      "change_pct": -1.18,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -173,16 +173,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.64,
-      "change": 0.023,
-      "change_pct": 0.64,
+      "value": 3.68,
+      "change": 0.037,
+      "change_pct": 1.02,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 4.31,
-      "change": 0.015,
-      "change_pct": 0.35,
+      "value": 4.38,
+      "change": 0.069,
+      "change_pct": 1.6,
       "signal": "red",
       "note": ""
     },
@@ -231,10 +231,10 @@
   "volume": {
     "sp500": {
       "volume": 4159900000,
-      "volume_avg_20d": 5164016500,
-      "volume_ratio": 0.81,
-      "up_day_avg_vol": 5477381764,
-      "down_day_avg_vol": 5516541111
+      "volume_avg_20d": 5187751500,
+      "volume_ratio": 0.8,
+      "up_day_avg_vol": 5490341562,
+      "down_day_avg_vol": 5540623846
     },
     "qqq": {
       "volume": 23790600,
