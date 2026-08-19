@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-19T21:00:00.572334+00:00",
+  "updated_at": "2026-08-19T21:25:04.120378+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -34,9 +34,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.52,
-      "change": -0.01,
-      "change_pct": -1.89,
+      "value": 0.46,
+      "change": -0.06,
+      "change_pct": -11.54,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -132,23 +132,23 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.79,
-      "change": -0.86,
-      "change_pct": -0.87,
+      "value": 98.8,
+      "change": -0.85,
+      "change_pct": -0.85,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4579.1,
-      "change": 213.1,
-      "change_pct": 4.88,
+      "value": 4580.7,
+      "change": 214.7,
+      "change_pct": 4.92,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.25,
-      "change": -0.69,
-      "change_pct": -0.81,
+      "value": 84.4,
+      "change": -0.54,
+      "change_pct": -0.64,
       "signal": "green",
       "note": ""
     },
@@ -160,9 +160,9 @@
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29539.5,
-      "change": -46.5,
-      "change_pct": -0.16,
+      "value": 29561.0,
+      "change": -25.0,
+      "change_pct": -0.08,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -232,17 +232,17 @@
   "volume": {
     "sp500": {
       "volume": 2981221000,
-      "volume_avg_20d": 5006227550,
+      "volume_avg_20d": 4994322050,
       "volume_ratio": 0.6,
-      "up_day_avg_vol": 5406707382,
-      "down_day_avg_vol": 5448600000
+      "up_day_avg_vol": 5415250031,
+      "down_day_avg_vol": 5469274444
     },
     "qqq": {
-      "volume": 33347399,
-      "volume_avg_20d": 40334299,
-      "volume_ratio": 0.83,
+      "volume": 34834540,
+      "volume_avg_20d": 40408657,
+      "volume_ratio": 0.86,
       "up_day_avg_vol": 40504858,
-      "down_day_avg_vol": 44850599
+      "down_day_avg_vol": 44895664
     },
     "schd": {
       "volume": 25068595,
