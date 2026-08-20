@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T21:36:51.593402+00:00",
+  "updated_at": "2026-08-20T21:57:14.656495+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -245,11 +245,11 @@
       "down_day_avg_vol": 44570601
     },
     "schd": {
-      "volume": 20569969,
-      "volume_avg_20d": 23964438,
-      "volume_ratio": 0.86,
+      "volume": 21266306,
+      "volume_avg_20d": 23999255,
+      "volume_ratio": 0.89,
       "up_day_avg_vol": 21090226,
-      "down_day_avg_vol": 22567066
+      "down_day_avg_vol": 22591935
     }
   },
   "calendar": [
