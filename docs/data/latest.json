@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T11:26:11.136538+00:00",
+  "updated_at": "2026-08-21T11:52:28.663432+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -103,19 +103,19 @@
       "signal": "red",
       "note": "5% 이상 건전"
     },
-    "sp500": {
-      "value": 7641.16,
-      "change": -66.82,
-      "change_pct": -0.87,
-      "signal": "red",
-      "note": ""
-    },
     "nasdaq": {
       "value": 26067.17,
       "change": -263.92,
       "change_pct": -1.0,
       "signal": "red",
       "note": ""
+    },
+    "qqq": {
+      "value": 710.93,
+      "change": -5.15,
+      "change_pct": -0.72,
+      "signal": "red",
+      "note": "나스닥100 추종 ETF"
     },
     "schd": {
       "value": 34.83,
@@ -125,46 +125,46 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.64,
-      "change": -0.26,
-      "change_pct": -0.26,
+      "value": 98.67,
+      "change": -0.23,
+      "change_pct": -0.24,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4649.1,
-      "change": 132.8,
-      "change_pct": 2.94,
+      "value": 4651.8,
+      "change": 135.5,
+      "change_pct": 3.0,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 87.24,
-      "change": -0.59,
-      "change_pct": -0.67,
+      "value": 86.48,
+      "change": -1.35,
+      "change_pct": -1.54,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.6,
-      "change": 0.14,
-      "change_pct": 2.18,
+      "value": 6.61,
+      "change": 0.15,
+      "change_pct": 2.36,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29474.0,
-      "change": 173.5,
-      "change_pct": 0.59,
+      "value": 29514.75,
+      "change": 214.25,
+      "change_pct": 0.73,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
-    "qqq": {
-      "value": 710.93,
-      "change": -5.15,
-      "change_pct": -0.72,
+    "sp500": {
+      "value": 7641.16,
+      "change": -66.82,
+      "change_pct": -0.87,
       "signal": "red",
-      "note": "나스닥100 추종 ETF"
+      "note": ""
     },
     "kospi": {
       "value": 6852.58,
