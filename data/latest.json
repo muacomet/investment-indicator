@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-20T21:57:14.656495+00:00",
+  "updated_at": "2026-08-21T01:05:42.644613+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -103,13 +103,6 @@
       "signal": "red",
       "note": "5% 이상 건전"
     },
-    "sp500": {
-      "value": 7641.16,
-      "change": -66.82,
-      "change_pct": -0.87,
-      "signal": "red",
-      "note": ""
-    },
     "nasdaq": {
       "value": 26067.17,
       "change": -263.92,
@@ -132,39 +125,46 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.87,
-      "change": 0.04,
-      "change_pct": 0.04,
+      "value": 98.82,
+      "change": -0.01,
+      "change_pct": -0.01,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4575.1,
-      "change": 85.7,
-      "change_pct": 1.91,
+      "value": 4567.0,
+      "change": 77.6,
+      "change_pct": 1.73,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 86.21,
-      "change": 0.38,
-      "change_pct": 0.44,
+      "value": 86.42,
+      "change": 0.59,
+      "change_pct": 0.69,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.48,
-      "change": -0.01,
-      "change_pct": -0.08,
-      "signal": "yellow",
+      "value": 6.5,
+      "change": 0.01,
+      "change_pct": 0.13,
+      "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29317.25,
-      "change": -195.5,
-      "change_pct": -0.66,
+      "value": 29322.5,
+      "change": -190.25,
+      "change_pct": -0.64,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
+    },
+    "sp500": {
+      "value": 7641.16,
+      "change": -66.82,
+      "change_pct": -0.87,
+      "signal": "red",
+      "note": ""
     },
     "kospi": {
       "value": 6852.58,
@@ -188,9 +188,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1402.5,
-      "change": -8.5,
-      "change_pct": -0.6,
+      "value": 1393.0,
+      "change": -9.5,
+      "change_pct": -0.68,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -232,24 +232,24 @@
   "volume": {
     "sp500": {
       "volume": 2706581000,
-      "volume_avg_20d": 4975940050,
+      "volume_avg_20d": 4982149550,
       "volume_ratio": 0.54,
-      "up_day_avg_vol": 5472433636,
-      "down_day_avg_vol": 5354047620
+      "up_day_avg_vol": 5485492258,
+      "down_day_avg_vol": 5370606821
     },
     "qqq": {
-      "volume": 32876361,
-      "volume_avg_20d": 39899403,
-      "volume_ratio": 0.82,
+      "volume": 33271359,
+      "volume_avg_20d": 39919152,
+      "volume_ratio": 0.83,
       "up_day_avg_vol": 40650910,
-      "down_day_avg_vol": 44570601
+      "down_day_avg_vol": 44582219
     },
     "schd": {
-      "volume": 21266306,
-      "volume_avg_20d": 23999255,
+      "volume": 21272757,
+      "volume_avg_20d": 23999577,
       "volume_ratio": 0.89,
       "up_day_avg_vol": 21090226,
-      "down_day_avg_vol": 22591935
+      "down_day_avg_vol": 22592166
     }
   },
   "calendar": [
@@ -257,19 +257,19 @@
       "date": "2026-09-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 15
+      "days_until": 14
     },
     {
       "date": "2026-09-11",
       "event": "CPI",
       "desc": "8월 소비자물가지수",
-      "days_until": 22
+      "days_until": 21
     },
     {
       "date": "2026-09-16",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 27
+      "days_until": 26
     }
   ]
 }
