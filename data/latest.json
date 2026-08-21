@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-21T16:13:56.017507+00:00",
+  "updated_at": "2026-08-21T16:50:29.672990+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -104,30 +104,30 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7683.12,
-      "change": 41.96,
-      "change_pct": 0.55,
+      "value": 7678.23,
+      "change": 37.07,
+      "change_pct": 0.49,
       "signal": "green",
       "note": ""
     },
     "nasdaq": {
-      "value": 26207.0,
-      "change": 139.83,
-      "change_pct": 0.54,
+      "value": 26188.95,
+      "change": 121.78,
+      "change_pct": 0.47,
       "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 713.73,
-      "change": 2.8,
-      "change_pct": 0.39,
+      "value": 713.14,
+      "change": 2.21,
+      "change_pct": 0.31,
       "signal": "green",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 35.13,
-      "change": 0.3,
-      "change_pct": 0.86,
+      "value": 35.1,
+      "change": 0.26,
+      "change_pct": 0.76,
       "signal": "green",
       "note": "미국 배당성장 ETF"
     },
@@ -139,32 +139,32 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4674.2,
-      "change": 157.9,
-      "change_pct": 3.5,
+      "value": 4676.0,
+      "change": 159.7,
+      "change_pct": 3.54,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 86.84,
-      "change": -0.99,
-      "change_pct": -1.13,
+      "value": 86.91,
+      "change": -0.92,
+      "change_pct": -1.05,
       "signal": "green",
       "note": ""
+    },
+    "nq_futures": {
+      "value": 29415.0,
+      "change": 114.5,
+      "change_pct": 0.39,
+      "signal": "green",
+      "note": "나스닥100 선물 실시간"
     },
     "copper": {
       "value": 6.58,
       "change": 0.12,
-      "change_pct": 1.83,
+      "change_pct": 1.87,
       "signal": "green",
       "note": "경기 선행 지표"
-    },
-    "nq_futures": {
-      "value": 29432.0,
-      "change": 131.5,
-      "change_pct": 0.45,
-      "signal": "green",
-      "note": "나스닥100 선물 실시간"
     },
     "kospi": {
       "value": 6852.58,
@@ -213,42 +213,42 @@
     "sp500": {
       "consecutive_up": 1,
       "ath": 7798.99,
-      "ath_distance_pct": -1.49,
-      "daily_change_pct": 0.55
+      "ath_distance_pct": -1.55,
+      "daily_change_pct": 0.48
     },
     "qqq": {
       "consecutive_up": 1,
       "ath": 746.16,
-      "ath_distance_pct": -4.35,
-      "daily_change_pct": 0.39
+      "ath_distance_pct": -4.43,
+      "daily_change_pct": 0.31
     },
     "schd": {
       "consecutive_up": 1,
-      "ath": 35.13,
+      "ath": 35.1,
       "ath_distance_pct": 0.0,
-      "daily_change_pct": 0.88
+      "daily_change_pct": 0.76
     }
   },
   "volume": {
     "sp500": {
-      "volume": 1122105000,
-      "volume_avg_20d": 4891665750,
-      "volume_ratio": 0.23,
-      "up_day_avg_vol": 5344482794,
+      "volume": 1244634000,
+      "volume_avg_20d": 4897792200,
+      "volume_ratio": 0.25,
+      "up_day_avg_vol": 5348086588,
       "down_day_avg_vol": 5424841724
     },
     "qqq": {
-      "volume": 16080174,
-      "volume_avg_20d": 38581063,
-      "volume_ratio": 0.42,
-      "up_day_avg_vol": 39803643,
+      "volume": 19187238,
+      "volume_avg_20d": 38736416,
+      "volume_ratio": 0.5,
+      "up_day_avg_vol": 39910784,
       "down_day_avg_vol": 44583241
     },
     "schd": {
-      "volume": 9409858,
-      "volume_avg_20d": 23464427,
-      "volume_ratio": 0.4,
-      "up_day_avg_vol": 20756501,
+      "volume": 10720096,
+      "volume_avg_20d": 23529939,
+      "volume_ratio": 0.46,
+      "up_day_avg_vol": 20793937,
       "down_day_avg_vol": 22592996
     }
   },
