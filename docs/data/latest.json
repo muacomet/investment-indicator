@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-24T20:21:33.856196+00:00",
+  "updated_at": "2026-08-24T20:53:02.442952+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -109,6 +109,13 @@
       "signal": "red",
       "note": ""
     },
+    "nasdaq": {
+      "value": 25980.19,
+      "change": -200.27,
+      "change_pct": -0.76,
+      "signal": "red",
+      "note": ""
+    },
     "qqq": {
       "value": 706.32,
       "change": -7.12,
@@ -126,44 +133,37 @@
     "dxy": {
       "value": 99.0,
       "change": 0.2,
-      "change_pct": 0.2,
+      "change_pct": 0.21,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4710.4,
-      "change": 86.3,
-      "change_pct": 1.87,
+      "value": 4703.6,
+      "change": 79.5,
+      "change_pct": 1.72,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.99,
-      "change": -2.07,
-      "change_pct": -2.38,
+      "value": 84.94,
+      "change": -2.12,
+      "change_pct": -2.44,
       "signal": "green",
       "note": ""
     },
     "copper": {
       "value": 6.6,
       "change": 0.02,
-      "change_pct": 0.33,
+      "change_pct": 0.37,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29107.75,
-      "change": -280.0,
-      "change_pct": -0.95,
+      "value": 29098.0,
+      "change": -289.75,
+      "change_pct": -0.99,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
-    },
-    "nasdaq": {
-      "value": 25980.19,
-      "change": -200.27,
-      "change_pct": -0.76,
-      "signal": "red",
-      "note": ""
     },
     "kospi": {
       "value": 6696.96,
@@ -230,11 +230,11 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2485778000,
-      "volume_avg_20d": 4932798400,
+      "volume": 2488280000,
+      "volume_avg_20d": 4932923500,
       "volume_ratio": 0.5,
       "up_day_avg_vol": 5457471250,
-      "down_day_avg_vol": 5326872933
+      "down_day_avg_vol": 5326956333
     },
     "qqq": {
       "volume": 35150941,
