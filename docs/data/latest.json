@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-25T01:08:28.524702+00:00",
+  "updated_at": "2026-08-25T02:37:02.241716+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 98.97,
-      "change": 0.17,
-      "change_pct": 0.17,
+      "value": 99.01,
+      "change": 0.21,
+      "change_pct": 0.22,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4746.3,
-      "change": 122.2,
-      "change_pct": 2.64,
+      "value": 4710.9,
+      "change": 86.8,
+      "change_pct": 1.88,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 84.85,
-      "change": -2.21,
-      "change_pct": -2.54,
+      "value": 85.75,
+      "change": -1.31,
+      "change_pct": -1.5,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.62,
-      "change": 0.04,
-      "change_pct": 0.65,
+      "value": 6.61,
+      "change": 0.03,
+      "change_pct": 0.46,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29137.5,
-      "change": -250.25,
-      "change_pct": -0.85,
+      "value": 29121.75,
+      "change": -266.0,
+      "change_pct": -0.91,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -187,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1383.6,
-      "change": -9.4,
-      "change_pct": -0.67,
+      "value": 1380.6,
+      "change": -3.0,
+      "change_pct": -0.22,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -238,16 +238,16 @@
     },
     "qqq": {
       "volume": 37094975,
-      "volume_avg_20d": 39167123,
+      "volume_avg_20d": 39172213,
       "volume_ratio": 0.95,
-      "up_day_avg_vol": 40894437,
+      "up_day_avg_vol": 40898207,
       "down_day_avg_vol": 44371870
     },
     "schd": {
       "volume": 24076092,
-      "volume_avg_20d": 23986409,
+      "volume_avg_20d": 23989729,
       "volume_ratio": 1.0,
-      "up_day_avg_vol": 21191142,
+      "up_day_avg_vol": 21193039,
       "down_day_avg_vol": 22393318
     }
   },
