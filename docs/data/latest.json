@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-05T03:30:40.435709+00:00",
+  "updated_at": "2026-09-06T03:30:54.793701+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -138,23 +138,23 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4477.2,
-      "change": -14.5,
-      "change_pct": -0.32,
+      "value": 4429.8,
+      "change": -61.9,
+      "change_pct": -1.38,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.22,
-      "change": -0.08,
-      "change_pct": -0.09,
+      "value": 91.48,
+      "change": 0.18,
+      "change_pct": 0.2,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.67,
-      "change": 0.09,
-      "change_pct": 1.38,
+      "value": 6.6,
+      "change": 0.02,
+      "change_pct": 0.3,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -230,11 +230,11 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2531375000,
-      "volume_avg_20d": 4517252250,
-      "volume_ratio": 0.56,
+      "volume": 4103570000,
+      "volume_avg_20d": 4595862000,
+      "volume_ratio": 0.89,
       "up_day_avg_vol": 5198739666,
-      "down_day_avg_vol": 5198480757
+      "down_day_avg_vol": 5246123030
     },
     "qqq": {
       "volume": 32784600,
@@ -256,19 +256,19 @@
       "date": "2026-09-11",
       "event": "CPI",
       "desc": "8월 소비자물가지수",
-      "days_until": 6
+      "days_until": 5
     },
     {
       "date": "2026-09-16",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 11
+      "days_until": 10
     },
     {
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 27
+      "days_until": 26
     }
   ]
 }
