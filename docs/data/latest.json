@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T02:46:09.026181+00:00",
+  "updated_at": "2026-09-07T07:54:05.659454+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,9 +132,9 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 99.17,
-      "change": 0.01,
-      "change_pct": 0.01,
+      "value": 99.11,
+      "change": -0.05,
+      "change_pct": -0.05,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
@@ -174,16 +174,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.71,
-      "change": -0.004,
-      "change_pct": -0.11,
+      "value": 3.72,
+      "change": 0.013,
+      "change_pct": 0.35,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 4.36,
-      "change": -0.007,
-      "change_pct": -0.16,
+      "value": 4.38,
+      "change": 0.025,
+      "change_pct": 0.57,
       "signal": "red",
       "note": ""
     },
