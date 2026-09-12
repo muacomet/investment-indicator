@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T23:36:48.429288+00:00",
+  "updated_at": "2026-09-12T03:41:01.994136+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -237,38 +237,32 @@
       "down_day_avg_vol": 5194874705
     },
     "qqq": {
-      "volume": 26176978,
-      "volume_avg_20d": 30616923,
-      "volume_ratio": 0.85,
-      "up_day_avg_vol": 36311502,
+      "volume": 26598700,
+      "volume_avg_20d": 30638010,
+      "volume_ratio": 0.87,
+      "up_day_avg_vol": 36326564,
       "down_day_avg_vol": 39298520
     },
     "schd": {
-      "volume": 18387214,
-      "volume_avg_20d": 23195700,
+      "volume": 18434200,
+      "volume_avg_20d": 23198050,
       "volume_ratio": 0.79,
-      "up_day_avg_vol": 21302997,
+      "up_day_avg_vol": 21304421,
       "down_day_avg_vol": 23430341
     }
   },
   "calendar": [
     {
-      "date": "2026-09-11",
-      "event": "CPI",
-      "desc": "8월 소비자물가지수",
-      "days_until": 0
-    },
-    {
       "date": "2026-09-16",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 5
+      "days_until": 4
     },
     {
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 21
+      "days_until": 20
     }
   ]
 }
