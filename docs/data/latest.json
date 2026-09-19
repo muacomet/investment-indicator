@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T23:34:13.016717+00:00",
+  "updated_at": "2026-09-19T03:42:23.824800+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -160,9 +160,9 @@
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29955.0,
-      "change": 508.25,
-      "change_pct": 1.73,
+      "value": 29917.25,
+      "change": 470.5,
+      "change_pct": 1.6,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -238,18 +238,18 @@
       "down_day_avg_vol": 5144283823
     },
     "qqq": {
-      "volume": 47864537,
-      "volume_avg_20d": 31352281,
-      "volume_ratio": 1.53,
-      "up_day_avg_vol": 35901801,
+      "volume": 48277100,
+      "volume_avg_20d": 31372910,
+      "volume_ratio": 1.54,
+      "up_day_avg_vol": 35916027,
       "down_day_avg_vol": 38104963
     },
     "schd": {
-      "volume": 22291754,
-      "volume_avg_20d": 22798477,
+      "volume": 22344400,
+      "volume_avg_20d": 22801110,
       "volume_ratio": 0.98,
       "up_day_avg_vol": 21318791,
-      "down_day_avg_vol": 23287219
+      "down_day_avg_vol": 23289100
     }
   },
   "calendar": [
@@ -257,13 +257,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 14
+      "days_until": 13
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 25
+      "days_until": 24
     }
   ]
 }
