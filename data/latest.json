@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-19T03:42:23.824800+00:00",
+  "updated_at": "2026-09-20T03:58:17.632332+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.21,
-      "change": -0.01,
-      "change_pct": -0.0,
+      "value": 100.22,
+      "change": 0.0,
+      "change_pct": 0.0,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4415.9,
-      "change": 16.2,
-      "change_pct": 0.37,
+      "value": 4424.9,
+      "change": 25.2,
+      "change_pct": 0.57,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 95.47,
-      "change": -6.44,
-      "change_pct": -6.32,
-      "signal": "yellow",
+      "value": 100.3,
+      "change": -1.61,
+      "change_pct": -1.58,
+      "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.72,
-      "change": 0.13,
-      "change_pct": 1.96,
+      "value": 6.61,
+      "change": 0.03,
+      "change_pct": 0.43,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29917.25,
-      "change": 470.5,
-      "change_pct": 1.6,
+      "value": 29613.68,
+      "change": 166.93,
+      "change_pct": 0.57,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -231,10 +231,10 @@
   },
   "volume": {
     "sp500": {
-      "volume": 6050102000,
-      "volume_avg_20d": 4787331100,
-      "volume_ratio": 1.26,
-      "up_day_avg_vol": 5055341857,
+      "volume": 8858350000,
+      "volume_avg_20d": 4927743500,
+      "volume_ratio": 1.8,
+      "up_day_avg_vol": 5155636428,
       "down_day_avg_vol": 5144283823
     },
     "qqq": {
@@ -257,13 +257,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 24
+      "days_until": 23
     }
   ]
 }
