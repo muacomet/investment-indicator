@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-09-20T03:58:17.632332+00:00",
+  "updated_at": "2026-09-21T03:12:04.070275+00:00",
   "phase": {
     "status": "buy",
-    "score": 3,
+    "score": 2,
     "reasons": [
       "VIX 15.4 안정 (추가 하락 여력 제한)",
       "RRP 0.6B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 0.94% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -132,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.22,
-      "change": 0.0,
-      "change_pct": 0.0,
+      "value": 100.3,
+      "change": 0.08,
+      "change_pct": 0.08,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4424.9,
-      "change": 25.2,
-      "change_pct": 0.57,
-      "signal": "green",
+      "value": 4399.3,
+      "change": -25.6,
+      "change_pct": -0.58,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 100.3,
-      "change": -1.61,
-      "change_pct": -1.58,
-      "signal": "green",
+      "value": 93.96,
+      "change": -6.34,
+      "change_pct": -6.32,
+      "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.61,
-      "change": 0.03,
-      "change_pct": 0.43,
+      "value": 6.72,
+      "change": 0.11,
+      "change_pct": 1.6,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29613.68,
-      "change": 166.93,
-      "change_pct": 0.57,
+      "value": 30083.5,
+      "change": 469.82,
+      "change_pct": 1.59,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -188,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1380.3,
-      "change": 12.0,
-      "change_pct": 0.88,
+      "value": 1383.8,
+      "change": 3.5,
+      "change_pct": 0.25,
       "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
@@ -257,13 +256,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 12
+      "days_until": 11
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 23
+      "days_until": 22
     }
   ]
 }
