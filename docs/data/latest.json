@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T20:38:38.713559+00:00",
+  "updated_at": "2026-09-23T23:07:12.791405+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -33,9 +33,9 @@
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.25,
-      "change": 0.05,
-      "change_pct": 25.0,
+      "value": 0.26,
+      "change": 0.01,
+      "change_pct": 4.0,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -138,30 +138,30 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4320.4,
-      "change": -56.0,
-      "change_pct": -1.28,
+      "value": 4324.9,
+      "change": -51.5,
+      "change_pct": -1.18,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 92.81,
-      "change": -1.78,
-      "change_pct": -1.88,
+      "value": 92.23,
+      "change": -2.36,
+      "change_pct": -2.49,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.78,
-      "change": 0.02,
-      "change_pct": 0.27,
+      "value": 6.79,
+      "change": 0.03,
+      "change_pct": 0.44,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30760.0,
-      "change": -268.5,
-      "change_pct": -0.87,
+      "value": 30793.75,
+      "change": -234.75,
+      "change_pct": -0.76,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -237,18 +237,18 @@
       "down_day_avg_vol": 5037807666
     },
     "qqq": {
-      "volume": 32027122,
-      "volume_avg_20d": 32591711,
-      "volume_ratio": 0.98,
+      "volume": 32952535,
+      "volume_avg_20d": 32637981,
+      "volume_ratio": 1.01,
       "up_day_avg_vol": 36407283,
-      "down_day_avg_vol": 36989260
+      "down_day_avg_vol": 37018179
     },
     "schd": {
-      "volume": 23029367,
-      "volume_avg_20d": 22904348,
+      "volume": 23060474,
+      "volume_avg_20d": 22905903,
       "volume_ratio": 1.01,
       "up_day_avg_vol": 21556488,
-      "down_day_avg_vol": 23423266
+      "down_day_avg_vol": 23424377
     }
   },
   "calendar": [
