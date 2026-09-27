@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T04:04:04.826422+00:00",
+  "updated_at": "2026-09-27T04:21:40.369485+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -152,10 +152,10 @@
       "note": ""
     },
     "copper": {
-      "value": 6.7,
-      "change": -0.02,
-      "change_pct": -0.34,
-      "signal": "yellow",
+      "value": 6.77,
+      "change": 0.05,
+      "change_pct": 0.71,
+      "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
@@ -256,13 +256,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 6
+      "days_until": 5
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 17
+      "days_until": 16
     }
   ]
 }
