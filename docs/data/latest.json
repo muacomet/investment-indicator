@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T04:21:40.369485+00:00",
+  "updated_at": "2026-09-28T03:30:09.368870+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,38 +131,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 100.97,
-      "change": -0.32,
-      "change_pct": -0.32,
+      "value": 101.09,
+      "change": 0.12,
+      "change_pct": 0.11,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4321.2,
-      "change": 23.2,
-      "change_pct": 0.54,
-      "signal": "green",
+      "value": 4231.6,
+      "change": -89.6,
+      "change_pct": -2.07,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 92.41,
-      "change": -2.2,
-      "change_pct": -2.33,
+      "value": 93.22,
+      "change": 0.81,
+      "change_pct": 0.88,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.77,
-      "change": 0.05,
-      "change_pct": 0.71,
-      "signal": "green",
+      "value": 6.66,
+      "change": -0.03,
+      "change_pct": -0.5,
+      "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30889.25,
-      "change": 122.5,
-      "change_pct": 0.4,
-      "signal": "green",
+      "value": 30676.25,
+      "change": -213.0,
+      "change_pct": -0.69,
+      "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -187,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1360.0,
-      "change": -24.3,
-      "change_pct": -1.76,
+      "value": 1352.0,
+      "change": -8.0,
+      "change_pct": -0.59,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -256,13 +256,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 5
+      "days_until": 4
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 16
+      "days_until": 15
     }
   ]
 }
