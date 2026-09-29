@@ -1,13 +1,12 @@
 {
-  "updated_at": "2026-09-29T04:05:42.763880+00:00",
+  "updated_at": "2026-09-29T10:49:58.627432+00:00",
   "phase": {
     "status": "buy",
-    "score": 3,
+    "score": 2,
     "reasons": [
       "VIX 14.2 안정 (추가 하락 여력 제한)",
       "RRP 0.9B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 1.17% 정상 (경기 확장)",
-      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -132,38 +131,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.2,
-      "change": 0.23,
-      "change_pct": 0.23,
+      "value": 101.41,
+      "change": 0.21,
+      "change_pct": 0.21,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4321.2,
-      "change": 23.2,
-      "change_pct": 0.54,
-      "signal": "green",
+      "value": 4180.9,
+      "change": -140.3,
+      "change_pct": -3.25,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 92.6,
-      "change": 0.19,
-      "change_pct": 0.21,
+      "value": 92.12,
+      "change": -0.48,
+      "change_pct": -0.52,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.57,
-      "change": -0.13,
-      "change_pct": -1.93,
-      "signal": "yellow",
+      "value": 6.61,
+      "change": 0.04,
+      "change_pct": 0.6,
+      "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30566.25,
-      "change": -323.0,
-      "change_pct": -1.05,
-      "signal": "red",
+      "value": 30608.25,
+      "change": 42.0,
+      "change_pct": 0.14,
+      "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -174,16 +173,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 4.08,
-      "change": 0.104,
-      "change_pct": 2.62,
+      "value": 4.03,
+      "change": -0.047,
+      "change_pct": -1.15,
       "signal": "red",
       "note": ""
     },
     "kr10y": {
-      "value": 4.54,
-      "change": 0.147,
-      "change_pct": 3.35,
+      "value": 4.48,
+      "change": -0.063,
+      "change_pct": -1.39,
       "signal": "red",
       "note": ""
     },
