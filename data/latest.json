@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-09-28T23:58:59.629325+00:00",
+  "updated_at": "2026-09-29T04:05:42.763880+00:00",
   "phase": {
     "status": "buy",
-    "score": 2,
+    "score": 3,
     "reasons": [
       "VIX 14.2 안정 (추가 하락 여력 제한)",
       "RRP 0.9B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 1.17% 정상 (경기 확장)",
+      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -131,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.19,
-      "change": 0.22,
-      "change_pct": 0.22,
+      "value": 101.2,
+      "change": 0.23,
+      "change_pct": 0.23,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4155.1,
-      "change": -166.1,
-      "change_pct": -3.84,
-      "signal": "yellow",
+      "value": 4321.2,
+      "change": 23.2,
+      "change_pct": 0.54,
+      "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 93.23,
-      "change": 0.82,
-      "change_pct": 0.89,
+      "value": 92.6,
+      "change": 0.19,
+      "change_pct": 0.21,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.62,
-      "change": -0.08,
-      "change_pct": -1.13,
+      "value": 6.57,
+      "change": -0.13,
+      "change_pct": -1.93,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30573.75,
-      "change": -315.5,
-      "change_pct": -1.02,
+      "value": 30566.25,
+      "change": -323.0,
+      "change_pct": -1.05,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -187,10 +188,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1352.0,
-      "change": -8.0,
-      "change_pct": -0.59,
-      "signal": "green",
+      "value": 1360.0,
+      "change": 8.0,
+      "change_pct": 0.59,
+      "signal": "yellow",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
@@ -230,25 +231,25 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2909239000,
-      "volume_avg_20d": 5029309950,
-      "volume_ratio": 0.58,
+      "volume": 5129710000,
+      "volume_avg_20d": 5140333500,
+      "volume_ratio": 1.0,
       "up_day_avg_vol": 5099671724,
-      "down_day_avg_vol": 4918285558
+      "down_day_avg_vol": 4983593529
     },
     "qqq": {
-      "volume": 41420278,
-      "volume_avg_20d": 33522398,
+      "volume": 41716200,
+      "volume_avg_20d": 33538925,
       "volume_ratio": 1.24,
-      "up_day_avg_vol": 35475596,
-      "down_day_avg_vol": 36610920
+      "up_day_avg_vol": 35476750,
+      "down_day_avg_vol": 36619887
     },
     "schd": {
-      "volume": 27541760,
-      "volume_avg_20d": 23124708,
+      "volume": 27586800,
+      "volume_avg_20d": 23129485,
       "volume_ratio": 1.19,
-      "up_day_avg_vol": 21746782,
-      "down_day_avg_vol": 23352371
+      "up_day_avg_vol": 21748267,
+      "down_day_avg_vol": 23353924
     }
   },
   "calendar": [
@@ -256,13 +257,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 4
+      "days_until": 3
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 15
+      "days_until": 14
     }
   ]
 }
