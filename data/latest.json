@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T22:11:46.425372+00:00",
+  "updated_at": "2026-10-01T04:01:22.899457+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -111,7 +111,7 @@
     },
     "nasdaq": {
       "value": 26861.06,
-      "change": 63.53,
+      "change": 63.52,
       "change_pct": 0.24,
       "signal": "green",
       "note": ""
@@ -130,40 +130,40 @@
       "signal": "red",
       "note": "미국 배당성장 ETF"
     },
+    "dxy": {
+      "value": 101.45,
+      "change": 0.08,
+      "change_pct": 0.08,
+      "signal": "green",
+      "note": "6개 주요 통화 대비 달러 가치"
+    },
     "gold": {
-      "value": 4190.1,
-      "change": 10.4,
-      "change_pct": 0.25,
+      "value": 4186.7,
+      "change": 7.0,
+      "change_pct": 0.17,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 90.33,
-      "change": 0.95,
-      "change_pct": 1.06,
+      "value": 90.42,
+      "change": 1.04,
+      "change_pct": 1.16,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.63,
-      "change": 0.09,
-      "change_pct": 1.31,
+      "value": 6.56,
+      "change": 0.02,
+      "change_pct": 0.24,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 30714.75,
-      "change": 101.5,
-      "change_pct": 0.33,
+      "value": 30698.75,
+      "change": 85.5,
+      "change_pct": 0.28,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
-    },
-    "dxy": {
-      "value": 101.46,
-      "change": 0.09,
-      "change_pct": 0.09,
-      "signal": "green",
-      "note": "6개 주요 통화 대비 달러 가치"
     },
     "kospi": {
       "value": 6838.04,
@@ -187,9 +187,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1358.4,
-      "change": -1.6,
-      "change_pct": -0.12,
+      "value": 1355.7,
+      "change": -2.7,
+      "change_pct": -0.2,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -230,25 +230,25 @@
   },
   "volume": {
     "sp500": {
-      "volume": 3151899000,
-      "volume_avg_20d": 5036894450,
-      "volume_ratio": 0.63,
+      "volume": 4276550000,
+      "volume_avg_20d": 5093127000,
+      "volume_ratio": 0.84,
       "up_day_avg_vol": 5066176428,
-      "down_day_avg_vol": 4909569685
+      "down_day_avg_vol": 4941702571
     },
     "qqq": {
-      "volume": 29369516,
-      "volume_avg_20d": 32989290,
-      "volume_ratio": 0.89,
-      "up_day_avg_vol": 34793629,
+      "volume": 29671400,
+      "volume_avg_20d": 33004385,
+      "volume_ratio": 0.9,
+      "up_day_avg_vol": 34803367,
       "down_day_avg_vol": 36490978
     },
     "schd": {
-      "volume": 20901625,
-      "volume_avg_20d": 23238211,
+      "volume": 20985500,
+      "volume_avg_20d": 23242405,
       "volume_ratio": 0.9,
       "up_day_avg_vol": 21798206,
-      "down_day_avg_vol": 23440194
+      "down_day_avg_vol": 23442990
     }
   },
   "calendar": [
@@ -256,13 +256,13 @@
       "date": "2026-10-02",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 2
+      "days_until": 1
     },
     {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 13
+      "days_until": 12
     }
   ]
 }
