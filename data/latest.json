@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T22:07:16.262553+00:00",
+  "updated_at": "2026-10-03T04:20:50.787519+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -131,37 +131,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.92,
-      "change": -0.18,
+      "value": 101.93,
+      "change": -0.17,
       "change_pct": -0.17,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4172.1,
-      "change": -30.2,
-      "change_pct": -0.72,
+      "value": 4162.3,
+      "change": -40.0,
+      "change_pct": -0.95,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.26,
-      "change": -1.61,
-      "change_pct": -1.73,
+      "value": 91.11,
+      "change": -1.76,
+      "change_pct": -1.9,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.58,
-      "change": 0.1,
-      "change_pct": 1.5,
+      "value": 6.49,
+      "change": 0.01,
+      "change_pct": 0.15,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 31049.0,
-      "change": 288.5,
-      "change_pct": 0.94,
+      "value": 31061.75,
+      "change": 301.25,
+      "change_pct": 0.98,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -230,39 +230,33 @@
   },
   "volume": {
     "sp500": {
-      "volume": 3130028000,
-      "volume_avg_20d": 5065552900,
-      "volume_ratio": 0.62,
-      "up_day_avg_vol": 5011862071,
+      "volume": 5277430000,
+      "volume_avg_20d": 5172923000,
+      "volume_ratio": 1.02,
+      "up_day_avg_vol": 5088555000,
       "down_day_avg_vol": 4941702571
     },
     "qqq": {
-      "volume": 34175024,
-      "volume_avg_20d": 33860731,
-      "volume_ratio": 1.01,
-      "up_day_avg_vol": 34960528,
+      "volume": 34467100,
+      "volume_avg_20d": 33875335,
+      "volume_ratio": 1.02,
+      "up_day_avg_vol": 34969656,
       "down_day_avg_vol": 36024241
     },
     "schd": {
-      "volume": 20649814,
-      "volume_avg_20d": 23348515,
-      "volume_ratio": 0.88,
-      "up_day_avg_vol": 21885991,
+      "volume": 20690800,
+      "volume_avg_20d": 23350565,
+      "volume_ratio": 0.89,
+      "up_day_avg_vol": 21887197,
       "down_day_avg_vol": 23426417
     }
   },
   "calendar": [
     {
-      "date": "2026-10-02",
-      "event": "고용",
-      "desc": "비농업 고용·실업률",
-      "days_until": 0
-    },
-    {
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 11
+      "days_until": 10
     }
   ]
 }
