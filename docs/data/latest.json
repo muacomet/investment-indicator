@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-03T04:20:50.787519+00:00",
+  "updated_at": "2026-10-04T04:52:09.733655+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -152,9 +152,9 @@
       "note": ""
     },
     "copper": {
-      "value": 6.49,
-      "change": 0.01,
-      "change_pct": 0.15,
+      "value": 6.55,
+      "change": 0.07,
+      "change_pct": 1.03,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -256,7 +256,7 @@
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 10
+      "days_until": 9
     }
   ]
 }
