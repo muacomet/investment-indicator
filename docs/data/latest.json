@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-10-04T04:52:09.733655+00:00",
+  "updated_at": "2026-10-05T03:55:39.918246+00:00",
   "phase": {
     "status": "buy",
-    "score": 2,
+    "score": 3,
     "reasons": [
       "VIX 16.4 안정 (추가 하락 여력 제한)",
       "RRP 1.5B$ 소진 (유동성 시장 유입)",
       "10Y-기준금리 스프레드 1.24% 정상 (경기 확장)",
+      "금·국채 동반 상승 (안전자산 선호 → 바닥 신호)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -131,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.93,
-      "change": -0.17,
-      "change_pct": -0.17,
+      "value": 102.45,
+      "change": 0.52,
+      "change_pct": 0.51,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4162.3,
-      "change": -40.0,
-      "change_pct": -0.95,
-      "signal": "yellow",
+      "value": 4172.0,
+      "change": 9.7,
+      "change_pct": 0.23,
+      "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.11,
-      "change": -1.76,
-      "change_pct": -1.9,
+      "value": 90.0,
+      "change": -1.11,
+      "change_pct": -1.22,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.55,
-      "change": 0.07,
-      "change_pct": 1.03,
+      "value": 6.59,
+      "change": 0.1,
+      "change_pct": 1.51,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 31061.75,
-      "change": 301.25,
-      "change_pct": 0.98,
+      "value": 31109.25,
+      "change": 47.5,
+      "change_pct": 0.15,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -256,7 +257,13 @@
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 9
+      "days_until": 8
+    },
+    {
+      "date": "2026-11-04",
+      "event": "FOMC",
+      "desc": "FOMC 금리 결정",
+      "days_until": 30
     }
   ]
 }
