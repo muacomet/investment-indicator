@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T04:40:47.758657+00:00",
+  "updated_at": "2026-10-12T04:12:17.251261+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 102.21,
-      "change": 0.07,
-      "change_pct": 0.07,
+      "value": 102.17,
+      "change": -0.04,
+      "change_pct": -0.04,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4216.3,
-      "change": 59.3,
-      "change_pct": 1.43,
+      "value": 4227.8,
+      "change": 11.5,
+      "change_pct": 0.27,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 91.85,
-      "change": 0.36,
-      "change_pct": 0.39,
+      "value": 90.21,
+      "change": -1.64,
+      "change_pct": -1.79,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.69,
-      "change": 0.17,
-      "change_pct": 2.65,
+      "value": 6.74,
+      "change": 0.1,
+      "change_pct": 1.54,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 31108.75,
-      "change": 139.25,
-      "change_pct": 0.45,
+      "value": 31231.0,
+      "change": 122.25,
+      "change_pct": 0.39,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
@@ -188,9 +188,9 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1339.2,
-      "change": -4.2,
-      "change_pct": -0.31,
+      "value": 1338.0,
+      "change": -1.2,
+      "change_pct": -0.09,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
@@ -257,19 +257,19 @@
       "date": "2026-10-13",
       "event": "CPI",
       "desc": "9월 소비자물가지수",
-      "days_until": 2
+      "days_until": 1
     },
     {
       "date": "2026-11-04",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 24
+      "days_until": 23
     },
     {
       "date": "2026-11-06",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 26
+      "days_until": 25
     }
   ]
 }
