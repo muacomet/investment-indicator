@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T22:13:53.400615+00:00",
+  "updated_at": "2026-10-17T03:28:40.136598+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -161,8 +161,8 @@
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29391.25,
-      "change": -752.5,
+      "value": 29391.5,
+      "change": -752.25,
       "change_pct": -2.5,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
@@ -239,17 +239,17 @@
       "down_day_avg_vol": 4913767694
     },
     "qqq": {
-      "volume": 66250770,
-      "volume_avg_20d": 35950113,
-      "volume_ratio": 1.84,
+      "volume": 66693300,
+      "volume_avg_20d": 35972240,
+      "volume_ratio": 1.85,
       "up_day_avg_vol": 34426377,
-      "down_day_avg_vol": 36639065
+      "down_day_avg_vol": 36652475
     },
     "schd": {
-      "volume": 25063282,
-      "volume_avg_20d": 23176374,
-      "volume_ratio": 1.08,
-      "up_day_avg_vol": 22545005,
+      "volume": 25156700,
+      "volume_avg_20d": 23181045,
+      "volume_ratio": 1.09,
+      "up_day_avg_vol": 22547600,
       "down_day_avg_vol": 23636789
     }
   },
@@ -258,19 +258,19 @@
       "date": "2026-11-04",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 19
+      "days_until": 18
     },
     {
       "date": "2026-11-06",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 21
+      "days_until": 20
     },
     {
       "date": "2026-11-12",
       "event": "CPI",
       "desc": "10월 소비자물가지수",
-      "days_until": 27
+      "days_until": 26
     }
   ]
 }
