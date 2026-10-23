@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T03:21:15.744754+00:00",
+  "updated_at": "2026-10-23T08:45:23.571038+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -132,38 +132,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.66,
-      "change": -0.12,
-      "change_pct": -0.12,
+      "value": 101.82,
+      "change": 0.21,
+      "change_pct": 0.21,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4030.0,
-      "change": -120.0,
-      "change_pct": -2.89,
+      "value": 4031.1,
+      "change": -29.3,
+      "change_pct": -0.72,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 100.14,
-      "change": 2.99,
-      "change_pct": 3.08,
-      "signal": "yellow",
+      "value": 100.28,
+      "change": 0.81,
+      "change_pct": 0.81,
+      "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.43,
-      "change": -0.11,
-      "change_pct": -1.73,
-      "signal": "yellow",
+      "value": 6.45,
+      "change": 0.09,
+      "change_pct": 1.42,
+      "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29170.5,
-      "change": -836.5,
-      "change_pct": -2.79,
-      "signal": "red",
+      "value": 29269.0,
+      "change": 127.0,
+      "change_pct": 0.44,
+      "signal": "green",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -174,28 +174,28 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.78,
-      "change": 0.002,
-      "change_pct": 0.05,
+      "value": 3.76,
+      "change": -0.024,
+      "change_pct": -0.63,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 4.15,
-      "change": -0.008,
-      "change_pct": -0.19,
+      "value": 4.1,
+      "change": -0.055,
+      "change_pct": -1.32,
       "signal": "red",
       "note": ""
     },
     "usdkrw": {
-      "value": 1325.5,
-      "change": -2.5,
-      "change_pct": -0.19,
+      "value": 1324.6,
+      "change": -0.9,
+      "change_pct": -0.07,
       "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
-      "value": 0.42,
+      "value": 0.45,
       "change": 0,
       "change_pct": 0,
       "signal": "green",
@@ -231,11 +231,11 @@
   },
   "volume": {
     "sp500": {
-      "volume": 3559453000,
-      "volume_avg_20d": 5070539150,
-      "volume_ratio": 0.7,
+      "volume": 5972620000,
+      "volume_avg_20d": 5191197500,
+      "volume_ratio": 1.15,
       "up_day_avg_vol": 5167335333,
-      "down_day_avg_vol": 4913501264
+      "down_day_avg_vol": 4984476764
     },
     "qqq": {
       "volume": 64165300,
