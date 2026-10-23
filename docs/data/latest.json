@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T23:39:55.159230+00:00",
+  "updated_at": "2026-10-23T03:21:15.744754+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -132,37 +132,37 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.62,
-      "change": -0.16,
-      "change_pct": -0.16,
+      "value": 101.66,
+      "change": -0.12,
+      "change_pct": -0.12,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4042.7,
-      "change": -107.3,
-      "change_pct": -2.59,
+      "value": 4030.0,
+      "change": -120.0,
+      "change_pct": -2.89,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 99.51,
-      "change": 2.36,
-      "change_pct": 2.43,
-      "signal": "green",
+      "value": 100.14,
+      "change": 2.99,
+      "change_pct": 3.08,
+      "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.4,
-      "change": -0.14,
-      "change_pct": -2.16,
+      "value": 6.43,
+      "change": -0.11,
+      "change_pct": -1.73,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29078.0,
-      "change": -929.0,
-      "change_pct": -3.1,
+      "value": 29170.5,
+      "change": -836.5,
+      "change_pct": -2.79,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
@@ -238,17 +238,17 @@
       "down_day_avg_vol": 4913501264
     },
     "qqq": {
-      "volume": 64223209,
-      "volume_avg_20d": 36752035,
+      "volume": 64165300,
+      "volume_avg_20d": 36749140,
       "volume_ratio": 1.75,
       "up_day_avg_vol": 34628216,
-      "down_day_avg_vol": 37478363
+      "down_day_avg_vol": 37476609
     },
     "schd": {
-      "volume": 28751649,
-      "volume_avg_20d": 22948822,
+      "volume": 28761700,
+      "volume_avg_20d": 22949325,
       "volume_ratio": 1.25,
-      "up_day_avg_vol": 22969776,
+      "up_day_avg_vol": 22970055,
       "down_day_avg_vol": 23656807
     }
   },
@@ -257,19 +257,19 @@
       "date": "2026-11-04",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-11-06",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 15
+      "days_until": 14
     },
     {
       "date": "2026-11-12",
       "event": "CPI",
       "desc": "10월 소비자물가지수",
-      "days_until": 21
+      "days_until": 20
     }
   ]
 }
