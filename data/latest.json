@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T03:45:06.930816+00:00",
+  "updated_at": "2026-10-25T03:43:31.467385+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -132,38 +132,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.75,
-      "change": 0.14,
-      "change_pct": 0.14,
+      "value": 101.81,
+      "change": 0.2,
+      "change_pct": 0.2,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4010.0,
-      "change": -50.4,
-      "change_pct": -1.24,
+      "value": 4007.9,
+      "change": -52.5,
+      "change_pct": -1.29,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 103.44,
-      "change": 3.97,
-      "change_pct": 3.99,
+      "value": 103.27,
+      "change": 3.8,
+      "change_pct": 3.82,
       "signal": "yellow",
       "note": ""
     },
     "copper": {
-      "value": 6.5,
-      "change": 0.13,
-      "change_pct": 2.12,
+      "value": 6.48,
+      "change": 0.11,
+      "change_pct": 1.78,
       "signal": "green",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 29175.0,
-      "change": 33.0,
-      "change_pct": 0.11,
-      "signal": "green",
+      "value": 29117.75,
+      "change": -24.25,
+      "change_pct": -0.08,
+      "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -231,11 +231,11 @@
   },
   "volume": {
     "sp500": {
-      "volume": 2749563000,
-      "volume_avg_20d": 5103716650,
-      "volume_ratio": 0.54,
+      "volume": 5062330000,
+      "volume_avg_20d": 5219355000,
+      "volume_ratio": 0.97,
       "up_day_avg_vol": 5177911724,
-      "down_day_avg_vol": 4920622085
+      "down_day_avg_vol": 4986701142
     },
     "qqq": {
       "volume": 30138000,
@@ -257,19 +257,19 @@
       "date": "2026-11-04",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 11
+      "days_until": 10
     },
     {
       "date": "2026-11-06",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-11-12",
       "event": "CPI",
       "desc": "10월 소비자물가지수",
-      "days_until": 19
+      "days_until": 18
     }
   ]
 }
