@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T05:51:57.682796+00:00",
+  "updated_at": "2026-11-10T14:16:27.725708+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
@@ -131,38 +131,38 @@
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 101.68,
-      "change": 0.03,
-      "change_pct": 0.03,
+      "value": 102.04,
+      "change": 0.39,
+      "change_pct": 0.39,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 4130.9,
-      "change": 16.4,
-      "change_pct": 0.4,
-      "signal": "green",
+      "value": 4064.5,
+      "change": -50.0,
+      "change_pct": -1.22,
+      "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 86.18,
-      "change": -0.67,
-      "change_pct": -0.77,
+      "value": 84.61,
+      "change": -2.24,
+      "change_pct": -2.58,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 6.36,
-      "change": 0.03,
-      "change_pct": 0.44,
-      "signal": "green",
+      "value": 6.26,
+      "change": -0.07,
+      "change_pct": -1.12,
+      "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 28035.75,
-      "change": 21.25,
-      "change_pct": 0.08,
-      "signal": "green",
+      "value": 27721.5,
+      "change": -293.0,
+      "change_pct": -1.05,
+      "signal": "red",
       "note": "나스닥100 선물 실시간"
     },
     "kospi": {
@@ -173,16 +173,16 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.63,
-      "change": 0.028,
-      "change_pct": 0.78,
+      "value": 3.64,
+      "change": 0.014,
+      "change_pct": 0.39,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 3.86,
-      "change": 0.01,
-      "change_pct": 0.26,
+      "value": 3.85,
+      "change": -0.013,
+      "change_pct": -0.34,
       "signal": "yellow",
       "note": ""
     },
