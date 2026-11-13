@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T04:57:00.901983+00:00",
+  "updated_at": "2026-11-13T12:53:00.225694+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -123,47 +123,47 @@
       "signal": "red",
       "note": "나스닥100 추종 ETF"
     },
-    "dxy": {
-      "value": 103.17,
-      "change": 0.26,
-      "change_pct": 0.25,
-      "signal": "green",
-      "note": "6개 주요 통화 대비 달러 가치"
-    },
-    "gold": {
-      "value": 3915.3,
-      "change": -85.2,
-      "change_pct": -2.13,
-      "signal": "yellow",
-      "note": "안전자산 선호 시 상승"
-    },
-    "wti": {
-      "value": 88.49,
-      "change": 1.96,
-      "change_pct": 2.27,
-      "signal": "green",
-      "note": ""
-    },
-    "copper": {
-      "value": 6.2,
-      "change": -0.07,
-      "change_pct": -1.16,
-      "signal": "yellow",
-      "note": "경기 선행 지표"
-    },
-    "nq_futures": {
-      "value": 28381.75,
-      "change": -91.5,
-      "change_pct": -0.32,
-      "signal": "red",
-      "note": "나스닥100 선물 실시간"
-    },
     "schd": {
       "value": 35.93,
       "change": -0.09,
       "change_pct": -0.25,
       "signal": "red",
       "note": "미국 배당성장 ETF"
+    },
+    "dxy": {
+      "value": 103.24,
+      "change": 0.07,
+      "change_pct": 0.07,
+      "signal": "green",
+      "note": "6개 주요 통화 대비 달러 가치"
+    },
+    "gold": {
+      "value": 3893.9,
+      "change": 8.6,
+      "change_pct": 0.22,
+      "signal": "green",
+      "note": "안전자산 선호 시 상승"
+    },
+    "wti": {
+      "value": 88.59,
+      "change": -0.15,
+      "change_pct": -0.17,
+      "signal": "green",
+      "note": ""
+    },
+    "copper": {
+      "value": 6.16,
+      "change": -0.02,
+      "change_pct": -0.38,
+      "signal": "yellow",
+      "note": "경기 선행 지표"
+    },
+    "nq_futures": {
+      "value": 28404.75,
+      "change": 20.25,
+      "change_pct": 0.07,
+      "signal": "green",
+      "note": "나스닥100 선물 실시간"
     },
     "kospi": {
       "value": 5342.73,
@@ -173,17 +173,17 @@
       "note": ""
     },
     "kr2y": {
-      "value": 3.73,
-      "change": 0.001,
-      "change_pct": 0.03,
+      "value": 3.75,
+      "change": 0.02,
+      "change_pct": 0.54,
       "signal": "yellow",
       "note": ""
     },
     "kr10y": {
-      "value": 3.94,
-      "change": -0.013,
-      "change_pct": -0.33,
-      "signal": "yellow",
+      "value": 4.0,
+      "change": 0.064,
+      "change_pct": 1.63,
+      "signal": "red",
       "note": ""
     },
     "usdkrw": {
@@ -230,11 +230,11 @@
   },
   "volume": {
     "sp500": {
-      "volume": 3182097000,
-      "volume_avg_20d": 5498252350,
-      "volume_ratio": 0.58,
+      "volume": 4693040000,
+      "volume_avg_20d": 5573799500,
+      "volume_ratio": 0.84,
       "up_day_avg_vol": 5298596785,
-      "down_day_avg_vol": 5047653527
+      "down_day_avg_vol": 5089624166
     },
     "qqq": {
       "volume": 36718000,
