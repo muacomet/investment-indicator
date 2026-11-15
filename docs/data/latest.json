@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T05:28:01.741945+00:00",
+  "updated_at": "2026-11-15T05:26:03.001593+00:00",
   "phase": {
     "status": "buy",
     "score": 2,
@@ -102,6 +102,13 @@
       "signal": "yellow",
       "note": "5% 이상 건전"
     },
+    "sp500": {
+      "value": 7561.67,
+      "change": -30.73,
+      "change_pct": -0.4,
+      "signal": "red",
+      "note": ""
+    },
     "nasdaq": {
       "value": 25136.27,
       "change": -229.82,
@@ -145,9 +152,9 @@
       "note": ""
     },
     "copper": {
-      "value": 6.08,
-      "change": -0.1,
-      "change_pct": -1.67,
+      "value": 6.09,
+      "change": -0.09,
+      "change_pct": -1.49,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
@@ -157,13 +164,6 @@
       "change_pct": -1.23,
       "signal": "red",
       "note": "나스닥100 선물 실시간"
-    },
-    "sp500": {
-      "value": 7561.67,
-      "change": -30.73,
-      "change_pct": -0.4,
-      "signal": "red",
-      "note": ""
     },
     "kospi": {
       "value": 5290.53,
@@ -256,13 +256,13 @@
       "date": "2026-12-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 20
+      "days_until": 19
     },
     {
       "date": "2026-12-10",
       "event": "CPI",
       "desc": "11월 소비자물가지수",
-      "days_until": 26
+      "days_until": 25
     }
   ]
 }
