@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-18T20:57:24.302475+00:00",
+  "updated_at": "2026-11-19T02:09:58.170327+00:00",
   "phase": {
     "status": "buy",
     "score": 3,
     "reasons": [
       "VIX 25.5 불안",
       "RRP 0.3B$ 소진 (유동성 시장 유입)",
-      "10Y-기준금리 스프레드 1.12% 정상 (경기 확장)",
+      "10Y-기준금리 스프레드 1.10% 정상 (경기 확장)",
       "M2 증가 추세 (유동성 확대)"
     ]
   },
@@ -19,23 +19,23 @@
       "note": "20 안정 / 25 불안 / 30 위험 / 60 패닉"
     },
     "us10y": {
-      "value": 5.12,
-      "change": -0.03,
-      "change_pct": -0.58,
+      "value": 5.1,
+      "change": -0.02,
+      "change_pct": -0.39,
       "signal": "red",
       "note": "기준금리 +0.5~1%가 정상"
     },
     "us2y": {
-      "value": 4.83,
-      "change": -0.05,
-      "change_pct": -1.02,
+      "value": 4.8,
+      "change": -0.03,
+      "change_pct": -0.62,
       "signal": "yellow",
       "note": ""
     },
     "spread_2_10": {
-      "value": 0.3,
-      "change": 0.01,
-      "change_pct": 3.45,
+      "value": 0.27,
+      "change": -0.03,
+      "change_pct": -10.0,
       "signal": "green",
       "note": "역전 시 경기침체 경고"
     },
@@ -103,67 +103,67 @@
       "note": "5% 이상 건전"
     },
     "sp500": {
-      "value": 7332.76,
-      "change": -7.77,
-      "change_pct": -0.11,
+      "value": 7323.63,
+      "change": -16.9,
+      "change_pct": -0.23,
       "signal": "red",
       "note": ""
     },
     "nasdaq": {
-      "value": 24459.01,
-      "change": 130.63,
-      "change_pct": 0.54,
+      "value": 24429.88,
+      "change": 101.5,
+      "change_pct": 0.42,
       "signal": "green",
       "note": ""
     },
     "qqq": {
-      "value": 660.6,
-      "change": 3.65,
-      "change_pct": 0.56,
-      "signal": "green",
+      "value": 656.95,
+      "change": -4.8,
+      "change_pct": -0.73,
+      "signal": "red",
       "note": "나스닥100 추종 ETF"
     },
     "schd": {
-      "value": 34.73,
-      "change": -0.58,
-      "change_pct": -1.64,
+      "value": 35.31,
+      "change": -0.55,
+      "change_pct": -1.53,
       "signal": "red",
       "note": "미국 배당성장 ETF"
     },
     "dxy": {
-      "value": 103.79,
-      "change": 0.31,
-      "change_pct": 0.29,
+      "value": 103.84,
+      "change": 0.35,
+      "change_pct": 0.34,
       "signal": "green",
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 3733.6,
-      "change": -130.6,
-      "change_pct": -3.38,
+      "value": 3755.5,
+      "change": -108.7,
+      "change_pct": -2.81,
       "signal": "yellow",
       "note": "안전자산 선호 시 상승"
     },
+    "wti": {
+      "value": 82.9,
+      "change": -3.11,
+      "change_pct": -3.62,
+      "signal": "yellow",
+      "note": ""
+    },
     "copper": {
-      "value": 5.67,
-      "change": -0.31,
-      "change_pct": -5.13,
+      "value": 5.7,
+      "change": -0.28,
+      "change_pct": -4.69,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
     "nq_futures": {
-      "value": 27173.0,
-      "change": 97.5,
-      "change_pct": 0.36,
+      "value": 27464.0,
+      "change": 388.5,
+      "change_pct": 1.43,
       "signal": "green",
       "note": "나스닥100 선물 실시간"
-    },
-    "wti": {
-      "value": 82.06,
-      "change": -3.95,
-      "change_pct": -4.59,
-      "signal": "yellow",
-      "note": ""
     },
     "kospi": {
       "value": 5067.44,
@@ -187,10 +187,10 @@
       "note": ""
     },
     "usdkrw": {
-      "value": 1338.8,
-      "change": 3.8,
-      "change_pct": 0.28,
-      "signal": "yellow",
+      "value": 1331.1,
+      "change": -7.7,
+      "change_pct": -0.58,
+      "signal": "green",
       "note": "환율 상승 = 원화 약세"
     },
     "kr_delinquency": {
@@ -212,43 +212,43 @@
     "sp500": {
       "consecutive_up": 0,
       "ath": 7818.93,
-      "ath_distance_pct": -6.22,
-      "daily_change_pct": -0.11
+      "ath_distance_pct": -6.33,
+      "daily_change_pct": -0.23
     },
     "qqq": {
-      "consecutive_up": 1,
+      "consecutive_up": 0,
       "ath": 759.66,
-      "ath_distance_pct": -13.06,
-      "daily_change_pct": 0.53
+      "ath_distance_pct": -13.52,
+      "daily_change_pct": -0.73
     },
     "schd": {
       "consecutive_up": 0,
       "ath": 36.21,
-      "ath_distance_pct": -4.1,
-      "daily_change_pct": -1.66
+      "ath_distance_pct": -2.49,
+      "daily_change_pct": -1.53
     }
   },
   "volume": {
     "sp500": {
-      "volume": 2312813000,
-      "volume_avg_20d": 5424189150,
-      "volume_ratio": 0.43,
-      "up_day_avg_vol": 5298596785,
-      "down_day_avg_vol": 5054448729
+      "volume": 3056907000,
+      "volume_avg_20d": 5461393850,
+      "volume_ratio": 0.56,
+      "up_day_avg_vol": 5302837407,
+      "down_day_avg_vol": 5074559378
     },
     "qqq": {
-      "volume": 38600823,
-      "volume_avg_20d": 51232396,
-      "volume_ratio": 0.75,
-      "up_day_avg_vol": 35249140,
-      "down_day_avg_vol": 43067306
+      "volume": 55693800,
+      "volume_avg_20d": 50926165,
+      "volume_ratio": 1.09,
+      "up_day_avg_vol": 35144400,
+      "down_day_avg_vol": 43301680
     },
     "schd": {
-      "volume": 26259802,
-      "volume_avg_20d": 25858880,
-      "volume_ratio": 1.02,
-      "up_day_avg_vol": 23782437,
-      "down_day_avg_vol": 23742027
+      "volume": 23691200,
+      "volume_avg_20d": 25513140,
+      "volume_ratio": 0.93,
+      "up_day_avg_vol": 23726541,
+      "down_day_avg_vol": 23663346
     }
   },
   "calendar": [
@@ -256,19 +256,19 @@
       "date": "2026-12-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 16
+      "days_until": 15
     },
     {
       "date": "2026-12-10",
       "event": "CPI",
       "desc": "11월 소비자물가지수",
-      "days_until": 22
+      "days_until": 21
     },
     {
       "date": "2026-12-16",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 28
+      "days_until": 27
     }
   ]
 }
