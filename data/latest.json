@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T06:03:58.106402+00:00",
+  "updated_at": "2026-11-22T05:40:11.509850+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 4,
@@ -146,16 +146,16 @@
       "note": "안전자산 선호 시 상승"
     },
     "wti": {
-      "value": 83.98,
-      "change": 0.77,
-      "change_pct": 0.93,
+      "value": 83.41,
+      "change": 0.2,
+      "change_pct": 0.24,
       "signal": "green",
       "note": ""
     },
     "copper": {
-      "value": 5.48,
-      "change": -0.15,
-      "change_pct": -2.63,
+      "value": 5.49,
+      "change": -0.14,
+      "change_pct": -2.49,
       "signal": "yellow",
       "note": "경기 선행 지표"
     },
@@ -257,19 +257,19 @@
       "date": "2026-12-04",
       "event": "고용",
       "desc": "비농업 고용·실업률",
-      "days_until": 13
+      "days_until": 12
     },
     {
       "date": "2026-12-10",
       "event": "CPI",
       "desc": "11월 소비자물가지수",
-      "days_until": 19
+      "days_until": 18
     },
     {
       "date": "2026-12-16",
       "event": "FOMC",
       "desc": "FOMC 금리 결정",
-      "days_until": 25
+      "days_until": 24
     }
   ]
 }
