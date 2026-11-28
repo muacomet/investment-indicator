@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-28T03:35:50.299192+00:00",
+  "updated_at": "2026-11-28T06:50:17.526230+00:00",
   "phase": {
     "status": "strong_buy",
     "score": 4,
@@ -139,9 +139,9 @@
       "note": "6개 주요 통화 대비 달러 가치"
     },
     "gold": {
-      "value": 3668.5,
-      "change": 132.7,
-      "change_pct": 3.75,
+      "value": 3639.6,
+      "change": 103.8,
+      "change_pct": 2.94,
       "signal": "green",
       "note": "안전자산 선호 시 상승"
     },
@@ -153,9 +153,9 @@
       "note": ""
     },
     "copper": {
-      "value": 5.6,
-      "change": 0.27,
-      "change_pct": 5.03,
+      "value": 5.52,
+      "change": 0.18,
+      "change_pct": 3.46,
       "signal": "green",
       "note": "경기 선행 지표"
     },
@@ -231,10 +231,10 @@
   },
   "volume": {
     "sp500": {
-      "volume": 1715427000,
-      "volume_avg_20d": 5434604850,
-      "volume_ratio": 0.32,
-      "up_day_avg_vol": 5283877576,
+      "volume": 2936150000,
+      "volume_avg_20d": 5495641000,
+      "volume_ratio": 0.53,
+      "up_day_avg_vol": 5330828461,
       "down_day_avg_vol": 5288326756
     },
     "qqq": {
